@@ -269,3 +269,17 @@
 .meglos-occasion:hover .meglos-occasion__title{
   color:var(--accent)
 }
+/* SHOPTET – vlastní homepage sekce pod sebou */
+.benefitBanner.position--benefitHomepage{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+
+.benefitBanner.position--benefitHomepage > .benefitBanner__item{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  flex:0 0 100%!important;
+  min-width:0!important;
+}
