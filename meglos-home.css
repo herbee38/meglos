@@ -90,11 +90,11 @@
 }
 /* Optické sjednocení velikosti benefitových ikon */
 .meglos-benefit:nth-child(1) .meglos-benefit__icon svg{
-  transform:scale(1.12)
+  transform:scale(1.18)
 }
 
 .meglos-benefit:nth-child(2) .meglos-benefit__icon svg{
-  transform:scale(.94)
+  transform:scale(.90)
 }
 
 .meglos-benefit:nth-child(3) .meglos-benefit__icon svg{
