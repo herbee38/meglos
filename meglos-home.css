@@ -2,37 +2,36 @@
    Homepage-only sections in visual order:
    banner wrapper -> hero -> benefits -> categories -> process.
 */
-
-/* SHOPTET TOP BANNER WRAPPER
-   Lets our custom homepage sections use the full available width. */
-.banners-top span[data-ec-promo-id]{
+/* SHOPTET HOMEPAGE BANNER RESET */
+.banners-row.has-text-banner .next-to-carousel-banners{
   display:block!important;
   width:100%!important;
   max-width:none!important
 }
-.banners-top,
-.banners-top .banner-wrapper,
-.banners-top .banner,
-.banners-top .banner-inner,
-.banners-top .extended-banner-texts{
-display:block!important;
-width:100%!important;
-max-width:none!important;
-height:auto!important;
-min-height:0!important;
-margin:0!important;
-padding:0!important;
-float:none!important;
-position:static!important;
-overflow:visible!important
+
+.banners-row.has-text-banner .next-to-carousel-banners>.banner-wrapper{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  flex:none!important;
+  margin:0!important;
+  padding:0!important
 }
 
-.banners-top .meglos-benefits,
-.banners-top .meglos-categories{
-display:block!important;
-width:100%!important;
-max-width:none!important
+.banners-row.has-text-banner .banner-wrapper>span[data-ec-promo-id]{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important
 }
+
+.banners-row.has-text-banner .meglos-benefits,
+.banners-row.has-text-banner .meglos-categories{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important
+}
+
+
 
 /* HERO */
 .meglos-hero{display:flex;align-items:center;justify-content:space-between;gap:50px;min-height:420px;padding:65px 7%;background:var(--bg);overflow:hidden;margin-bottom:20px!important}
