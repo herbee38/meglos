@@ -3,6 +3,38 @@
    banner wrapper -> hero -> benefits -> categories -> process.
 */
 /* SHOPTET HOMEPAGE BANNER RESET */
+/* CUSTOM SECTIONS VŽDY POD SEBOU */
+.banners-row.has-text-banner{
+  display:block!important;
+  width:100%!important;
+}
+
+.banners-row.has-text-banner > *{
+  width:100%!important;
+  max-width:none!important;
+}
+
+.banners-row.has-text-banner .next-to-carousel-banners{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  flex:none!important;
+}
+
+.banners-row.has-text-banner .next-to-carousel-banners > .banner-wrapper{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  flex:0 0 100%!important;
+  float:none!important;
+}
+
+.banners-row.has-text-banner .banner-wrapper > span[data-ec-promo-id]{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+
 .banners-row.has-text-banner .next-to-carousel-banners{
   display:block!important;
   width:100%!important;
