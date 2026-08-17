@@ -5,9 +5,29 @@
 
 /* SHOPTET TOP BANNER WRAPPER
    Lets our custom homepage sections use the full available width. */
-.banners-top{display:block!important;width:100%!important;max-width:none!important}
-.banners-top .banner-wrapper{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
-.banners-top .banner{width:100%!important;max-width:none!important;margin:0!important;float:none!important}
+.banners-top,
+.banners-top .banner-wrapper,
+.banners-top .banner,
+.banners-top .banner-inner,
+.banners-top .extended-banner-texts{
+display:block!important;
+width:100%!important;
+max-width:none!important;
+height:auto!important;
+min-height:0!important;
+margin:0!important;
+padding:0!important;
+float:none!important;
+position:static!important;
+overflow:visible!important
+}
+
+.banners-top .meglos-benefits,
+.banners-top .meglos-categories{
+display:block!important;
+width:100%!important;
+max-width:none!important
+}
 
 /* HERO */
 .meglos-hero{display:flex;align-items:center;justify-content:space-between;gap:50px;min-height:420px;padding:65px 7%;background:var(--bg);overflow:hidden;margin-bottom:20px!important}
