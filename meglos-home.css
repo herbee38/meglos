@@ -5,6 +5,11 @@
 
 /* SHOPTET TOP BANNER WRAPPER
    Lets our custom homepage sections use the full available width. */
+.banners-top span[data-ec-promo-id]{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important
+}
 .banners-top,
 .banners-top .banner-wrapper,
 .banners-top .banner,
