@@ -23,13 +23,25 @@
   width:100%!important;
   max-width:none!important
 }
-
 .banners-row.has-text-banner .meglos-benefits,
-.banners-row.has-text-banner .meglos-categories{
+.banners-row.has-text-banner .meglos-categories,
+.banners-row.has-text-banner .meglos-process,
+.banners-row.has-text-banner .meglos-occasions{
   display:block!important;
   width:100%!important;
   max-width:none!important
 }
+.banners-row.has-text-banner .next-to-carousel-banners{
+  display:block!important;
+}
+
+.banners-row.has-text-banner .next-to-carousel-banners > .banner-wrapper{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  flex:none!important;
+}
+
 
 
 
