@@ -407,3 +407,18 @@
   stroke-linecap:round;
   stroke-linejoin:round
 }
+/* HERO – pevné usazení na širokých obrazovkách */
+.meglos-hero{
+  width:100%;
+  max-width:1200px;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+/* HERO – lepší poměr text / obrázek */
+@media (min-width:992px){
+  .meglos-hero{
+    grid-template-columns:42% 58%!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+}
