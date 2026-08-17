@@ -158,4 +158,70 @@
 .meglos-process__icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .meglos-process h3{height:76px;margin:0;padding:8px 0 12px;color:var(--dark);font-size:16px;line-height:1.28;text-align:center}
 .meglos-process__step p{margin:0 auto!important;max-width:210px;font-size:14px;line-height:1.55;text-align:center}
-/* force rebuild 1 */
+/* DÁRKY PRO KAŽDOU PŘÍLEŽITOST */
+.meglos-occasions{
+  padding:55px 6% 65px;
+  background:var(--bg)
+}
+.meglos-occasions *{box-sizing:border-box}
+.meglos-occasions__inner{
+  max-width:1200px;
+  margin:auto
+}
+.meglos-occasions__header{
+  max-width:760px;
+  margin:0 auto 38px;
+  text-align:center
+}
+.meglos-occasions__header h2{
+  margin:0 0 10px;
+  font-size:32px
+}
+.meglos-occasions__header p{margin:0}
+.meglos-occasions__grid{
+  display:grid;
+  grid-template-columns:repeat(8,minmax(0,1fr));
+  gap:18px
+}
+.meglos-occasion{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  color:var(--dark)!important;
+  text-decoration:none!important;
+  text-align:center
+}
+.meglos-occasion__icon{
+  display:grid;
+  place-items:center;
+  width:82px;
+  height:82px;
+  border:1px solid var(--border);
+  border-radius:50%;
+  background:#fff;
+  color:var(--accent);
+  transition:.25s
+}
+.meglos-occasion__icon svg{
+  width:44px;
+  height:44px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round
+}
+.meglos-occasion__title{
+  font-size:13px;
+  font-weight:600;
+  line-height:1.3
+}
+.meglos-occasion:hover .meglos-occasion__icon{
+  transform:translateY(-3px);
+  border-color:#d2b48c;
+  box-shadow:0 7px 18px rgba(43,43,43,.07)
+}
+.meglos-occasion:hover .meglos-occasion__title{
+  color:var(--accent)
+}
