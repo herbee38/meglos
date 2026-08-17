@@ -88,6 +88,23 @@
   height:100%;
   color:inherit
 }
+/* Optické sjednocení velikosti benefitových ikon */
+.meglos-benefit:nth-child(1) .meglos-benefit__icon svg{
+  transform:scale(1.12)
+}
+
+.meglos-benefit:nth-child(2) .meglos-benefit__icon svg{
+  transform:scale(.94)
+}
+
+.meglos-benefit:nth-child(3) .meglos-benefit__icon svg{
+  transform:scale(1.18)
+}
+
+.meglos-benefit:nth-child(4) .meglos-benefit__icon svg{
+  transform:scale(1.03)
+}
+
 
 .meglos-benefit__content{
   min-width:0
