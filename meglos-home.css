@@ -1,9 +1,15 @@
 /* MEGLOS HOMEPAGE
-   Homepage-only sections in visual order:
-   banner wrapper -> hero -> benefits -> categories -> process.
+   Homepage-only styles in visual order:
+   Shoptet wrappers -> hero -> benefits -> categories -> process
+   -> occasions -> final CTA.
 */
-/* SHOPTET HOMEPAGE BANNER RESET */
-/* CUSTOM SECTIONS VŽDY POD SEBOU */
+
+
+/* =========================
+   SHOPTET HOMEPAGE WRAPPERS
+   ========================= */
+
+/* Vlastní homepage sekce vždy pod sebou a přes dostupnou šířku. */
 .banners-row.has-text-banner{
   display:block!important;
   width:100%!important;
@@ -25,8 +31,10 @@
   display:block!important;
   width:100%!important;
   max-width:none!important;
-  flex:0 0 100%!important;
+  flex:none!important;
   float:none!important;
+  margin:0!important;
+  padding:0!important;
 }
 
 .banners-row.has-text-banner .banner-wrapper > span[data-ec-promo-id]{
@@ -35,241 +43,16 @@
   max-width:none!important;
 }
 
-.banners-row.has-text-banner .next-to-carousel-banners{
-  display:block!important;
-  width:100%!important;
-  max-width:none!important
-}
-
-.banners-row.has-text-banner .next-to-carousel-banners>.banner-wrapper{
-  display:block!important;
-  width:100%!important;
-  max-width:none!important;
-  flex:none!important;
-  margin:0!important;
-  padding:0!important
-}
-
-.banners-row.has-text-banner .banner-wrapper>span[data-ec-promo-id]{
-  display:block!important;
-  width:100%!important;
-  max-width:none!important
-}
 .banners-row.has-text-banner .meglos-benefits,
 .banners-row.has-text-banner .meglos-categories,
 .banners-row.has-text-banner .meglos-process,
 .banners-row.has-text-banner .meglos-occasions{
   display:block!important;
   width:100%!important;
-  max-width:none!important
-}
-.banners-row.has-text-banner .next-to-carousel-banners{
-  display:block!important;
-}
-
-.banners-row.has-text-banner .next-to-carousel-banners > .banner-wrapper{
-  display:block!important;
-  width:100%!important;
   max-width:none!important;
-  flex:none!important;
 }
 
-
-
-
-/* HERO */
-.meglos-hero{display:flex;align-items:center;justify-content:space-between;gap:50px;min-height:420px;padding:65px 7%;background:var(--bg);overflow:hidden;margin-bottom:20px!important}
-.meglos-hero-content{flex:0 1 42%;max-width:560px}
-.meglos-hero h1{margin:0 0 22px;font-size:48px;line-height:1.12}
-.meglos-hero p{max-width:520px;margin:0;font-size:17px;line-height:1.7}
-.meglos-hero-image{flex:0 1 58%;align-self:stretch}
-.meglos-hero-image img{width:100%!important;height:auto!important;min-height:0!important;object-fit:contain!important;display:block!important;border-radius:8px!important}
-
-/* BENEFITS UNDER HERO */
-.meglos-benefits{
-  padding:0 6% 24px;
-  background:var(--bg)
-}
-.meglos-benefits *{box-sizing:border-box}
-
-.meglos-benefits__inner{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  max-width:1200px;
-  margin:0 auto;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:12px;
-  box-shadow:0 8px 28px rgba(43,43,43,.06);
-  overflow:hidden
-}
-
-.meglos-benefit{
-  display:grid;
-  grid-template-columns:54px 1fr;
-  grid-template-rows:auto auto;
-  column-gap:12px;
-  row-gap:6px;
-  align-items:center;
-  padding:14px 16px;
-  min-width:0;
-  border-right:1px solid var(--border)
-}
-.meglos-benefit:last-child{border-right:0}
-
-.meglos-benefit__icon{
-  grid-column:1;
-  grid-row:1;
-  display:grid;
-  place-items:center;
-  width:54px;
-  height:54px;
-  color:var(--accent)
-}
-.meglos-benefit__icon svg{
-  display:block;
-  width:100%;
-  height:100%;
-  color:inherit
-}
-/* Optické sjednocení velikosti benefitových ikon */
-.meglos-benefit:nth-child(1) .meglos-benefit__icon svg{
-  transform:scale(1.28)
-}
-
-.meglos-benefit:nth-child(2) .meglos-benefit__icon svg{
-  transform:scale(.90)
-}
-
-.meglos-benefit:nth-child(3) .meglos-benefit__icon svg{
-  transform:scale(1.28)
-}
-
-.meglos-benefit:nth-child(4) .meglos-benefit__icon svg{
-  transform:scale(1.03)
-}
-
-
-.meglos-benefit__content{
-  min-width:0
-}
-
-.meglos-benefit h3{
-  grid-column:2;
-  grid-row:1;
-  margin:0!important;
-  min-height:36px;
-  font-size:13px;
-  line-height:1.2;
-  display:flex;
-  align-items:center
-}
-
-.meglos-benefit p{
-  grid-column:1/-1;
-  grid-row:2;
-  margin:0!important;
-  min-height:44px;
-  font-size:12px;
-  line-height:1.4
-}
-
-/* MAIN CATEGORIES */
-.meglos-categories{padding:55px 6% 30px;background:var(--bg)}
-.meglos-categories-head{max-width:760px;margin:0 auto 38px;text-align:center}
-.meglos-categories-head h2{margin-bottom:12px;font-size:32px}
-.meglos-categories-head p{margin:0}
-.meglos-category-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px!important;max-width:1200px!important;margin:auto!important}
-.meglos-category-card{display:flex!important;flex-direction:column!important;min-height:250px!important;padding:0!important;margin:0!important;background:#fff!important;border:1px solid var(--border)!important;border-radius:10px!important;box-shadow:0 6px 22px rgba(43,43,43,.06)!important;box-sizing:border-box!important;text-decoration:none!important;transition:.25s;overflow:hidden!important}
-.meglos-category-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(43,43,43,.11)!important}
-.meglos-category-image{height:210px!important;overflow:hidden!important}
-.meglos-category-image img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
-.meglos-category-card-content{display:flex!important;flex:1!important;flex-direction:column!important;padding:24px!important}
-.meglos-category-card h3{margin:0 0 14px!important;color:var(--dark)!important;font-size:20px!important;line-height:1.3!important}
-.meglos-category-card p{margin:0 0 22px!important;font-size:15px;line-height:1.65}
-.meglos-category-card span{display:block!important;margin-top:auto!important;color:var(--accent)!important;font-size:14px;font-weight:600}
-
-/* HOW IT WORKS */
-.meglos-process{padding:55px 6% 70px;background:var(--bg)}
-.meglos-process *{box-sizing:border-box}
-.meglos-process__inner{max-width:1200px;margin:auto}
-.meglos-process__header{max-width:760px;margin:0 auto 42px;text-align:center}
-.meglos-process h2{margin:0;font-size:32px}
-.meglos-process__lead{margin:12px auto 0!important}
-.meglos-process__steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
-.meglos-process__step{display:grid;grid-template-rows:82px 76px 1fr;padding:26px 16px 24px;background:#fff;border:1px solid var(--border);border-radius:14px;text-align:center;box-shadow:0 6px 22px rgba(43,43,43,.05)}
-.meglos-process__icon{display:grid;place-items:center;width:82px;height:82px;margin:auto;color:var(--accent)}
-.meglos-process__icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
-.meglos-process h3{height:76px;margin:0;padding:8px 0 12px;color:var(--dark);font-size:16px;line-height:1.28;text-align:center}
-.meglos-process__step p{margin:0 auto!important;max-width:210px;font-size:14px;line-height:1.55;text-align:center}
-/* DÁRKY PRO KAŽDOU PŘÍLEŽITOST */
-.meglos-occasions{
-  padding:55px 6% 65px;
-  background:var(--bg)
-}
-.meglos-occasions *{box-sizing:border-box}
-.meglos-occasions__inner{
-  max-width:1200px;
-  margin:auto
-}
-.meglos-occasions__header{
-  max-width:760px;
-  margin:0 auto 38px;
-  text-align:center
-}
-.meglos-occasions__header h2{
-  margin:0 0 10px;
-  font-size:32px
-}
-.meglos-occasions__header p{margin:0}
-.meglos-occasions__grid{
-  display:grid;
-  grid-template-columns:repeat(8,minmax(0,1fr));
-  gap:18px
-}
-.meglos-occasion{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:12px;
-  color:var(--dark)!important;
-  text-decoration:none!important;
-  text-align:center
-}
-.meglos-occasion__icon{
-  display:grid;
-  place-items:center;
-  width:82px;
-  height:82px;
-  border:1px solid var(--border);
-  border-radius:50%;
-  background:#fff;
-  color:var(--accent);
-  transition:.25s
-}
-.meglos-occasion__icon svg{
-  width:44px;
-  height:44px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round
-}
-.meglos-occasion__title{
-  font-size:13px;
-  font-weight:600;
-  line-height:1.3
-}
-.meglos-occasion:hover .meglos-occasion__icon{
-  transform:translateY(-3px);
-  border-color:#d2b48c;
-  box-shadow:0 7px 18px rgba(43,43,43,.07)
-}
-.meglos-occasion:hover .meglos-occasion__title{
-  color:var(--accent)
-}
-/* SHOPTET – vlastní homepage sekce pod sebou */
+/* Shoptet benefitBanner jinak skládá vlastní bloky vedle sebe. */
 .benefitBanner.position--benefitHomepage{
   display:block!important;
   width:100%!important;
@@ -283,21 +66,482 @@
   flex:0 0 100%!important;
   min-width:0!important;
 }
-/* FINAL CTA */
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.meglos-hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  max-width:1200px;
+  gap:40px;
+  margin:0 auto!important;
+  padding:48px 6% 52px;
+  background:var(--bg);
+  overflow:hidden;
+}
+
+.meglos-hero-content{
+  flex:0 1 46%;
+  width:auto;
+  max-width:none;
+  min-width:0;
+}
+
+.meglos-hero h1{
+  margin:0 0 20px!important;
+  font-size:42px!important;
+  line-height:1.12!important;
+  letter-spacing:-.025em;
+}
+
+.meglos-hero p{
+  max-width:520px;
+  margin:0!important;
+  font-size:17px;
+  line-height:1.7;
+}
+
+.meglos-hero-image{
+  flex:1 1 54%;
+  width:auto;
+  height:auto;
+  min-width:0;
+}
+
+.meglos-hero-image img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  object-fit:contain!important;
+  border-radius:8px!important;
+}
+
+
+/* HERO – užší desktop */
+
+@media (min-width:992px) and (max-width:1100px){
+
+  .meglos-hero{
+    gap:30px;
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .meglos-hero-content{
+    flex-basis:47%;
+  }
+
+  .meglos-hero-image{
+    flex-basis:53%;
+  }
+
+  .meglos-hero h1{
+    font-size:38px!important;
+    line-height:1.1!important;
+  }
+
+}
+
+
+/* =========================
+   BENEFITS UNDER HERO
+   ========================= */
+
+.meglos-benefits{
+  padding:0 6% 28px;
+  background:var(--bg);
+}
+
+.meglos-benefits *{
+  box-sizing:border-box;
+}
+
+.meglos-benefits__inner{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  max-width:1200px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  box-shadow:0 8px 28px rgba(43,43,43,.06);
+  overflow:hidden;
+}
+
+.meglos-benefit{
+  display:grid;
+  grid-template-columns:54px 1fr;
+  grid-template-rows:auto auto;
+  column-gap:12px;
+  row-gap:6px;
+  align-items:center;
+  min-width:0;
+  padding:14px 16px;
+  border-right:1px solid var(--border);
+}
+
+.meglos-benefit:last-child{
+  border-right:0;
+}
+
+.meglos-benefit__icon{
+  grid-column:1;
+  grid-row:1;
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  color:var(--accent);
+}
+
+.meglos-benefit__icon svg{
+  display:block;
+  width:100%;
+  height:100%;
+  color:inherit;
+}
+
+
+/* BENEFITS – optické sjednocení velikosti ikon */
+
+.meglos-benefit:nth-child(1) .meglos-benefit__icon svg{
+  transform:scale(1.28);
+}
+
+.meglos-benefit:nth-child(2) .meglos-benefit__icon svg{
+  transform:scale(.90);
+}
+
+.meglos-benefit:nth-child(3) .meglos-benefit__icon svg{
+  transform:scale(1.28);
+}
+
+.meglos-benefit:nth-child(4) .meglos-benefit__icon svg{
+  transform:scale(1.03);
+}
+
+
+.meglos-benefit__content{
+  min-width:0;
+}
+
+.meglos-benefit h3{
+  grid-column:2;
+  grid-row:1;
+  display:flex;
+  align-items:center;
+  min-height:36px;
+  margin:0!important;
+  font-size:13px;
+  line-height:1.2;
+}
+
+.meglos-benefit p{
+  grid-column:1 / -1;
+  grid-row:2;
+  min-height:44px;
+  margin:0!important;
+  font-size:12px;
+  line-height:1.4;
+}
+
+
+/* =========================
+   MAIN CATEGORIES
+   ========================= */
+
+.meglos-categories{
+  padding:46px 6% 28px;
+  background:var(--bg);
+}
+
+.meglos-categories-head{
+  max-width:760px;
+  margin:0 auto 34px;
+  text-align:center;
+}
+
+.meglos-categories-head h2{
+  margin:0 0 12px!important;
+  font-size:32px;
+}
+
+.meglos-categories-head p{
+  margin:0!important;
+}
+
+.meglos-category-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:24px!important;
+  max-width:1200px!important;
+  margin:0 auto!important;
+}
+
+.meglos-category-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:250px!important;
+  margin:0!important;
+  padding:0!important;
+  background:#fff!important;
+  border:1px solid var(--border)!important;
+  border-radius:10px!important;
+  box-shadow:0 6px 22px rgba(43,43,43,.06)!important;
+  box-sizing:border-box!important;
+  text-decoration:none!important;
+  transition:.25s;
+  overflow:hidden!important;
+}
+
+.meglos-category-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(43,43,43,.11)!important;
+}
+
+.meglos-category-image{
+  height:210px!important;
+  overflow:hidden!important;
+}
+
+.meglos-category-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+.meglos-category-card-content{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  padding:24px!important;
+}
+
+.meglos-category-card h3{
+  margin:0 0 14px!important;
+  color:var(--dark)!important;
+  font-size:20px!important;
+  line-height:1.3!important;
+}
+
+.meglos-category-card p{
+  margin:0 0 22px!important;
+  font-size:15px;
+  line-height:1.65;
+}
+
+.meglos-category-card span{
+  display:block!important;
+  margin-top:auto!important;
+  color:var(--accent)!important;
+  font-size:14px;
+  font-weight:600;
+}
+
+
+/* =========================
+   HOW IT WORKS
+   ========================= */
+
+.meglos-process{
+  padding:46px 6% 52px;
+  background:var(--bg);
+}
+
+.meglos-process *{
+  box-sizing:border-box;
+}
+
+.meglos-process__inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.meglos-process__header{
+  max-width:760px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+
+.meglos-process h2{
+  margin:0!important;
+  font-size:32px;
+}
+
+.meglos-process__lead{
+  margin:12px auto 0!important;
+}
+
+.meglos-process__steps{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:18px;
+}
+
+.meglos-process__step{
+  display:grid;
+  grid-template-rows:82px 76px 1fr;
+  padding:26px 16px 24px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(43,43,43,.05);
+}
+
+.meglos-process__icon{
+  display:grid;
+  place-items:center;
+  width:82px;
+  height:82px;
+  margin:0 auto;
+  color:var(--accent);
+}
+
+.meglos-process__icon svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.meglos-process h3{
+  height:76px;
+  margin:0;
+  padding:8px 0 12px;
+  color:var(--dark);
+  font-size:16px;
+  line-height:1.28;
+  text-align:center;
+}
+
+.meglos-process__step p{
+  max-width:210px;
+  margin:0 auto!important;
+  font-size:14px;
+  line-height:1.55;
+  text-align:center;
+}
+
+
+/* =========================
+   DÁRKY PRO KAŽDOU PŘÍLEŽITOST
+   ========================= */
+
+.meglos-occasions{
+  padding:34px 6% 52px;
+  background:var(--bg);
+}
+
+.meglos-occasions *{
+  box-sizing:border-box;
+}
+
+.meglos-occasions__inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.meglos-occasions__header{
+  max-width:760px;
+  margin:0 auto 34px;
+  text-align:center;
+}
+
+.meglos-occasions__header h2{
+  margin:0 0 10px!important;
+  font-size:32px;
+}
+
+.meglos-occasions__header p{
+  margin:0!important;
+}
+
+.meglos-occasions__grid{
+  display:grid;
+  grid-template-columns:repeat(8,minmax(0,1fr));
+  gap:18px;
+}
+
+.meglos-occasion{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  color:var(--dark)!important;
+  text-decoration:none!important;
+  text-align:center;
+}
+
+.meglos-occasion__icon{
+  display:grid;
+  place-items:center;
+  width:82px;
+  height:82px;
+  border:1px solid var(--border);
+  border-radius:50%;
+  background:#fff;
+  color:var(--accent);
+  transition:.25s;
+}
+
+.meglos-occasion__icon svg{
+  width:44px;
+  height:44px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.meglos-occasion__title{
+  font-size:13px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.meglos-occasion:hover .meglos-occasion__icon{
+  transform:translateY(-3px);
+  border-color:#d2b48c;
+  box-shadow:0 7px 18px rgba(43,43,43,.07);
+}
+
+.meglos-occasion:hover .meglos-occasion__title{
+  color:var(--accent);
+}
+
+
+/* =========================
+   FINAL CTA
+   ========================= */
+
 .meglos-final-cta{
   position:relative;
   width:100%;
   max-width:1200px;
   min-height:440px;
-  margin:35px auto 65px;
+  margin:28px auto 45px;
   overflow:hidden;
   border-radius:16px;
   background:#eadfce;
-  box-shadow:0 12px 34px rgba(43,43,43,.08)
+  box-shadow:0 12px 34px rgba(43,43,43,.08);
 }
 
 .meglos-final-cta *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 .meglos-final-cta__image{
@@ -308,7 +552,7 @@
   height:100%;
   object-fit:cover;
   object-position:center;
-  z-index:0
+  z-index:0;
 }
 
 .meglos-final-cta__overlay{
@@ -322,23 +566,23 @@
     rgba(246,242,237,.66) 47%,
     rgba(246,242,237,.08) 66%,
     rgba(246,242,237,0) 100%
-  )
+  );
 }
 
 .meglos-final-cta__content{
   position:relative;
   z-index:2;
   width:52%;
-  padding:58px 52px 45px
+  padding:58px 52px 45px;
 }
 
 .meglos-final-cta h2{
-  margin:0 0 15px!important;
   max-width:500px;
+  margin:0 0 15px!important;
   font-size:36px;
   line-height:1.16;
   font-weight:700;
-  color:var(--dark)
+  color:var(--dark);
 }
 
 .meglos-final-cta__lead{
@@ -346,7 +590,7 @@
   margin:0 0 25px!important;
   font-size:15px;
   line-height:1.65;
-  color:var(--text)
+  color:var(--text);
 }
 
 .meglos-final-cta__button{
@@ -361,12 +605,12 @@
   font-size:14px;
   font-weight:600;
   text-decoration:none!important;
-  transition:.2s
+  transition:.2s;
 }
 
 .meglos-final-cta__button:hover{
   background:var(--hover);
-  transform:translateY(-1px)
+  transform:translateY(-1px);
 }
 
 .meglos-final-cta__trust{
@@ -374,7 +618,7 @@
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:14px 20px;
   max-width:500px;
-  margin-top:30px
+  margin-top:30px;
 }
 
 .meglos-final-trust{
@@ -385,7 +629,7 @@
   font-size:12px;
   font-weight:600;
   line-height:1.3;
-  color:var(--dark)
+  color:var(--dark);
 }
 
 .meglos-final-trust__icon{
@@ -394,7 +638,7 @@
   flex:0 0 30px;
   width:30px;
   height:30px;
-  color:var(--accent)
+  color:var(--accent);
 }
 
 .meglos-final-trust__icon svg{
@@ -405,124 +649,5 @@
   stroke:currentColor;
   stroke-width:1.7;
   stroke-linecap:round;
-  stroke-linejoin:round
+  stroke-linejoin:round;
 }
-/* HERO – pevné usazení na širokých obrazovkách */
-.meglos-hero{
-  width:100%;
-  max-width:1200px;
-  margin-left:auto!important;
-  margin-right:auto!important;
-}
-/* HERO – stabilní desktopové rozložení */
-@media (min-width:992px){
-
-  .meglos-hero{
-    display:flex!important;
-    align-items:center!important;
-    width:100%;
-    max-width:1200px;
-    margin-left:auto!important;
-    margin-right:auto!important;
-
-    gap:40px!important;
-    padding:55px 6% 95px!important;
-    height:auto!important;
-    min-height:0!important;
-  }
-
-  .meglos-hero-content{
-    flex:0 1 46%!important;
-    width:auto!important;
-    max-width:none!important;
-    min-width:0!important;
-  }
-
-  .meglos-hero-image{
-    flex:1 1 54%!important;
-    width:auto!important;
-    height:auto!important;
-    min-width:0!important;
-  }
-
-  .meglos-hero-image img{
-    display:block!important;
-    width:100%!important;
-    height:auto!important;
-    max-width:100%!important;
-    object-fit:contain!important;
-  }
-}
-/* HERO – přechod mezi desktopem a mobilem */
-@media (min-width:992px) and (max-width:1100px){
-
-  .meglos-hero{
-    gap:30px!important;
-    padding-left:5%!important;
-    padding-right:5%!important;
-  }
-
-  .meglos-hero-content{
-    flex-basis:47%!important;
-  }
-
-  .meglos-hero-image{
-    flex-basis:53%!important;
-  }
-
-  .meglos-hero h1{
-    font-size:44px!important;
-    line-height:1.08!important;
-  }
-}
-/* FOOTER – 4 sloupce na desktopu */
-@media (min-width:992px){
-  .custom-footer.elements-4{
-    display:grid!important;
-    grid-template-columns:repeat(4,minmax(0,1fr))!important;
-    gap:36px!important;
-  }
-
-  .custom-footer.elements-4 > *{
-    width:auto!important;
-    max-width:none!important;
-    float:none!important;
-    margin:0!important;
-  }
-}
-/* FOOTER – odstranění Bootstrap clearfix z gridu */
-.custom-footer.elements-4::before,
-.custom-footer.elements-4::after{
-  display:none!important;
-  content:none!important;
-}
-/* FOOTER – finální pořadí sloupců */
-@media (min-width:992px){
-  .custom-footer.elements-4 > :nth-child(1){order:1}
-  .custom-footer.elements-4 > :nth-child(2){order:4}
-  .custom-footer.elements-4 > :nth-child(3){order:2}
-  .custom-footer.elements-4 > :nth-child(4){order:3}
-}
-(() => {
-  const footer = document.querySelector('#footer');
-  let el = footer?.previousElementSibling;
-
-  console.log('=== PRVEK PŘED FOOTEREM ===');
-
-  for (let i = 0; i < 5 && el; i++, el = el.previousElementSibling) {
-    const r = el.getBoundingClientRect();
-    const s = getComputedStyle(el);
-
-    console.log(i + 1, {
-      tag: el.tagName,
-      class: el.className,
-      top: Math.round(r.top),
-      bottom: Math.round(r.bottom),
-      height: Math.round(r.height),
-      marginTop: s.marginTop,
-      marginBottom: s.marginBottom,
-      paddingTop: s.paddingTop,
-      paddingBottom: s.paddingBottom
-    });
-  }
-})();
