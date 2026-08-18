@@ -80,7 +80,7 @@
   max-width:1200px;
   gap:40px;
   margin:0 auto!important;
-  padding:30px 6% 34px;
+  padding:48px 6% 52px;
   background:var(--bg);
   overflow:hidden;
 }
@@ -129,23 +129,27 @@
 /* HERO – užší desktop */
 
 @media (min-width:992px) and (max-width:1100px){
+
   .meglos-hero{
-    gap:24px!important;
-    padding:24px 5% 38px!important;
+    gap:30px!important;
+
+    /* vertikální výšku necháváme z hlavního HERO */
+    padding-left:5%!important;
+    padding-right:5%!important;
   }
 
   .meglos-hero-content{
-    flex:0 1 50%!important;
+    flex:0 1 47%!important;
   }
 
   .meglos-hero-image{
-    flex:1 1 50%!important;
+    flex:1 1 53%!important;
   }
 
   .meglos-hero h1{
     font-size:34px!important;
     line-height:1.10!important;
-    margin-bottom:14px!important;
+    margin-bottom:16px!important;
   }
 
 }
