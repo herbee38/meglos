@@ -490,3 +490,9 @@
     margin:0!important;
   }
 }
+/* FOOTER – odstranění Bootstrap clearfix z gridu */
+.custom-footer.elements-4::before,
+.custom-footer.elements-4::after{
+  display:none!important;
+  content:none!important;
+}
