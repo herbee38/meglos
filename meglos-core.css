@@ -315,36 +315,39 @@ input[type=submit]:hover{
   margin:0!important;
   padding:0!important;
 }
-
-
-/* FOOTER – desktop: 4 informační sloupce + logo u spodní hrany */
-
+/* FOOTER – desktop: 3 sloupce + logo u spodní hrany */
 @media (min-width:992px){
 
-  #footer .custom-footer.elements-many{
+  #footer{
+    margin-top:0!important;
+    padding-bottom:8px!important;
+  }
+
+  #footer .custom-footer.elements-4{
     position:relative;
     display:grid!important;
-    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
     grid-template-rows:auto!important;
-    column-gap:48px!important;
+    column-gap:70px!important;
     row-gap:0!important;
     align-items:start!important;
 
-    /*
-       Rezervované místo pouze pro logo.
-       Logo samo není další gridový řádek.
-    */
     padding-top:18px!important;
-    padding-bottom:92px!important;
+
+    /*
+       Logo využije prázdný prostor pod kratšími sloupci.
+       Nemusíme pro něj rezervovat celých 87 px.
+    */
+    padding-bottom:68px!important;
   }
 
-  #footer .custom-footer.elements-many::before,
-  #footer .custom-footer.elements-many::after{
+  #footer .custom-footer.elements-4::before,
+  #footer .custom-footer.elements-4::after{
     display:none!important;
     content:none!important;
   }
 
-  #footer .custom-footer.elements-many > *{
+  #footer .custom-footer.elements-4 > *{
     width:auto!important;
     max-width:none!important;
     height:auto!important;
@@ -353,65 +356,36 @@ input[type=submit]:hover{
     margin:0!important;
     padding:0!important;
     transform:none!important;
-    align-self:start!important;
   }
 
-  /*
-     Aktuální pořadí prvků v Shoptetu:
-     1 Kontakt
-     2 Meglos
-     3 Nákup a péče
-     4 Logo
-     5 Informace
-  */
-
-  #footer .custom-footer.elements-many > :nth-child(1){
-    order:1;
+  /* Meglos */
+  #footer .custom-footer.elements-4 > :nth-child(1){
+    grid-column:1;
+    grid-row:1;
   }
 
-  #footer .custom-footer.elements-many > :nth-child(2){
-    order:2;
+  /* Nákup a péče */
+  #footer .custom-footer.elements-4 > :nth-child(2){
+    grid-column:2;
+    grid-row:1;
   }
 
-  #footer .custom-footer.elements-many > :nth-child(3){
-    order:3;
+  /* Informace */
+  #footer .custom-footer.elements-4 > :nth-child(4){
+    grid-column:3;
+    grid-row:1;
   }
 
-  #footer .custom-footer.elements-many > :nth-child(5){
-    order:4;
-  }
-
-  /*
-     Logo vyjmeme z gridu.
-     Tím nevytváří další vysoký řádek footeru.
-  */
-
-  #footer .custom-footer.elements-many > :nth-child(4){
+  /* Logo – mimo běžný tok layoutu */
+  #footer .custom-footer.elements-4 > :nth-child(3){
     position:absolute!important;
     left:0!important;
     bottom:0!important;
     width:auto!important;
-    max-width:none!important;
     margin:0!important;
     padding:0!important;
-    z-index:1;
-  }
-
-  /*
-     Robustní pojistka pro případ, že Shoptet později
-     změní pořadí bannerů, ale logo zůstane označeno
-     třídou .meglos-footer-brand.
-  */
-
-  #footer .custom-footer.elements-many > *:has(.meglos-footer-brand){
-    position:absolute!important;
-    left:0!important;
-    bottom:0!important;
-    width:auto!important;
-    max-width:none!important;
-    margin:0!important;
-    padding:0!important;
-    z-index:1;
   }
 
 }
+
+
