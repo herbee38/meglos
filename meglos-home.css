@@ -25,6 +25,7 @@
   width:100%!important;
   max-width:none!important;
   flex:none!important;
+  margin-top:0!important;
 }
 
 .banners-row.has-text-banner .next-to-carousel-banners > .banner-wrapper{
