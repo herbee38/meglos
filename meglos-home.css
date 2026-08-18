@@ -503,3 +503,26 @@
   .custom-footer.elements-4 > :nth-child(3){order:2}
   .custom-footer.elements-4 > :nth-child(4){order:3}
 }
+(() => {
+  const footer = document.querySelector('#footer');
+  let el = footer?.previousElementSibling;
+
+  console.log('=== PRVEK PŘED FOOTEREM ===');
+
+  for (let i = 0; i < 5 && el; i++, el = el.previousElementSibling) {
+    const r = el.getBoundingClientRect();
+    const s = getComputedStyle(el);
+
+    console.log(i + 1, {
+      tag: el.tagName,
+      class: el.className,
+      top: Math.round(r.top),
+      bottom: Math.round(r.bottom),
+      height: Math.round(r.height),
+      marginTop: s.marginTop,
+      marginBottom: s.marginBottom,
+      paddingTop: s.paddingTop,
+      paddingBottom: s.paddingBottom
+    });
+  }
+})();
