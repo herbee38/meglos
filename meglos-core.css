@@ -113,4 +113,52 @@ h3,.h3{font-size:21px;line-height:1.35}
     column-gap:48px!important
   }
 }
+/* FOOTER – 4 sloupce + logo přes celou šířku */
+@media (min-width:992px){
+
+  #footer .custom-footer.elements-5{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:36px 48px!important;
+  }
+
+  #footer .custom-footer.elements-5::before,
+  #footer .custom-footer.elements-5::after{
+    display:none!important;
+    content:none!important;
+  }
+
+  #footer .custom-footer.elements-5 > *{
+    width:auto!important;
+    max-width:none!important;
+    float:none!important;
+    margin:0!important;
+  }
+
+  /* finální pořadí */
+  #footer .custom-footer.elements-5 > :nth-child(1){order:1}
+  #footer .custom-footer.elements-5 > :nth-child(2){order:4}
+  #footer .custom-footer.elements-5 > :nth-child(3){order:2}
+  #footer .custom-footer.elements-5 > :nth-child(4){order:3}
+
+  /* logo pod všemi čtyřmi sloupci */
+  #footer .custom-footer.elements-5 > :nth-child(5){
+    order:5;
+    grid-column:1 / -1;
+  }
+}
+
+/* FOOTER BRAND */
+.meglos-footer-brand{
+  margin-top:8px;
+  padding-top:26px;
+  border-top:1px solid var(--border);
+}
+
+.meglos-footer-brand img{
+  display:block;
+  width:240px;
+  max-width:100%;
+  height:auto;
+}
 
