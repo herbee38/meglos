@@ -46,4 +46,71 @@ h3,.h3{font-size:21px;line-height:1.35}
     font-size:14px!important;
   }
 }
-https://github.com/herbee38/meglos/edit/main/meglos-core.css
+/* =========================
+   MEGLOS FOOTER
+   ========================= */
+
+#footer{
+  background:#F0E9E1!important;
+  border-top:1px solid var(--border);
+  color:var(--text)
+}
+
+#footer .custom-footer{
+  max-width:1200px;
+  margin:0 auto!important;
+  padding-top:42px;
+  padding-bottom:38px
+}
+
+/* Nadpisy sloupců */
+#footer .custom-footer h4,
+#footer .custom-footer .contact-box h4,
+#footer .custom-footer .menu h4{
+  margin:0 0 18px!important;
+  font-size:17px!important;
+  line-height:1.3;
+  font-weight:600!important;
+  color:var(--dark)!important
+}
+
+/* Odkazy a běžný text */
+#footer .custom-footer a,
+#footer .custom-footer li,
+#footer .custom-footer p{
+  font-size:14px!important;
+  line-height:1.55!important
+}
+
+#footer .custom-footer a{
+  color:var(--text)!important;
+  text-decoration:none!important;
+  transition:.2s
+}
+
+#footer .custom-footer a:hover{
+  color:var(--accent)!important
+}
+
+/* Vlastní Meglos sloupce */
+.meglos-footer-column ul{
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important
+}
+
+.meglos-footer-column li{
+  margin:0 0 9px!important
+}
+
+.meglos-footer-column li:last-child{
+  margin-bottom:0!important
+}
+
+/* 4 sloupce */
+@media (min-width:992px){
+  .custom-footer.elements-4{
+    column-gap:48px!important
+  }
+}
+
