@@ -414,4 +414,43 @@
   margin-left:auto!important;
   margin-right:auto!important;
 }
+/* HERO – stabilní desktopové rozložení */
+@media (min-width:992px){
+
+  .meglos-hero{
+    display:flex!important;
+    align-items:center!important;
+    width:100%;
+    max-width:1200px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+
+    gap:40px!important;
+    padding:55px 6% 95px!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  .meglos-hero-content{
+    flex:0 1 46%!important;
+    width:auto!important;
+    max-width:none!important;
+    min-width:0!important;
+  }
+
+  .meglos-hero-image{
+    flex:1 1 54%!important;
+    width:auto!important;
+    height:auto!important;
+    min-width:0!important;
+  }
+
+  .meglos-hero-image img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    object-fit:contain!important;
+  }
+}
 
