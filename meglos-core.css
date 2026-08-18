@@ -161,4 +161,11 @@ h3,.h3{font-size:21px;line-height:1.35}
     grid-column:1 / -1;
   }
 }
+/* FOOTER – velikost loga */
+#footer .meglos-footer-brand img{
+  display:block!important;
+  width:240px!important;
+  max-width:240px!important;
+  height:auto!important;
+}
 
