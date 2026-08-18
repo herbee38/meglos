@@ -5,7 +5,7 @@
 :root{--bg:#F6F2ED;--text:#3D3935;--dark:#2B2B2B;--accent:#8B5E34;--hover:#6F4726;--white:#FFF;--border:#E8DED3}
 
 html,body{font-family:Montserrat,sans-serif!important;color:var(--text);font-size:16px;line-height:1.65}
-body,.content-wrapper,.content,.container{background:var(--bg)!important}
+body,.content-wrapper,.content{background:var(--bg)!important}
 p,li,td,th,input,textarea,select,button{font-family:Montserrat,sans-serif}
 p,li,td,th{color:var(--text)!important}
 
