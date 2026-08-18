@@ -496,3 +496,10 @@
   display:none!important;
   content:none!important;
 }
+/* FOOTER – finální pořadí sloupců */
+@media (min-width:992px){
+  .custom-footer.elements-4 > :nth-child(1){order:1}
+  .custom-footer.elements-4 > :nth-child(2){order:4}
+  .custom-footer.elements-4 > :nth-child(3){order:2}
+  .custom-footer.elements-4 > :nth-child(4){order:3}
+}
