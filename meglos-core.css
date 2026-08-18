@@ -168,4 +168,18 @@ h3,.h3{font-size:21px;line-height:1.35}
   max-width:240px!important;
   height:auto!important;
 }
+/* FOOTER – odstranění zbytečné výšky řádků */
+@media (min-width:992px){
 
+  #footer .custom-footer.elements-many{
+    grid-template-rows:max-content max-content!important;
+    align-items:start!important;
+  }
+
+  #footer .custom-footer.elements-many > *{
+    align-self:start!important;
+    height:auto!important;
+    min-height:0!important;
+    padding-bottom:0!important;
+  }
+}
