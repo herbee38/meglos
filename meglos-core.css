@@ -271,3 +271,44 @@ h3,.h3{font-size:21px;line-height:1.35}
     transform:translateY(35px);
   }
 }
+/* FOOTER – finální kompaktní rozložení desktop */
+@media (min-width:992px){
+
+  #footer .custom-footer.elements-many{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    grid-template-rows:auto auto!important;
+    column-gap:48px!important;
+    row-gap:8px!important;
+
+    padding-top:36px!important;
+    padding-bottom:0!important;
+  }
+
+  /* 4 informační sloupce */
+  #footer .custom-footer.elements-many > :nth-child(-n+4){
+    margin:0!important;
+    padding:0!important;
+    align-self:end!important;
+    transform:translateY(35px);
+  }
+
+  /* logo */
+  #footer .custom-footer.elements-many > :nth-child(5){
+    grid-column:1 / -1!important;
+    margin:0!important;
+    padding:0!important;
+    align-self:end!important;
+  }
+
+  #footer .custom-footer.elements-many .banner,
+  #footer .custom-footer.elements-many .banner-wrapper{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  #footer .meglos-footer-brand{
+    margin:0!important;
+    padding:0 0 4px!important;
+  }
+}
