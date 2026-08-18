@@ -265,3 +265,9 @@ h3,.h3{font-size:21px;line-height:1.35}
     line-height:0;
   }
 }
+/* FOOTER – posun informačních bloků dolů */
+@media (min-width:992px){
+  #footer .custom-footer.elements-many > :nth-child(-n+4){
+    transform:translateY(35px);
+  }
+}
