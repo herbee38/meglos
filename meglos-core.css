@@ -215,3 +215,53 @@ h3,.h3{font-size:21px;line-height:1.35}
     border-top:0!important;
   }
 }
+/* FOOTER – odstranění Shoptet mezer */
+@media (min-width:992px){
+
+  #footer .custom-footer.elements-many{
+    grid-template-rows:auto auto!important;
+    row-gap:0!important;
+    padding-top:14px!important;
+    padding-bottom:0!important;
+    align-items:start!important;
+  }
+
+  #footer .custom-footer.elements-many > *{
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding-bottom:0!important;
+    align-self:start!important;
+  }
+
+  /* Shoptet přidává 40 + 10 px pod bannery */
+  #footer .custom-footer.elements-many .banner{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    min-height:0!important;
+  }
+
+  #footer .custom-footer.elements-many .banner-wrapper{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    min-height:0!important;
+  }
+
+  /* vlastní sloupce */
+  #footer .meglos-footer-column{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* logo – velikost NEMĚNÍME */
+  #footer .meglos-footer-brand{
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    line-height:0;
+  }
+}
