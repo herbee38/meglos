@@ -475,3 +475,18 @@
     line-height:1.08!important;
   }
 }
+/* FOOTER – 4 sloupce na desktopu */
+@media (min-width:992px){
+  .custom-footer.elements-4{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:36px!important;
+  }
+
+  .custom-footer.elements-4 > *{
+    width:auto!important;
+    max-width:none!important;
+    float:none!important;
+    margin:0!important;
+  }
+}
