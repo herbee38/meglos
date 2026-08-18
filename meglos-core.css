@@ -29,3 +29,20 @@ h3,.h3{font-size:21px;line-height:1.35}
 .navigation-in ul.menu-level-2{background:#fff!important;border:1px solid var(--border)!important;border-radius:8px!important;padding:8px!important;min-width:210px;box-shadow:0 12px 30px rgba(43,43,43,.1)!important}
 .navigation-in ul.menu-level-2 li a{padding:10px 12px!important;color:var(--text)!important;font-size:14px;font-weight:500;line-height:1.35;border-radius:5px;background:transparent!important}
 .navigation-in ul.menu-level-2 li a:hover{color:var(--accent)!important;background:var(--bg)!important}
+/* HEADER – aby se všechny 3 hlavní položky vešly i s rozbalováním */
+@media (min-width:992px) and (max-width:1199px){
+
+  #header .site-name img,
+  .site-name img{
+    max-width:230px!important;
+  }
+
+  .navigation-in > ul{
+    gap:2px!important;
+  }
+
+  .navigation-in > ul > li > a{
+    padding:22px 10px!important;
+    font-size:14px!important;
+  }
+}
