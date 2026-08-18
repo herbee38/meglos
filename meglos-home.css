@@ -129,29 +129,27 @@
 /* HERO – užší desktop */
 
 @media (min-width:992px) and (max-width:1100px){
-
   .meglos-hero{
-    gap:30px;
-    padding-left:5%;
-    padding-right:5%;
+    gap:24px!important;
+    padding:18px 5% 22px!important;
   }
 
   .meglos-hero-content{
-    flex-basis:47%;
+    flex:0 1 50%!important;
   }
 
   .meglos-hero-image{
-    flex-basis:53%;
+    flex:1 1 50%!important;
   }
 
   .meglos-hero h1{
-    font-size:38px!important;
-    line-height:1.1!important;
+    font-size:36px!important;
+    line-height:1.10!important;
+    margin-bottom:14px!important;
   }
 
 }
-
-
+  
 /* =========================
    BENEFITS UNDER HERO
    ========================= */
