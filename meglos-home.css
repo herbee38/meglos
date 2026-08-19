@@ -276,7 +276,7 @@ main.content.wide > .index-content-wrapper{
    ========================= */
 
 .meglos-categories{
-  padding:30px 6% 24px;
+  padding:30px 6% 0;
   background:var(--bg);
 }
 
@@ -371,7 +371,7 @@ main.content.wide > .index-content-wrapper{
    ========================= */
 
 .meglos-process{
-  padding:28px 6% 52px;
+  padding:0 6% O;
   background:var(--bg);
 }
 
@@ -459,7 +459,7 @@ main.content.wide > .index-content-wrapper{
    ========================= */
 
 .meglos-occasions{
-  padding:24px 6% 30px;
+  padding:0 6% 0;
   background:var(--bg);
 }
 
