@@ -248,7 +248,7 @@ input[type=submit]:hover{
      Top 9 px ho přibližuje k samotnému menu.
   */
   #header #navigation::before{
-    content:"Vyberte si dárek";
+    content:"Vyberte si";
     position:absolute!important;
 
     top:9px!important;
