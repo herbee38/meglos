@@ -200,10 +200,9 @@ input[type=submit]:hover{
   background:var(--bg)!important;
 }
 
-
 /* =========================
    HEADER – DESKTOP
-   Popisek + zarovnání navigace
+   Popisek + optické zarovnání navigace
    ========================= */
 
 @media (min-width:992px){
@@ -212,18 +211,15 @@ input[type=submit]:hover{
     position:relative!important;
   }
 
-  /* Malý popisek nad kategoriemi */
+  /* Popisek nad hlavním menu */
   #navigation::before{
     content:"Vyberte si dárek";
     position:absolute;
-    top:1px;
+    top:3px;
+    left:0;
     right:0;
 
-    width:470px;
-    max-width:100%;
-
     text-align:center;
-
     font-size:11px;
     line-height:1.2;
     font-weight:500;
@@ -233,32 +229,17 @@ input[type=submit]:hover{
     opacity:.58;
 
     pointer-events:none;
-    z-index:2;
   }
 
-  /* Samotné menu níž a směrem k pravé straně */
+  /* Menu lehce níž */
   .navigation-in > ul{
-    justify-content:flex-end!important;
-    transform:translateY(18px);
-  }
-
-  /*
-     Shoptet zde standardně drží cca 74 px rezervu.
-     Zmenšením na 24 px získá navigace více místa
-     a celé menu se dostane blíž k vyhledávání.
-  */
-  .menu-helper{
-    width:24px!important;
-    min-width:24px!important;
-    flex:0 0 24px!important;
-    box-sizing:border-box!important;
+    transform:translateY(12px);
   }
 
 }
 
 
 /* HEADER – menší desktop */
-
 @media (min-width:992px) and (max-width:1199px){
 
   #header .site-name img,
@@ -276,6 +257,8 @@ input[type=submit]:hover{
   }
 
 }
+
+
 
 
 /* =========================
