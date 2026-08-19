@@ -131,8 +131,6 @@ input[type=submit]:hover{
   border-color:var(--hover)!important;
   color:#fff!important;
 }
-
-
 /* =========================
    HEADER
    ========================= */
@@ -147,10 +145,18 @@ input[type=submit]:hover{
   max-height:82px!important;
 }
 
+
+/* Hlavní navigace */
+
 .navigation-in > ul{
   display:flex;
   align-items:center;
+  flex-wrap:nowrap;
   gap:8px;
+}
+
+.navigation-in > ul > li{
+  flex:0 0 auto;
 }
 
 .navigation-in > ul > li > a{
@@ -158,6 +164,7 @@ input[type=submit]:hover{
   font-size:15px;
   font-weight:600;
   color:var(--dark)!important;
+  white-space:nowrap;
   transition:.2s;
 }
 
@@ -165,6 +172,9 @@ input[type=submit]:hover{
 .navigation-in > ul > li.exp > a{
   color:var(--accent)!important;
 }
+
+
+/* Rozbalovací menu */
 
 .navigation-in ul.menu-level-2{
   background:#fff!important;
@@ -191,7 +201,63 @@ input[type=submit]:hover{
 }
 
 
-/* HEADER – aby se všechny 3 hlavní položky vešly i s rozbalováním */
+/* =========================
+   HEADER – DESKTOP
+   Popisek + zarovnání navigace
+   ========================= */
+
+@media (min-width:992px){
+
+  #navigation{
+    position:relative!important;
+  }
+
+  /* Malý popisek nad kategoriemi */
+  #navigation::before{
+    content:"Vyberte si dárek";
+    position:absolute;
+    top:1px;
+    right:0;
+
+    width:470px;
+    max-width:100%;
+
+    text-align:center;
+
+    font-size:11px;
+    line-height:1.2;
+    font-weight:500;
+    letter-spacing:.03em;
+
+    color:var(--text);
+    opacity:.58;
+
+    pointer-events:none;
+    z-index:2;
+  }
+
+  /* Samotné menu níž a směrem k pravé straně */
+  .navigation-in > ul{
+    justify-content:flex-end!important;
+    transform:translateY(18px);
+  }
+
+  /*
+     Shoptet zde standardně drží cca 74 px rezervu.
+     Zmenšením na 24 px získá navigace více místa
+     a celé menu se dostane blíž k vyhledávání.
+  */
+  .menu-helper{
+    width:24px!important;
+    min-width:24px!important;
+    flex:0 0 24px!important;
+    box-sizing:border-box!important;
+  }
+
+}
+
+
+/* HEADER – menší desktop */
 
 @media (min-width:992px) and (max-width:1199px){
 
@@ -201,7 +267,7 @@ input[type=submit]:hover{
   }
 
   .navigation-in > ul{
-    gap:0px!important;
+    gap:0!important;
   }
 
   .navigation-in > ul > li > a{
