@@ -669,3 +669,28 @@ main.content.wide > .index-content-wrapper{
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+/* =========================
+   HOMEPAGE – VERTICAL RHYTHM
+   ========================= */
+
+/* Kategorie → Jak to funguje */
+.benefitBanner.position--benefitHomepage{
+  margin-top:15px!important;
+  margin-bottom:0!important;
+}
+
+/* Jednotná mezera mezi bloky v benefitBanneru */
+.benefitBanner.position--benefitHomepage > .benefitBanner__item{
+  margin-bottom:15px!important;
+}
+
+/* Poslední blok už nepotřebuje další Shoptet mezeru */
+.benefitBanner.position--benefitHomepage > .benefitBanner__item:last-child{
+  margin-bottom:0!important;
+}
+
+/* Příležitosti → CTA:
+   Shoptet už vytvoří 15 px, takže CTA nesmí přidávat dalších 18 px nahoře */
+.meglos-final-cta{
+  margin-top:0!important;
+}
