@@ -694,3 +694,32 @@ main.content.wide > .index-content-wrapper{
 .meglos-final-cta{
   margin-top:0!important;
 }
+/* =========================
+   HOMEPAGE – VIZUÁLNÍ RYTMUS DESKTOP
+   ========================= */
+
+/* Kategorie */
+.meglos-categories{
+  padding-top:30px;
+  padding-bottom:12px;
+}
+
+/* Jak to funguje */
+.meglos-process{
+  padding-top:22px;
+  padding-bottom:20px;
+}
+
+.meglos-process__header{
+  margin-bottom:30px;
+}
+
+/* Příležitosti */
+.meglos-occasions{
+  padding-top:20px;
+  padding-bottom:18px;
+}
+
+.meglos-occasions__header{
+  margin-bottom:28px;
+}
