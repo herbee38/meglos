@@ -209,6 +209,7 @@ input[type=submit]:hover{
 
   #navigation{
     position:relative!important;
+   transform:translateX(32px);
   }
 
   /* Popisek nad hlavním menu */
