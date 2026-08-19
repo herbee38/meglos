@@ -708,15 +708,13 @@ main.content.wide > .index-content-wrapper{
   padding-top:0!important;
   padding-bottom:0!important;
 }
-
-/* Příležitosti */
-.meglos-occasions{
-  padding-top:0!important;
-  padding-bottom:0!important;
-}
-/* Jak to funguje – výraznější linky ikon */
-.meglos-process svg [stroke]{
-  stroke-width:2!important;
+/* Jak to funguje – zesílení současných SVG ikon */
+.meglos-process__icon svg path{
+  stroke:currentColor!important;
+  stroke-width:1.6px!important;
+  vector-effect:non-scaling-stroke;
   stroke-linecap:round;
   stroke-linejoin:round;
+  paint-order:stroke fill;
 }
+
