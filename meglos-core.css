@@ -3,6 +3,7 @@
    Keep this file small because it is needed on every page.
 */
 
+
 /* =========================
    VARIABLES
    ========================= */
@@ -131,6 +132,8 @@ input[type=submit]:hover{
   border-color:var(--hover)!important;
   color:#fff!important;
 }
+
+
 /* =========================
    HEADER
    ========================= */
@@ -174,7 +177,9 @@ input[type=submit]:hover{
 }
 
 
-/* Rozbalovací menu */
+/* =========================
+   HEADER – DROPDOWN MENU
+   ========================= */
 
 .navigation-in ul.menu-level-2{
   background:#fff!important;
@@ -200,47 +205,129 @@ input[type=submit]:hover{
   background:var(--bg)!important;
 }
 
+
 /* =========================
    HEADER – DESKTOP
-   Popisek + optické zarovnání navigace
    ========================= */
 
 @media (min-width:992px){
 
-  #navigation{
+  /*
+     Vytvoříme vrstvu nad obsahem stránky,
+     aby dropdown nebyl schovaný za hero sekcí.
+  */
+  #header{
     position:relative!important;
-   transform:translateX(32px);
+    z-index:9999!important;
   }
 
-  /* Popisek nad hlavním menu */
-  #navigation::before{
+
+  /*
+     Hlavní navigaci můžeme nechat přesahovat
+     mimo její původní Shoptet kontejner.
+  */
+  #header #navigation{
+    position:relative!important;
+    overflow:visible!important;
+
+    /*
+       Optický posun celé navigace doprava
+       směrem k ikonám vyhledávání / účtu / košíku.
+    */
+    transform:translateX(32px);
+  }
+
+  #header .navigation-in,
+  #header .navigation-in > ul{
+    overflow:visible!important;
+  }
+
+
+  /*
+     Popisek nad hlavní navigací.
+     Top 9 px ho přibližuje k samotnému menu.
+  */
+  #header #navigation::before{
     content:"Vyberte si dárek";
-    position:absolute;
-    top:3px;
-    left:0;
-    right:0;
+    position:absolute!important;
 
-    text-align:center;
-    font-size:11px;
-    line-height:1.2;
-    font-weight:500;
-    letter-spacing:.03em;
+    top:9px!important;
+    left:0!important;
+    right:0!important;
 
-    color:var(--text);
-    opacity:.58;
+    text-align:center!important;
 
-    pointer-events:none;
+    font-size:11px!important;
+    line-height:1.2!important;
+    font-weight:500!important;
+    letter-spacing:.03em!important;
+
+    color:var(--text)!important;
+    opacity:.65!important;
+
+    pointer-events:none!important;
+    z-index:20!important;
   }
 
-  /* Menu lehce níž */
-  .navigation-in > ul{
+
+  /*
+     Hlavní odkazy posuneme trochu níž.
+     Popisek tak zůstává nad nimi.
+  */
+  #header .navigation-in > ul{
     transform:translateY(12px);
+  }
+
+
+  /*
+     Shoptet při nedostatku místa označuje položku
+     třídou "splitted" a schovává ji.
+
+     Na Meglosu máme jen 3 hlavní položky,
+     takže je chceme na desktopu vždy viditelné.
+  */
+  #header .navigation-in > ul > li.splitted{
+    visibility:visible!important;
+  }
+
+
+  /*
+     Shoptetí pomocné menu "Více" nepotřebujeme,
+     protože zobrazujeme všechny 3 hlavní kategorie.
+  */
+  #header .menu-helper{
+    display:none!important;
+  }
+
+
+  /*
+     Dropdown musí být nad obsahem stránky.
+  */
+  #header .navigation-in ul.menu-level-2{
+    z-index:10000!important;
+  }
+
+
+  /*
+     Pojistka pro zobrazení dropdownu při hoveru,
+     aktivním stavu nebo ovládání klávesnicí.
+  */
+  #header .navigation-in > ul > li.ext:hover > ul.menu-level-2,
+  #header .navigation-in > ul > li.exp > ul.menu-level-2,
+  #header .navigation-in > ul > li.ext:focus-within > ul.menu-level-2{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    z-index:10000!important;
   }
 
 }
 
 
-/* HEADER – menší desktop */
+/* =========================
+   HEADER – MENŠÍ DESKTOP
+   ========================= */
+
 @media (min-width:992px) and (max-width:1199px){
 
   #header .site-name img,
@@ -248,18 +335,16 @@ input[type=submit]:hover{
     max-width:230px!important;
   }
 
-  .navigation-in > ul{
+  #header .navigation-in > ul{
     gap:0!important;
   }
 
-  .navigation-in > ul > li > a{
+  #header .navigation-in > ul > li > a{
     padding:22px 10px!important;
     font-size:14px!important;
   }
 
 }
-
-
 
 
 /* =========================
@@ -365,7 +450,13 @@ input[type=submit]:hover{
   margin:0!important;
   padding:0!important;
 }
-/* FOOTER – desktop: 3 sloupce + logo u spodní hrany */
+
+
+/* =========================
+   FOOTER – DESKTOP
+   3 sloupce + logo u spodní hrany
+   ========================= */
+
 @media (min-width:992px){
 
   #footer{
@@ -375,18 +466,21 @@ input[type=submit]:hover{
 
   #footer .custom-footer.elements-4{
     position:relative;
+
     display:grid!important;
     grid-template-columns:repeat(3,minmax(0,1fr))!important;
     grid-template-rows:auto!important;
+
     column-gap:70px!important;
     row-gap:0!important;
+
     align-items:start!important;
 
     padding-top:18px!important;
 
     /*
        Logo využije prázdný prostor pod kratšími sloupci.
-       Nemusíme pro něj rezervovat celých 87 px.
+       Nemusíme pro něj rezervovat celou jeho výšku.
     */
     padding-bottom:68px!important;
   }
@@ -402,40 +496,52 @@ input[type=submit]:hover{
     max-width:none!important;
     height:auto!important;
     min-height:0!important;
+
     float:none!important;
+
     margin:0!important;
     padding:0!important;
+
     transform:none!important;
   }
 
+
   /* Meglos */
+
   #footer .custom-footer.elements-4 > :nth-child(1){
     grid-column:1;
     grid-row:1;
   }
 
+
   /* Nákup a péče */
+
   #footer .custom-footer.elements-4 > :nth-child(2){
     grid-column:2;
     grid-row:1;
   }
 
+
   /* Informace */
+
   #footer .custom-footer.elements-4 > :nth-child(4){
     grid-column:3;
     grid-row:1;
   }
 
+
   /* Logo – mimo běžný tok layoutu */
+
   #footer .custom-footer.elements-4 > :nth-child(3){
     position:absolute!important;
+
     left:0!important;
     bottom:0!important;
+
     width:auto!important;
+
     margin:0!important;
     padding:0!important;
   }
 
 }
-
-
