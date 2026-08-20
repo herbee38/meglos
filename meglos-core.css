@@ -567,7 +567,7 @@ input[type=submit]:hover{
     padding:0!important;
   }
 }
-/* STABILIZACE MENU BEZ ZMĚNY JEHO POZICE */
+/* STABILNÍ DESKTOPOVÉ MENU */
 @media (min-width:992px){
   #navigation .menu-level-1 > li.ext{
     position:relative
@@ -576,25 +576,34 @@ input[type=submit]:hover{
   #navigation .menu-level-1 > li.ext::after{
     content:"";
     position:absolute;
-    z-index:1;
     top:calc(100% - 17px);
     left:0;
     width:100%;
-    height:18px
+    height:20px
   }
 
   #navigation .menu-level-1 > li.ext > .menu-level-2{
+    display:block!important;
     top:calc(100% - 16px)!important;
     margin-top:0!important;
-    pointer-events:auto!important;
-    transition:none!important;
-    z-index:2!important
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+    z-index:10001!important;
+    transition:
+      opacity .12s ease .15s,
+      visibility 0s linear .27s!important
   }
 
   #navigation .menu-level-1 > li.ext:hover > .menu-level-2,
   #navigation .menu-level-1 > li.ext:focus-within > .menu-level-2{
-    display:block!important;
+    opacity:1!important;
     visibility:visible!important;
-    opacity:1!important
+    pointer-events:auto!important;
+    transition-delay:0s!important
+  }
+
+  #navigation .menu-level-1 > li.ext:hover{
+    z-index:10002
   }
 }
