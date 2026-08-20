@@ -58,9 +58,8 @@
    ========================= */
 
 @media(max-width:767px){
-
-   /* Logo v mobilním hamburger menu */
-#navigation .navigation-in > ul::before{
+/* Logo pouze před PRVNÍM seznamem hlavních kategorií */
+#navigation .navigation-in > ul:first-of-type::before{
   content:"";
   display:block!important;
 
@@ -71,23 +70,23 @@
 
   margin:12px 18px 8px!important;
 
-  background-image:url("https://cdn.myshoptet.com/usr/770059.myshoptet.com/user/logos/meglos_logo_transparent_clean_800w.png");
+  background-image:url("hhttps://cdn.myshoptet.com/usr/770059.myshoptet.com/user/logos/meglos_logo_clean_curves_v17_transparent.png");
   background-repeat:no-repeat;
   background-position:left center;
   background-size:contain;
 
-  pointer-events:none;
+  pointer-events:none!important;
 }
-   /* Popisek nad hlavními kategoriemi hamburger menu */
-#navigation .navigation-in > ul > li:first-child::before{
+/* "Vyber dárek" pouze před PRVNÍ kategorií prvního seznamu */
+#navigation .navigation-in > ul:first-of-type > li:first-child::before{
   content:"Vyber dárek";
 
   display:block!important;
-
   width:100%!important;
-  box-sizing:border-box!important;
 
   padding:8px 18px 5px!important;
+
+  box-sizing:border-box!important;
 
   font-size:11px!important;
   line-height:1.3!important;
@@ -97,10 +96,9 @@
   color:var(--text)!important;
   opacity:.6!important;
 
-  text-transform:none!important;
-
   pointer-events:none!important;
-}
+}  
+  
 
   /* =========================
      TYPOGRAFIE
