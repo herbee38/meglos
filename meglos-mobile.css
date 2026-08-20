@@ -278,23 +278,32 @@
 
   text-align:center!important;
 }
-@media (max-width:380px){
+@media(max-width:380px){
+
   .meglos-benefits__inner{
     grid-template-columns:1fr!important;
   }
 
   .meglos-benefit{
     display:grid!important;
-    grid-template-columns:52px 1fr!important;
-    align-items:center!important;
-    column-gap:14px!important;
-    row-gap:6px!important;
 
-    padding:16px 18px!important;
+    /* ikona + nadpis jako jedna centrovaná dvojice */
+    grid-template-columns:52px auto!important;
+    grid-template-rows:auto auto!important;
+
+    justify-content:center!important;
+    align-items:center!important;
+
+    column-gap:12px!important;
+    row-gap:8px!important;
+
+    width:100%!important;
+    padding:17px 18px!important;
 
     border-right:0!important;
     border-bottom:1px solid var(--border)!important;
-    text-align:left!important;
+
+    box-sizing:border-box!important;
   }
 
   .meglos-benefit:last-child{
@@ -302,8 +311,12 @@
   }
 
   .meglos-benefit__icon{
+    grid-column:1!important;
+    grid-row:1!important;
+
     width:52px!important;
     height:52px!important;
+
     margin:0!important;
 
     display:flex!important;
@@ -312,23 +325,33 @@
   }
 
   .meglos-benefit__icon svg{
-    width:100%;
-    height:100%;
+    width:100%!important;
+    height:100%!important;
   }
 
   .meglos-benefit h3{
-    margin:0 0 4px!important;
+    grid-column:2!important;
+    grid-row:1!important;
+
+    margin:0!important;
+
     font-size:14px!important;
     line-height:1.3!important;
+
     text-align:left!important;
   }
 
   .meglos-benefit p{
-    grid-column:2!important;
-    margin:0!important;
+    grid-column:1 / -1!important;
+    grid-row:2!important;
+
+    max-width:270px!important;
+    margin:0 auto!important;
+
     font-size:12.5px!important;
     line-height:1.5!important;
-    text-align:left!important;
+
+    text-align:center!important;
   }
 }
    
