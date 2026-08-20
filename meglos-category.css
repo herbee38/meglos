@@ -24,5 +24,27 @@
   body.type-category .content-wrapper{
     display:block!important;
   }
+/* =========================
+   CATEGORY – HEADER
+   ========================= */
 
+body.type-category .breadcrumbs{
+  margin-bottom:22px!important;
+}
+
+body.type-category .category-title{
+  margin:0 0 18px!important;
+  font-size:42px!important;
+  line-height:1.12!important;
+  letter-spacing:-.025em!important;
+  color:var(--dark)!important;
+}
+
+body.type-category .category-perex{
+  max-width:900px!important;
+  margin:0 0 36px!important;
+  font-size:17px!important;
+  line-height:1.65!important;
+  color:var(--text)!important;
+}
 }
