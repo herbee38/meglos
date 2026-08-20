@@ -158,3 +158,116 @@ body.type-category .category-perex{
 body.type-category .category-perex.empty-content.empty-content-category{
   display:none!important;
 }
+/* =========================
+   CATEGORY – BENEFITS
+   ========================= */
+
+@media(min-width:992px){
+
+  body.type-category .benefitBanner.position--benefitCategory{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+
+    width:100%!important;
+    max-width:none!important;
+
+    margin:38px 0 28px!important;
+    padding:0!important;
+
+    background:#fff!important;
+    border:1px solid var(--border)!important;
+    border-radius:12px!important;
+    box-shadow:0 8px 28px rgba(43,43,43,.06)!important;
+
+    overflow:hidden!important;
+  }
+
+  body.type-category .benefitBanner.position--benefitCategory
+  .benefitBanner__item{
+    display:grid!important;
+    grid-template-columns:54px 1fr!important;
+    grid-template-rows:auto auto!important;
+
+    column-gap:12px!important;
+    row-gap:6px!important;
+
+    align-items:center!important;
+
+    width:auto!important;
+    max-width:none!important;
+
+    margin:0!important;
+    padding:14px 16px!important;
+
+    border-right:1px solid var(--border)!important;
+
+    box-sizing:border-box!important;
+  }
+
+  body.type-category .benefitBanner.position--benefitCategory
+  .benefitBanner__item:last-child{
+    border-right:0!important;
+  }
+
+  body.type-category .benefitBanner__picture{
+    grid-column:1!important;
+    grid-row:1!important;
+
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+
+    width:54px!important;
+    height:54px!important;
+
+    margin:0!important;
+  }
+
+  body.type-category .benefitBanner__img{
+    display:block!important;
+
+    width:54px!important;
+    height:54px!important;
+    max-width:54px!important;
+    max-height:54px!important;
+
+    object-fit:contain!important;
+  }
+
+  body.type-category .benefitBanner__content{
+    display:contents!important;
+  }
+
+  body.type-category .benefitBanner__title{
+    grid-column:2!important;
+    grid-row:1!important;
+
+    display:flex!important;
+    align-items:center!important;
+
+    min-height:36px!important;
+
+    margin:0!important;
+
+    font-size:13px!important;
+    line-height:1.2!important;
+    font-weight:600!important;
+
+    color:var(--dark)!important;
+  }
+
+  body.type-category .benefitBanner__data{
+    grid-column:1 / -1!important;
+    grid-row:2!important;
+
+    min-height:44px!important;
+
+    margin:0!important;
+
+    font-size:12px!important;
+    line-height:1.4!important;
+
+    color:var(--text)!important;
+  }
+
+}
