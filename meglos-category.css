@@ -257,14 +257,19 @@ body.type-category .category-perex.empty-content.empty-content-category{
   }
 
   body.type-category .benefitBanner__data{
-    grid-column:2!important;
+    grid-column:1/-1!important;
   grid-row:2!important;
 
+  width:100%!important;
+  min-width:0!important;
   min-height:34px!important;
+
   margin:0!important;
 
   font-size:12px!important;
   line-height:1.4!important;
+  text-align:center!important;
+
   color:var(--text)!important;
 }
 
