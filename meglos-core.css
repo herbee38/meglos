@@ -142,8 +142,7 @@ input[type=submit]:hover{
   background:var(--bg)!important;
 }
 
-#header .site-name img,
-.site-name img{
+#header .site-name img{
   max-width:260px!important;
   max-height:82px!important;
 }
@@ -213,7 +212,7 @@ input[type=submit]:hover{
 @media (min-width:992px){
 
   /*
-     Vytvoříme vrstvu nad obsahem stránky,
+     Header musí být nad obsahem stránky,
      aby dropdown nebyl schovaný za hero sekcí.
   */
   #header{
@@ -223,16 +222,16 @@ input[type=submit]:hover{
 
 
   /*
-     Hlavní navigaci můžeme nechat přesahovat
-     mimo její původní Shoptet kontejner.
+     Navigace může přesahovat mimo původní
+     Shoptet kontejner.
   */
   #header #navigation{
     position:relative!important;
     overflow:visible!important;
 
     /*
-       Optický posun celé navigace doprava
-       směrem k ikonám vyhledávání / účtu / košíku.
+       Optický posun navigace doprava
+       směrem k vyhledávání / účtu / košíku.
     */
     transform:translateX(32px);
   }
@@ -245,7 +244,8 @@ input[type=submit]:hover{
 
   /*
      Popisek nad hlavní navigací.
-     Top 9 px ho přibližuje k samotnému menu.
+     Šířka 400 px ho centruje nad trojicí:
+     Podle typu / Pro koho / Podle příležitosti.
   */
   #header #navigation::before{
     content:"Vyberte si";
@@ -272,8 +272,8 @@ input[type=submit]:hover{
 
 
   /*
-     Hlavní odkazy posuneme trochu níž.
-     Popisek tak zůstává nad nimi.
+     Hlavní odkazy jsou lehce níž,
+     aby nad nimi zůstal prostor pro popisek.
   */
   #header .navigation-in > ul{
     transform:translateY(12px);
@@ -281,11 +281,9 @@ input[type=submit]:hover{
 
 
   /*
-     Shoptet při nedostatku místa označuje položku
-     třídou "splitted" a schovává ji.
-
-     Na Meglosu máme jen 3 hlavní položky,
-     takže je chceme na desktopu vždy viditelné.
+     Shoptet při nedostatku místa označuje položky
+     třídou "splitted". Na Meglosu chceme všechny
+     tři hlavní kategorie vždy viditelné.
   */
   #header .navigation-in > ul > li.splitted{
     visibility:visible!important;
@@ -293,8 +291,7 @@ input[type=submit]:hover{
 
 
   /*
-     Shoptetí pomocné menu "Více" nepotřebujeme,
-     protože zobrazujeme všechny 3 hlavní kategorie.
+     Pomocné menu "Více" nepotřebujeme.
   */
   #header .menu-helper{
     display:none!important;
@@ -310,8 +307,8 @@ input[type=submit]:hover{
 
 
   /*
-     Pojistka pro zobrazení dropdownu při hoveru,
-     aktivním stavu nebo ovládání klávesnicí.
+     Zobrazení dropdownu při hoveru,
+     aktivním stavu a ovládání klávesnicí.
   */
   #header .navigation-in > ul > li.ext:hover > ul.menu-level-2,
   #header .navigation-in > ul > li.exp > ul.menu-level-2,
@@ -331,8 +328,7 @@ input[type=submit]:hover{
 
 @media (min-width:992px) and (max-width:1199px){
 
-  #header .site-name img,
-  .site-name img{
+  #header .site-name img{
     max-width:230px!important;
   }
 
@@ -368,9 +364,7 @@ input[type=submit]:hover{
 
 /* FOOTER – nadpisy sloupců */
 
-#footer .custom-footer h4,
-#footer .custom-footer .contact-box h4,
-#footer .custom-footer .menu h4{
+#footer .custom-footer h4{
   margin:0 0 10px!important;
   font-size:17px!important;
   line-height:1.3;
@@ -465,36 +459,49 @@ input[type=submit]:hover{
     padding-bottom:8px!important;
   }
 
+
+  /*
+     Tři obsahové sloupce.
+     Logo je mimo běžný grid a leží pod prvním sloupcem.
+  */
   #footer .custom-footer.elements-4{
     position:relative;
-  display:grid!important;
 
-  grid-template-columns:220px 220px 220px!important;
-  justify-content:space-between!important;
+    display:grid!important;
 
-  column-gap:0!important;
-  row-gap:0!important;
+    grid-template-columns:220px 220px 220px!important;
+    justify-content:space-between!important;
 
-  align-items:start!important;
+    column-gap:0!important;
+    row-gap:0!important;
 
-  padding-top:18px!important;
-  padding-left:22px!important;
-  padding-right:22px!important;
-  padding-bottom:68px!important;
+    align-items:start!important;
+
+    padding-top:18px!important;
+    padding-left:22px!important;
+    padding-right:22px!important;
 
     /*
-       Logo využije prázdný prostor pod kratšími sloupci.
-       Nemusíme pro něj rezervovat celou jeho výšku.
+       Rezerva pro logo + větší mezera
+       mezi "Mapa webu" a logem.
     */
-    padding-bottom:68px!important;
+    padding-bottom:78px!important;
   }
 
+
+  /*
+     Vypnutí Shoptet clearfix pseudo-elementů.
+  */
   #footer .custom-footer.elements-4::before,
   #footer .custom-footer.elements-4::after{
     display:none!important;
     content:none!important;
   }
 
+
+  /*
+     Reset výchozího Shoptet rozložení bannerů.
+  */
   #footer .custom-footer.elements-4 > *{
     width:auto!important;
     max-width:none!important;
@@ -534,8 +541,11 @@ input[type=submit]:hover{
   }
 
 
-  /* Logo – mimo běžný tok layoutu */
-
+  /*
+     Logo mimo běžný tok layoutu.
+     left:0 zachovává zarovnání se spodním
+     copyright řádkem.
+  */
   #footer .custom-footer.elements-4 > :nth-child(3){
     position:absolute!important;
 
