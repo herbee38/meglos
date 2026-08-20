@@ -675,3 +675,29 @@
     min-width:106px
   }
 }
+/* OPRAVA ZNAKŮ PLUS A MINUS */
+.type-product .quantity .increase::before,
+.type-product .quantity .decrease::before{
+  content:none!important;
+  display:none!important
+}
+
+.type-product .quantity .increase,
+.type-product .quantity .decrease{
+  display:flex!important;
+  align-items:center;
+  justify-content:center
+}
+
+.type-product .quantity .increase__sign,
+.type-product .quantity .decrease__sign{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  color:#3D3935;
+  font-family:Montserrat,sans-serif!important;
+  font-size:18px!important;
+  line-height:1!important
+}
