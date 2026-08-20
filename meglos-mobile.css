@@ -70,6 +70,99 @@
 @media(max-width:767px){
 
    /* =========================
+   MOBILE – FOOTER
+   ========================= */
+
+#footer .custom-footer.elements-4{
+  display:flex!important;
+  flex-direction:column!important;
+
+  width:100%!important;
+
+  padding:24px 20px 20px!important;
+  margin:0!important;
+
+  box-sizing:border-box!important;
+}
+
+
+/* Reset Shoptet sloupců */
+
+#footer .custom-footer.elements-4 > *{
+  width:100%!important;
+  max-width:none!important;
+
+  float:none!important;
+
+  margin:0!important;
+  padding:0!important;
+}
+
+
+/* 1. Meglos */
+
+#footer .custom-footer.elements-4 > :nth-child(1){
+  order:1;
+}
+
+
+/* 2. Nákup a péče */
+
+#footer .custom-footer.elements-4 > :nth-child(2){
+  order:2;
+  margin-top:22px!important;
+}
+
+
+/* 3. Informace */
+
+#footer .custom-footer.elements-4 > :nth-child(4){
+  order:3;
+  margin-top:22px!important;
+}
+
+
+/* 4. Logo */
+
+#footer .custom-footer.elements-4 > :nth-child(3){
+  order:4;
+
+  margin-top:28px!important;
+}
+
+
+/* Logo vystředit */
+
+#footer .meglos-footer-brand-row{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+
+  width:100%!important;
+}
+
+
+#footer .meglos-footer-brand{
+  margin:0 auto!important;
+}
+
+
+#footer .meglos-footer-brand img{
+  width:190px!important;
+  max-width:190px!important;
+  height:auto!important;
+
+  margin:0 auto!important;
+}
+
+
+/* Platby + Vyrobeno v ČR na mobilu skrýt */
+
+#footer .meglos-footer-trust{
+  display:none!important;
+}
+
+   /* =========================
    MOBILE – SJEDNOCENÝ VERTIKÁLNÍ RYTMUS
    Cíl: cca 40 px mezi sekcemi
    ========================= */
