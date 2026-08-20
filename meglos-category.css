@@ -118,12 +118,14 @@ body.type-category .category-perex{
   body.type-category .subcategories.with-image .image img{
     display:block!important;
 
-    width:100%!important;
-    height:100%!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
 
-    margin:0!important;
-    object-fit:cover!important;
-  }
+  margin:0!important;
+  object-fit:cover!important;
+}
 
   /* Výchozí Shoptet ikona, dokud není nahraná fotografie kategorie */
   body.type-category .subcategories.with-image .image img[src*="folder.svg"]{
