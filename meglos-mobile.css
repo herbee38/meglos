@@ -366,14 +366,7 @@ main.content.wide
     box-sizing:border-box!important;
   }
 
-  .meglos-hero-image{
-    order:1;
-  }
-
-  .meglos-hero-content{
-    order:2;
-  }
-
+  
   .meglos-hero-image img{
     display:block;
 
