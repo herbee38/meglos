@@ -78,7 +78,29 @@
 
   pointer-events:none;
 }
-   
+   /* Popisek nad hlavními kategoriemi hamburger menu */
+#navigation .navigation-in > ul > li:first-child::before{
+  content:"Vyber dárek";
+
+  display:block!important;
+
+  width:100%!important;
+  box-sizing:border-box!important;
+
+  padding:8px 18px 5px!important;
+
+  font-size:11px!important;
+  line-height:1.3!important;
+  font-weight:500!important;
+  letter-spacing:.04em!important;
+
+  color:var(--text)!important;
+  opacity:.6!important;
+
+  text-transform:none!important;
+
+  pointer-events:none!important;
+}
 
   /* =========================
      TYPOGRAFIE
