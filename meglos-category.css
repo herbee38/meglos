@@ -1,0 +1,28 @@
+/* MEGLOS CATEGORY
+   Společné rozložení kategorií.
+*/
+
+
+/* =========================
+   CATEGORY – DESKTOP
+   ========================= */
+
+@media(min-width:992px){
+
+  /* Levý Shoptet sidebar na kategoriích skrýt */
+  body.type-category .sidebar.sidebar-left{
+    display:none!important;
+  }
+
+  /* Hlavní obsah přes celou dostupnou šířku */
+  body.type-category main.content.narrow{
+    width:100%!important;
+    max-width:none!important;
+    float:none!important;
+  }
+
+  body.type-category .content-wrapper{
+    display:block!important;
+  }
+
+}
