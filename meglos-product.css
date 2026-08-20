@@ -1,0 +1,289 @@
+/* MEGLOS – DETAIL PRODUKTU */
+.type-product .p-detail-inner{
+  align-items:flex-start
+}
+
+.type-product .p-image,
+.type-product .p-data-wrapper{
+  background:#fff;
+  border:1px solid #E8DED3;
+  border-radius:14px;
+  box-shadow:0 8px 28px rgba(61,57,53,.07)
+}
+
+.type-product .p-image{
+  padding:0!important;
+  overflow:hidden
+}
+
+.type-product .p-main-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:13px
+}
+
+.type-product .p-data-wrapper{
+  padding:30px!important
+}
+
+.type-product .p-detail-inner-header h1{
+  margin:0 0 14px;
+  color:#2B2B2B;
+  font-size:34px;
+  line-height:1.2;
+  font-weight:600
+}
+
+.type-product .p-short-description{
+  margin:0 0 20px;
+  color:#5F5953;
+  font-size:15px;
+  line-height:1.7
+}
+
+.type-product .p-short-description p{
+  margin:0
+}
+
+/* Pořadí prvků objednávky */
+.type-product #product-detail-form{
+  display:flex;
+  flex-direction:column
+}
+
+.type-product .p-variants-block{order:1}
+.type-product .p-basic-info-block{order:2}
+.type-product #dkLabNoteMainWrapper{order:3}
+.type-product .p-to-cart-block{order:4}
+
+/* Dostupnost a kód */
+.type-product .p-basic-info-block{
+  justify-content:space-between;
+  margin:0 0 18px;
+  padding:13px 0!important;
+  border-top:1px solid #E8DED3;
+  border-bottom:1px solid #E8DED3;
+  font-size:13px
+}
+
+.type-product .availability-label{
+  font-weight:600
+}
+
+/* Nahrání fotografie a vlastní text */
+.type-product #dkLabNoteMainWrapper{
+  display:grid!important;
+  gap:16px;
+  margin:0 0 18px
+}
+
+.type-product #dkLabNoteFileForm{
+  padding:15px;
+  background:#FBF8F4;
+  border:1px dashed #C9AD91;
+  border-radius:10px
+}
+
+.type-product .dkLabFileButton{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  margin:0 0 8px!important;
+  padding:12px 18px!important;
+  color:#fff!important;
+  background:#8B5E34!important;
+  border:1px solid #8B5E34!important;
+  border-radius:8px!important;
+  font-size:15px!important;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease
+}
+
+.type-product .dkLabFileButton:hover{
+  background:#6F4726!important;
+  border-color:#6F4726!important
+}
+
+.type-product .dkLabNoteResult.warning{
+  color:#766A60!important;
+  font-size:12px!important;
+  line-height:1.5!important
+}
+
+.type-product #dkLabNoteDetailWrapper{
+  padding:0!important
+}
+
+.type-product .dkLabNoteHeader{
+  margin:0 0 8px;
+  color:#3D3935;
+  font-size:14px;
+  font-weight:600
+}
+
+.type-product .dkLabNoteTextArea{
+  display:block;
+  width:100%!important;
+  min-height:105px;
+  padding:12px 14px!important;
+  color:#3D3935;
+  background:#fff;
+  border:1px solid #D8CCC0!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+  font:14px/1.55 Montserrat,sans-serif;
+  resize:vertical
+}
+
+.type-product .dkLabNoteTextArea:focus{
+  border-color:#8B5E34!important;
+  outline:0;
+  box-shadow:0 0 0 3px rgba(139,94,52,.12)!important
+}
+
+/* Cena a vložení do košíku */
+.type-product .p-to-cart-block{
+  display:block!important;
+  margin:0!important;
+  padding:18px!important;
+  background:#F6F2ED;
+  border:1px solid #E8DED3;
+  border-radius:11px
+}
+
+.type-product .p-final-price-wrapper{
+  width:100%!important;
+  margin:0 0 14px
+}
+
+.type-product .price-final{
+  color:#2B2B2B;
+  font-size:30px;
+  line-height:1.2;
+  font-weight:700
+}
+
+.type-product .p-add-to-cart-wrapper,
+.type-product .add-to-cart{
+  width:100%!important
+}
+
+.type-product .add-to-cart{
+  display:flex!important;
+  gap:10px
+}
+
+.type-product .quantity{
+  flex:0 0 120px;
+  width:120px!important;
+  border-color:#D8CCC0!important;
+  border-radius:8px!important;
+  overflow:hidden
+}
+
+.type-product .add-to-cart-button{
+  flex:1;
+  min-height:52px;
+  padding:13px 20px!important;
+  background:#8B5E34!important;
+  border-color:#8B5E34!important;
+  border-radius:8px!important;
+  font-size:15px!important;
+  font-weight:600;
+  text-transform:none
+}
+
+.type-product .add-to-cart-button:hover{
+  background:#6F4726!important;
+  border-color:#6F4726!important
+}
+
+.type-product .add-to-cart-button.dkLabNotAllowed{
+  opacity:.55
+}
+
+.type-product .p-param-block{
+  margin-top:16px;
+  padding:14px 0 0!important;
+  border-top:1px solid #E8DED3;
+  font-size:12px
+}
+
+.type-product .p-param-block .print{
+  display:none
+}
+
+/* Desktop */
+@media (min-width:992px){
+  .type-product .sidebar-left{
+    display:none!important
+  }
+
+  .type-product .content-wrapper-in{
+    display:block!important
+  }
+
+  .type-product #content{
+    width:100%!important;
+    max-width:none!important;
+    padding:0!important
+  }
+
+  .type-product .p-detail-inner{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.08fr) minmax(410px,.92fr);
+    gap:48px;
+    padding-top:32px!important
+  }
+
+  .type-product .p-image-wrapper,
+  .type-product .p-data-wrapper{
+    width:auto!important;
+    max-width:none!important;
+    flex:none!important
+  }
+
+  .type-product .p-image-wrapper{
+    padding:0!important
+  }
+}
+
+/* Mobil a tablet */
+@media (max-width:991px){
+  .type-product .p-detail-inner{
+    display:flex!important;
+    flex-direction:column!important;
+    padding-top:16px!important
+  }
+
+  .type-product .p-image-wrapper{
+    order:1;
+    width:100%!important;
+    padding:0 12px!important
+  }
+
+  .type-product .p-data-wrapper{
+    order:2;
+    width:calc(100% - 24px)!important;
+    margin:16px 12px 0;
+    padding:22px 18px!important
+  }
+
+  .type-product .p-detail-inner-header h1{
+    font-size:29px
+  }
+}
+
+@media (max-width:480px){
+  .type-product .add-to-cart{
+    display:grid!important;
+    grid-template-columns:106px minmax(0,1fr)
+  }
+
+  .type-product .quantity{
+    width:106px!important
+  }
+}
