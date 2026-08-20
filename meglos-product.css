@@ -287,3 +287,239 @@
     width:106px!important
   }
 }
+/* MEGLOS – VARIANTY PRODUKTU */
+.type-product .p-variants-block{
+  padding:0 0 16px!important
+}
+
+.type-product .p-variants-block .detail-parameters,
+.type-product .p-variants-block tbody,
+.type-product .p-variants-block .variant-list{
+  display:block;
+  width:100%!important
+}
+
+.type-product .variant-list th,
+.type-product .variant-list td{
+  display:block;
+  width:100%!important;
+  padding:0!important;
+  text-align:left
+}
+
+.type-product .variant-list th{
+  margin:0 0 8px;
+  font-size:0!important
+}
+
+.type-product .variant-list th::after{
+  content:"Vyberte rozměr";
+  color:#3D3935;
+  font:600 14px/1.4 Montserrat,sans-serif
+}
+
+.type-product #simple-variants,
+.type-product #simple-variants-select{
+  width:100%!important
+}
+
+.type-product #simple-variants-select{
+  height:52px;
+  padding:10px 52px 10px 14px!important;
+  color:#3D3935;
+  background-color:#fff;
+  border:1px solid #D8CCC0!important;
+  border-radius:8px!important;
+  font:500 14px/1.4 Montserrat,sans-serif;
+  cursor:pointer
+}
+
+.type-product #simple-variants-select:focus{
+  border-color:#8B5E34!important;
+  outline:0;
+  box-shadow:0 0 0 3px rgba(139,94,52,.12)
+}
+
+/* BENEFITY NA DETAILU PRODUKTU */
+.type-product .position--benefitProduct{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin:34px 0!important
+}
+
+.type-product .position--benefitProduct .benefitBanner__item{
+  display:flex!important;
+  align-items:center;
+  width:auto!important;
+  min-height:118px;
+  margin:0!important;
+  padding:18px!important;
+  background:#fff;
+  border:1px solid #E8DED3;
+  border-radius:12px;
+  box-shadow:0 5px 18px rgba(61,57,53,.05)
+}
+
+.type-product .benefitBanner__picture{
+  flex:0 0 56px;
+  width:56px!important;
+  margin-right:14px!important
+}
+
+.type-product .benefitBanner__img{
+  width:54px!important;
+  height:54px!important;
+  object-fit:contain
+}
+
+.type-product .benefitBanner__content{
+  min-width:0
+}
+
+.type-product .benefitBanner__title{
+  display:block;
+  margin:0 0 5px;
+  color:#3D3935;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:600
+}
+
+.type-product .benefitBanner__data{
+  color:#746A61;
+  font-size:12px;
+  line-height:1.5
+}
+
+/* DLOUHÝ POPIS PRODUKTU */
+.type-product .p-detail-tabs-wrapper{
+  margin-top:10px;
+  padding-top:0!important
+}
+
+.type-product .p-detail-tabs-wrapper > .row{
+  margin:0
+}
+
+.type-product .p-detail-tabs-wrapper .col-sm-12{
+  padding:0
+}
+
+.type-product .p-detail-tabs-wrapper .shp-tabs-holder{
+  max-width:960px;
+  margin:0 auto 16px;
+  border-bottom:1px solid #E8DED3
+}
+
+.type-product .p-detail-tabs .shp-tab{
+  border:0!important
+}
+
+.type-product .p-detail-tabs .shp-tab-link{
+  padding:12px 4px!important;
+  color:#8B5E34!important;
+  background:transparent!important;
+  border:0!important;
+  border-bottom:2px solid #8B5E34!important;
+  font-size:14px;
+  font-weight:600
+}
+
+.type-product .p-detail-tabs-wrapper .tab-content{
+  width:100%!important;
+  max-width:960px!important;
+  margin:0 auto;
+  padding:42px 48px!important;
+  background:#fff;
+  border:1px solid #E8DED3;
+  border-radius:14px;
+  box-shadow:0 8px 28px rgba(61,57,53,.06)
+}
+
+.type-product .basic-description{
+  width:100%!important
+}
+
+.type-product .basic-description h2{
+  margin:0 0 20px;
+  color:#2B2B2B;
+  font-size:30px;
+  line-height:1.25
+}
+
+.type-product .basic-description h3,
+.type-product .basic-description h4,
+.type-product .basic-description h5{
+  margin:32px 0 14px;
+  color:#3D3935;
+  font-size:21px;
+  line-height:1.35;
+  font-weight:600
+}
+
+.type-product .basic-description p{
+  margin:0 0 17px;
+  color:#5F5953;
+  font-size:15px;
+  line-height:1.8
+}
+
+.type-product .basic-description ul{
+  margin:16px 0 28px;
+  padding:18px 22px 18px 42px;
+  background:#FBF8F4;
+  border:1px solid #E8DED3;
+  border-radius:10px
+}
+
+.type-product .basic-description li{
+  margin:0;
+  color:#514B46;
+  font-size:14px;
+  line-height:1.7
+}
+
+.type-product .basic-description li + li{
+  margin-top:7px
+}
+
+/* TABLET A MOBIL */
+@media (max-width:991px){
+  .type-product .position--benefitProduct{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    margin:26px 12px!important
+  }
+
+  .type-product .p-detail-tabs-wrapper{
+    padding:0 12px!important
+  }
+
+  .type-product .p-detail-tabs-wrapper .tab-content{
+    padding:30px 26px!important
+  }
+}
+
+@media (max-width:540px){
+  .type-product .position--benefitProduct{
+    grid-template-columns:1fr
+  }
+
+  .type-product .position--benefitProduct .benefitBanner__item{
+    min-height:0
+  }
+
+  .type-product .p-detail-tabs-wrapper .tab-content{
+    padding:25px 18px!important
+  }
+
+  .type-product .basic-description h2{
+    font-size:25px
+  }
+
+  .type-product .basic-description h3,
+  .type-product .basic-description h4,
+  .type-product .basic-description h5{
+    font-size:19px
+  }
+}
