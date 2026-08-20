@@ -21,6 +21,26 @@
   h3,.h3{font-size:19px}
   #header .site-name img,.site-name img{max-width:175px!important;max-height:58px!important}
 
+   /* =========================
+   MOBILE – ŠÍŘKA HOMEPAGE
+   ========================= */
+
+main.content.wide{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+.banners-row.has-text-banner .next-to-carousel-banners{
+  width:100%!important;
+  max-width:none!important;
+
+  padding-left:0!important;
+  padding-right:0!important;
+
+  margin-left:0!important;
+  margin-right:0!important;
+}
+
 /* =========================
    MOBILE – HERO
    ========================= */
