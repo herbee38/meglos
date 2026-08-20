@@ -607,3 +607,9 @@ input[type=submit]:hover{
     z-index:10002
   }
 }
+/* STEJNÉ CHOVÁNÍ TEXTU A ŠIPKY V MENU */
+@media (min-width:992px){
+  #navigation .menu-level-1 > li.ext.splitted > a > b{
+    pointer-events:none!important
+  }
+}
