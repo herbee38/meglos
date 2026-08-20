@@ -58,7 +58,52 @@
    ========================= */
 
 @media(max-width:767px){
-/* Logo pouze před PRVNÍM seznamem hlavních kategorií */
+
+   /* =========================
+   MOBILE HAMBURGER – UŽITEČNÉ INFORMACE
+   ========================= */
+
+#navigation .meglos-mobile-useful{
+  margin:0!important;
+  padding:14px 0 0!important;
+
+  border-top:1px solid var(--border)!important;
+}
+
+/* Nadpis */
+#navigation .meglos-mobile-useful__title,
+#navigation .meglos-mobile-useful > div:first-child{
+  margin:0 0 8px!important;
+  padding:0 20px 0 22px!important;
+
+  font-size:15px!important;
+  line-height:1.35!important;
+  font-weight:700!important;
+
+  color:var(--dark)!important;
+}
+
+/* Odkazy */
+#navigation .meglos-mobile-useful a{
+  display:block!important;
+
+  margin:0!important;
+  padding:7px 20px 7px 22px!important;
+
+  font-size:14px!important;
+  line-height:1.35!important;
+  font-weight:400!important;
+
+  color:var(--text)!important;
+  text-decoration:none!important;
+}
+
+/* menší mezery mezi řádky */
+#navigation .meglos-mobile-useful a + a{
+  margin-top:1px!important;
+}
+   
+   /* Logo pouze před PRVNÍM seznamem hlavních kategorií */
 #navigation .navigation-in > ul:first-of-type::before{
   content:"";
   display:block!important;
