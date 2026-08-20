@@ -111,11 +111,35 @@
   }
 
   /* Tři hlavní kategorie – kompaktní řádky */
-  #navigation .navigation-in > ul:first-of-type > li > a{
-    height:50px!important;
-    min-height:50px!important;
-    max-height:50px!important;
-  }
+#navigation .navigation-in > ul:first-of-type > li > a{
+  height:46px!important;
+  min-height:46px!important;
+  max-height:46px!important;
+
+  padding-left:20px!important;
+  padding-right:20px!important;
+}
+
+
+/* Text kategorie */
+#navigation .navigation-in > ul:first-of-type > li > a > b{
+  flex:0 1 auto!important;
+}
+
+
+/* Všechny rozbalovací šipky na stejné pravé ose */
+#navigation .navigation-in > ul:first-of-type > li > a > .submenu-arrow{
+  flex:0 0 20px!important;
+
+  width:20px!important;
+  height:20px!important;
+
+  margin-left:auto!important;
+
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
 
   /* Přihlášení */
   #navigation .navigation-in > ul:not(:first-of-type) > li > a{
