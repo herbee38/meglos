@@ -550,7 +550,7 @@ input[type=submit]:hover{
     position:absolute!important;
 
     left:0!important;
-    bottom:0!important;
+    bottom:-2px!important;
 
     width:auto!important;
 
