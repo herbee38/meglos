@@ -214,7 +214,7 @@
   grid-template-columns:52px 1fr!important;
   align-items:center!important;
 
-  gap:12px!important;
+  gap:14px!important;
 
   min-width:0;
   padding:16px 17px!important;
@@ -234,6 +234,10 @@
   height:52px!important;
 
   margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  align-self:center!important;
 }
 
 .meglos-benefit__icon svg{
