@@ -69,6 +69,36 @@
 
 @media(max-width:767px){
 
+   /* =========================
+   MOBILE – SJEDNOCENÝ VERTIKÁLNÍ RYTMUS
+   Cíl: cca 40 px mezi sekcemi
+   ========================= */
+
+/* Benefity → Kategorie = 20 + 20 */
+.meglos-benefits{
+  padding-bottom:20px!important;
+}
+
+.meglos-categories{
+  padding-top:20px!important;
+  padding-bottom:25px!important;
+}
+
+
+/* Kategorie → Jak to funguje
+   25 px padding + 15 px Shoptet mezera = 40 px */
+.meglos-process{
+  padding-top:0!important;
+  padding-bottom:25px!important;
+}
+
+
+/* Jak to funguje → Příležitosti
+   25 px + 15 px Shoptet mezera = 40 px */
+.meglos-occasions{
+  padding-top:0!important;
+  padding-bottom:25px!important;
+}
   /* =========================
      TYPOGRAFIE
      ========================= */
