@@ -701,34 +701,3 @@
   font-size:18px!important;
   line-height:1!important
 }
-/* STABILIZACE MENU BEZ ZMĚNY JEHO POZICE */
-@media (min-width:992px){
-  #navigation .menu-level-1 > li.ext{
-    position:relative
-  }
-
-  #navigation .menu-level-1 > li.ext::after{
-    content:"";
-    position:absolute;
-    z-index:1;
-    top:calc(100% - 17px);
-    left:0;
-    width:100%;
-    height:18px
-  }
-
-  #navigation .menu-level-1 > li.ext > .menu-level-2{
-    top:calc(100% - 16px)!important;
-    margin-top:0!important;
-    pointer-events:auto!important;
-    transition:none!important;
-    z-index:2!important
-  }
-
-  #navigation .menu-level-1 > li.ext:hover > .menu-level-2,
-  #navigation .menu-level-1 > li.ext:focus-within > .menu-level-2{
-    display:block!important;
-    visibility:visible!important;
-    opacity:1!important
-  }
-}
