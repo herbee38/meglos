@@ -527,8 +527,12 @@ input[type=submit]:hover{
 }
 
 #footer .custom-footer .banner-wrapper > span{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
   margin:0!important;
   padding:0!important;
+  overflow:visible!important;
 }
 
 
@@ -543,6 +547,19 @@ input[type=submit]:hover{
     margin-top:0!important;
     padding-bottom:8px!important;
   }
+   #footer .custom-footer.elements-4 > :nth-child(3),
+#footer .custom-footer.elements-4 > :nth-child(3) .banner,
+#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper,
+#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper > span,
+#footer .meglos-footer-brand-row{
+  width:100%!important;
+  max-width:none!important;
+}
+
+#footer .custom-footer.elements-4 > :nth-child(3) .banner,
+#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper{
+  overflow:visible!important;
+}
 
 
   /*
