@@ -3,7 +3,6 @@
    Keep this file small because it is needed on every page.
 */
 
-
 /* =========================
    VARIABLES
    ========================= */
@@ -211,118 +210,14 @@ input[type=submit]:hover{
 
 @media (min-width:992px){
 
-  /*
-     Header musí být nad obsahem stránky,
-     aby dropdown nebyl schovaný za hero sekcí.
-  */
   #header{
     position:relative!important;
     z-index:9999!important;
   }
-  /* =========================
-   FOOTER – LOGO + TRUST ROW
-   ========================= */
 
-#footer .meglos-footer-brand-row{
-  position:relative!important;
-  display:block!important;
-  width:100%!important;
-  min-height:72px;
-}
-
-
-/* Pravá skupina */
-
-#footer .meglos-footer-trust{
-  position:absolute!important;
-  right:0!important;
-  bottom:17px!important;
-
-  display:flex!important;
-  align-items:center!important;
-  justify-content:flex-end!important;
-
-  gap:34px!important;
-
-  margin:0!important;
-
-  font-size:13px;
-  line-height:1.3;
-  color:var(--text);
-}
-
-
-/* Platební metody */
-
-#footer .meglos-footer-trust__payments{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:22px;
-}
-
-
-/* Jednotlivá položka */
-
-#footer .meglos-footer-trust__item,
-#footer .meglos-footer-trust__made{
-  display:flex;
-  align-items:center;
-  gap:8px;
-
-  white-space:nowrap;
-}
-
-
-/* Ikony platby */
-
-#footer .meglos-footer-trust__item svg{
-  display:block;
-
-  width:24px;
-  height:24px;
-
-  fill:none;
-  stroke:var(--accent);
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-
-/* CZ badge */
-
-#footer .meglos-footer-cz{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  width:29px;
-  height:29px;
-
-  border:1.5px solid var(--accent);
-  border-radius:50%;
-
-  color:var(--accent);
-  font-size:10px;
-  line-height:1;
-  font-weight:700;
-  letter-spacing:.04em;
-} 
-
-
-  /*
-     Navigace může přesahovat mimo původní
-     Shoptet kontejner.
-  */
   #header #navigation{
     position:relative!important;
     overflow:visible!important;
-
-    /*
-       Optický posun navigace doprava
-       směrem k vyhledávání / účtu / košíku.
-    */
     transform:translateX(32px);
   }
 
@@ -331,75 +226,40 @@ input[type=submit]:hover{
     overflow:visible!important;
   }
 
-
-  /*
-     Popisek nad hlavní navigací.
-     Šířka 400 px ho centruje nad trojicí:
-     Podle typu / Pro koho / Podle příležitosti.
-  */
   #header #navigation::before{
     content:"Vyberte si";
     position:absolute!important;
-
     top:9px!important;
     left:0!important;
     right:auto!important;
     width:400px!important;
-
     text-align:center!important;
-
     font-size:11px!important;
     line-height:1.2!important;
     font-weight:500!important;
     letter-spacing:.03em!important;
-
     color:var(--text)!important;
     opacity:.65!important;
-
     pointer-events:none!important;
     z-index:20!important;
   }
 
-
-  /*
-     Hlavní odkazy jsou lehce níž,
-     aby nad nimi zůstal prostor pro popisek.
-  */
   #header .navigation-in > ul{
     transform:translateY(12px);
   }
 
-
-  /*
-     Shoptet při nedostatku místa označuje položky
-     třídou "splitted". Na Meglosu chceme všechny
-     tři hlavní kategorie vždy viditelné.
-  */
   #header .navigation-in > ul > li.splitted{
     visibility:visible!important;
   }
 
-
-  /*
-     Pomocné menu "Více" nepotřebujeme.
-  */
   #header .menu-helper{
     display:none!important;
   }
 
-
-  /*
-     Dropdown musí být nad obsahem stránky.
-  */
   #header .navigation-in ul.menu-level-2{
     z-index:10000!important;
   }
 
-
-  /*
-     Zobrazení dropdownu při hoveru,
-     aktivním stavu a ovládání klávesnicí.
-  */
   #header .navigation-in > ul > li.ext:hover > ul.menu-level-2,
   #header .navigation-in > ul > li.exp > ul.menu-level-2,
   #header .navigation-in > ul > li.ext:focus-within > ul.menu-level-2{
@@ -408,7 +268,6 @@ input[type=submit]:hover{
     opacity:1!important;
     z-index:10000!important;
   }
-
 }
 
 
@@ -430,7 +289,6 @@ input[type=submit]:hover{
     padding:22px 10px!important;
     font-size:14px!important;
   }
-
 }
 
 
@@ -508,9 +366,10 @@ input[type=submit]:hover{
 /* FOOTER – logo */
 
 #footer .meglos-footer-brand{
-  position:absolute!important;
-  left:0!important;
-  bottom:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  line-height:0!important;
 }
 
 #footer .meglos-footer-brand img{
@@ -518,6 +377,56 @@ input[type=submit]:hover{
   width:220px!important;
   max-width:220px!important;
   height:auto!important;
+}
+
+
+/* FOOTER – trust prvky */
+
+#footer .meglos-footer-trust{
+  font-size:13px;
+  line-height:1.3;
+  color:var(--text);
+}
+
+#footer .meglos-footer-trust__payments{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+}
+
+#footer .meglos-footer-trust__item,
+#footer .meglos-footer-trust__made{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+
+#footer .meglos-footer-trust__item svg{
+  display:block;
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+#footer .meglos-footer-cz{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:29px;
+  height:29px;
+  border:1.5px solid var(--accent);
+  border-radius:50%;
+  color:var(--accent);
+  font-size:10px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.04em;
 }
 
 
@@ -542,7 +451,8 @@ input[type=submit]:hover{
 
 /* =========================
    FOOTER – DESKTOP
-   3 sloupce + logo u spodní hrany
+   3 sloupce + druhý řádek:
+   logo vlevo, trust prvky vpravo
    ========================= */
 
 @media (min-width:992px){
@@ -551,120 +461,109 @@ input[type=submit]:hover{
     margin-top:0!important;
     padding-bottom:8px!important;
   }
-   #footer .custom-footer.elements-4 > :nth-child(3),
-#footer .custom-footer.elements-4 > :nth-child(3) .banner,
-#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper,
-#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper > span,
-#footer .meglos-footer-brand-row{
-  width:100%!important;
-  max-width:none!important;
-}
 
-#footer .custom-footer.elements-4 > :nth-child(3) .banner,
-#footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper{
-  overflow:visible!important;
-}
-
-
-  /*
-     Tři obsahové sloupce.
-     Logo je mimo běžný grid a leží pod prvním sloupcem.
-  */
   #footer .custom-footer.elements-4{
     position:relative;
-
     display:grid!important;
-
     grid-template-columns:220px 220px 220px!important;
+    grid-template-rows:auto auto!important;
     justify-content:space-between!important;
-
-    column-gap:0!important;
-    row-gap:0!important;
-
     align-items:start!important;
-
+    column-gap:0!important;
+    row-gap:14px!important;
     padding-top:18px!important;
     padding-left:22px!important;
     padding-right:22px!important;
-
-    /*
-       Rezerva pro logo + větší mezera
-       mezi "Mapa webu" a logem.
-    */
-    padding-bottom:78px!important;
+    padding-bottom:8px!important;
   }
 
-
-  /*
-     Vypnutí Shoptet clearfix pseudo-elementů.
-  */
   #footer .custom-footer.elements-4::before,
   #footer .custom-footer.elements-4::after{
     display:none!important;
     content:none!important;
   }
 
-
-  /*
-     Reset výchozího Shoptet rozložení bannerů.
-  */
   #footer .custom-footer.elements-4 > *{
     width:auto!important;
     max-width:none!important;
     height:auto!important;
     min-height:0!important;
-
     float:none!important;
-
     margin:0!important;
     padding:0!important;
-
     transform:none!important;
   }
 
-
   /* Meglos */
-
   #footer .custom-footer.elements-4 > :nth-child(1){
     grid-column:1;
     grid-row:1;
   }
 
-
   /* Nákup a péče */
-
   #footer .custom-footer.elements-4 > :nth-child(2){
     grid-column:2;
     grid-row:1;
   }
 
-
   /* Informace */
-
   #footer .custom-footer.elements-4 > :nth-child(4){
     grid-column:3;
     grid-row:1;
   }
 
-
   /*
-     Logo mimo běžný tok layoutu.
-     left:0 zachovává zarovnání se spodním
-     copyright řádkem.
+     Druhý řádek přes celou šířku.
+     -22 px kompenzuje padding gridu, aby logo zůstalo
+     zarovnané s copyrightem a trust prvky dosáhly doprava.
   */
   #footer .custom-footer.elements-4 > :nth-child(3){
-   #footer .custom-footer.elements-4 > :nth-child(3){
-  position:absolute!important;
-
-  left:0!important;
-  right:0!important;
-  bottom:-2px!important;
-
-  width:auto!important;
-
-  margin:0!important;
-  padding:0!important;
-}
+    position:static!important;
+    grid-column:1 / -1!important;
+    grid-row:2!important;
+    width:calc(100% + 44px)!important;
+    max-width:none!important;
+    margin-left:-22px!important;
+    margin-right:-22px!important;
+    padding:0!important;
   }
 
+  #footer .custom-footer.elements-4 > :nth-child(3) .banner,
+  #footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper,
+  #footer .custom-footer.elements-4 > :nth-child(3) .banner-wrapper > span{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  #footer .meglos-footer-brand-row{
+    position:static!important;
+    display:flex!important;
+    align-items:center!important;
+    width:100%!important;
+    max-width:none!important;
+    min-height:72px;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  #footer .meglos-footer-brand{
+    position:static!important;
+    flex:0 0 auto!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  #footer .meglos-footer-trust{
+    position:static!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:34px!important;
+    margin:0 0 0 auto!important;
+    padding:0!important;
+  }
 }
