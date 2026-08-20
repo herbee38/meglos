@@ -85,7 +85,55 @@
   box-sizing:border-box!important;
 }
 
+/* =========================
+   MOBILE – FOOTER BOTTOM
+   ========================= */
 
+#footer .footer-bottom{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  gap:10px!important;
+
+  padding:16px 20px 18px!important;
+
+  text-align:center!important;
+  box-sizing:border-box!important;
+}
+
+
+/* Copyright první */
+
+#footer .footer-bottom .copyright{
+  order:1!important;
+
+  display:block!important;
+  width:100%!important;
+
+  float:none!important;
+  margin:0!important;
+
+  font-size:13px!important;
+  line-height:1.55!important;
+
+  text-align:center!important;
+}
+
+
+/* Shoptet až pod copyright */
+
+#footer .footer-bottom #signature{
+  order:2!important;
+
+  display:block!important;
+
+  float:none!important;
+  margin:0!important;
+
+  text-align:center!important;
+}
 /* Reset Shoptet sloupců */
 
 #footer .custom-footer.elements-4 > *{
