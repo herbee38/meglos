@@ -708,8 +708,16 @@ main.content.wide > .index-content-wrapper{
   padding-top:0!important;
   padding-bottom:0!important;
 }
-/* Jak to funguje – zesílení současných SVG ikon */
-.meglos-process__icon svg path{
+
+}
+/* =========================
+   JAK TO FUNGUJE – SÍLA IKON
+   ========================= */
+
+/* Původní ikonky 2–4 */
+.meglos-process__step:nth-child(2) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(3) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(4) .meglos-process__icon svg path{
   stroke:currentColor!important;
   stroke-width:1.6px!important;
   vector-effect:non-scaling-stroke;
@@ -718,3 +726,22 @@ main.content.wide > .index-content-wrapper{
   paint-order:stroke fill;
 }
 
+/* 1. Rozcestník */
+.meglos-process__step:nth-child(1) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(1) .meglos-process__icon svg line{
+  stroke:currentColor!important;
+  stroke-width:4px!important;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* 5. 3D dárek */
+.meglos-process__step:nth-child(5) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(5) .meglos-process__icon svg circle{
+  stroke:currentColor!important;
+  stroke-width:4px!important;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
