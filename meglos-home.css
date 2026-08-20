@@ -731,4 +731,22 @@ main.content.wide > .index-content-wrapper{
   fill:#fff!important;
   stroke:currentColor!important;
 }
+/* =========================
+   JAK TO FUNGUJE – BOD 5
+   jemně silnější a širší
+   ========================= */
+
+/* lehce zesílit linky */
+.meglos-process__step:nth-child(5) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(5) .meglos-process__icon svg circle,
+.meglos-process__step:nth-child(5) .meglos-process__icon svg rect{
+  stroke-width:3.5px!important;
+}
+
+/* opticky roztáhnout ikonu do šířky */
+.meglos-process__step:nth-child(5) .meglos-process__icon svg{
+  transform:scaleX(1.08);
+  transform-origin:center center;
+  overflow:visible;
+}
 
