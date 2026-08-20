@@ -48,3 +48,106 @@ body.type-category .category-perex{
   color:var(--text)!important;
 }
 }
+/* =========================
+   CATEGORY – SUBCATEGORIES
+   ========================= */
+
+@media(min-width:992px){
+
+  body.type-category .subcategories.with-image{
+    display:grid!important;
+    grid-template-columns:repeat(3, minmax(0, 1fr))!important;
+    gap:22px!important;
+
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+
+    list-style:none!important;
+  }
+
+  body.type-category .subcategories.with-image > li{
+    width:auto!important;
+    max-width:none!important;
+    flex:none!important;
+
+    margin:0!important;
+    padding:0!important;
+  }
+
+  body.type-category .subcategories.with-image > li > a{
+    display:flex!important;
+    flex-direction:column!important;
+
+    width:100%!important;
+    height:100%!important;
+
+    overflow:hidden!important;
+
+    background:#fff!important;
+    border:1px solid var(--border)!important;
+    border-radius:14px!important;
+
+    text-decoration:none!important;
+
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease,
+      border-color .2s ease!important;
+  }
+
+  body.type-category .subcategories.with-image > li > a:hover{
+    transform:translateY(-3px)!important;
+    border-color:#d9c9b8!important;
+    box-shadow:0 10px 28px rgba(61,57,53,.09)!important;
+  }
+
+  body.type-category .subcategories.with-image .image{
+    display:block!important;
+
+    width:100%!important;
+    height:190px!important;
+
+    margin:0!important;
+    padding:0!important;
+
+    overflow:hidden!important;
+    background:#f3eee8!important;
+  }
+
+  body.type-category .subcategories.with-image .image img{
+    display:block!important;
+
+    width:100%!important;
+    height:100%!important;
+
+    margin:0!important;
+    object-fit:cover!important;
+  }
+
+  /* Výchozí Shoptet ikona, dokud není nahraná fotografie kategorie */
+  body.type-category .subcategories.with-image .image img[src*="folder.svg"]{
+    object-fit:contain!important;
+    padding:48px!important;
+    box-sizing:border-box!important;
+    opacity:.22!important;
+  }
+
+  body.type-category .subcategories.with-image .text{
+    display:flex!important;
+    align-items:center!important;
+
+    min-height:64px!important;
+    padding:18px 20px!important;
+
+    box-sizing:border-box!important;
+
+    font-size:16px!important;
+    line-height:1.35!important;
+    font-weight:600!important;
+
+    color:var(--dark)!important;
+    text-align:left!important;
+  }
+
+}
