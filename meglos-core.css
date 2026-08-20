@@ -467,17 +467,20 @@ input[type=submit]:hover{
 
   #footer .custom-footer.elements-4{
     position:relative;
+  display:grid!important;
 
-    display:grid!important;
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    grid-template-rows:auto!important;
+  grid-template-columns:220px 220px 220px!important;
+  justify-content:space-between!important;
 
-    column-gap:70px!important;
-    row-gap:0!important;
+  column-gap:0!important;
+  row-gap:0!important;
 
-    align-items:start!important;
+  align-items:start!important;
 
-    padding-top:18px!important;
+  padding-top:18px!important;
+  padding-left:22px!important;
+  padding-right:22px!important;
+  padding-bottom:68px!important;
 
     /*
        Logo využije prázdný prostor pod kratšími sloupci.
