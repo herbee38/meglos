@@ -253,7 +253,8 @@ input[type=submit]:hover{
 
     top:9px!important;
     left:0!important;
-    right:0!important;
+    right:auto!important;
+    width:400px!important;
 
     text-align:center!important;
 
