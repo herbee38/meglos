@@ -352,7 +352,7 @@ main.content.wide
 
     min-height:auto;
 
-    padding:22px 20px 28px!important;
+    padding:22px 20px 16px!important;
     margin:0 0 12px!important;
   }
 
@@ -413,7 +413,7 @@ main.content.wide
      ========================= */
 
   .meglos-categories{
-    padding:20px 20px 25px!important;
+    padding:12px 20px 25px!important;
 
     box-sizing:border-box!important;
   }
