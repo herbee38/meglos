@@ -599,3 +599,79 @@
     padding-bottom:40px!important
   }
 }
+/* OPRAVA OVLADAČE MNOŽSTVÍ */
+.type-product .quantity{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr);
+  flex:0 0 126px;
+  width:126px!important;
+  height:52px!important;
+  padding:0!important;
+  box-sizing:border-box;
+  overflow:hidden
+}
+
+.type-product .quantity label{
+  display:block!important;
+  grid-column:2;
+  grid-row:1;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important
+}
+
+.type-product .quantity .amount{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  color:#3D3935;
+  background:#fff;
+  border:0!important;
+  border-radius:0!important;
+  text-align:center;
+  line-height:52px!important;
+  box-shadow:none!important;
+  appearance:textfield
+}
+
+.type-product .quantity .increase,
+.type-product .quantity .decrease{
+  position:static!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  color:#3D3935;
+  background:#fff;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important
+}
+
+.type-product .quantity .decrease{
+  grid-column:1;
+  grid-row:1;
+  border-right:1px solid #D8CCC0!important
+}
+
+.type-product .quantity .increase{
+  grid-column:3;
+  grid-row:1;
+  border-left:1px solid #D8CCC0!important
+}
+
+.type-product .quantity .amount::-webkit-inner-spin-button,
+.type-product .quantity .amount::-webkit-outer-spin-button{
+  margin:0;
+  appearance:none
+}
+
+@media (max-width:480px){
+  .type-product .quantity{
+    width:106px!important;
+    min-width:106px
+  }
+}
