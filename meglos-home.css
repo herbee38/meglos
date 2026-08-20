@@ -709,5 +709,19 @@ main.content.wide > .index-content-wrapper{
   padding-bottom:0!important;
 }
 
+/* =========================
+   JAK TO FUNGUJE – zesílení ikon 1–4
+   ========================= */
+
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg path,
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg circle,
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg rect,
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg line,
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg polyline,
+.meglos-process__step:nth-child(-n+4) .meglos-process__icon svg polygon{
+  stroke-width:3.2px!important;
+  vector-effect:non-scaling-stroke!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
 }
 
