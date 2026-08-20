@@ -310,7 +310,7 @@
 }
 
  /* =========================
-     Benegit max 380px
+     Benefit max 380px
      ========================= */
    @media(max-width:380px){
 
@@ -436,7 +436,16 @@
     padding:22px!important;
   }
 
+/* =========================
+   MOBILE – FINÁLNÍ ODSAZENÍ KATEGORIÍ
+   ========================= */
 
+.meglos-categories{
+  padding-top:20px!important;
+  padding-right:20px!important;
+  padding-bottom:25px!important;
+  padding-left:20px!important;
+}
   /* =========================
      JAK TO FUNGUJE
      ========================= */
