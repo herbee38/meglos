@@ -740,7 +740,7 @@ main.content.wide > .index-content-wrapper{
 .meglos-process__step:nth-child(5) .meglos-process__icon svg path,
 .meglos-process__step:nth-child(5) .meglos-process__icon svg circle,
 .meglos-process__step:nth-child(5) .meglos-process__icon svg rect{
-  stroke-width:3.5px!important;
+  stroke-width:3.8px!important;
 }
 
 /* opticky roztáhnout ikonu do šířky */
