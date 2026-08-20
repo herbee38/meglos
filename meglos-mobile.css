@@ -70,6 +70,86 @@
 @media(max-width:767px){
 
    /* =========================
+   MOBILE – HAMBURGER MENU
+   ========================= */
+
+#navigation{
+  transform:none!important;
+  overflow:visible!important;
+}
+
+#navigation .navigation-in{
+  width:100%!important;
+  overflow:visible!important;
+}
+
+#navigation .navigation-in > ul{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+
+  width:100%!important;
+
+  gap:0!important;
+  transform:none!important;
+
+  margin:0!important;
+  padding:0!important;
+
+  overflow:visible!important;
+}
+
+
+/* Každá hlavní položka přes celou šířku */
+
+#navigation .navigation-in > ul > li{
+  display:block!important;
+  position:relative!important;
+
+  width:100%!important;
+  max-width:none!important;
+  flex:none!important;
+
+  margin:0!important;
+
+  visibility:visible!important;
+}
+
+
+/* Hlavní odkazy */
+
+#navigation .navigation-in > ul > li > a{
+  display:flex!important;
+  align-items:center!important;
+
+  width:100%!important;
+
+  padding:16px 18px!important;
+
+  font-size:15px!important;
+  line-height:1.3!important;
+
+  white-space:normal!important;
+
+  box-sizing:border-box!important;
+}
+
+
+/* Desktopový popisek "Vyberte si" na mobilu nechceme */
+
+#navigation::before{
+  display:none!important;
+  content:none!important;
+}
+
+
+/* Žádné desktopové pomocné menu */
+
+#navigation .menu-helper{
+  display:none!important;
+}
+
+   /* =========================
    MOBILE – FOOTER
    ========================= */
 
