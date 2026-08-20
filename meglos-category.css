@@ -151,3 +151,10 @@ body.type-category .category-perex{
 }
 
 }
+/* =========================
+   CATEGORY – EMPTY PRODUCTS
+   ========================= */
+
+body.type-category .category-perex.empty-content.empty-content-category{
+  display:none!important;
+}
