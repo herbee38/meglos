@@ -187,7 +187,26 @@
 
   box-sizing:border-box!important;
 }
- 
+ /* Hlavní tři položky hamburger menu */
+#navigation .navigation-in > ul:first-of-type > li > a{
+  display:flex!important;
+  align-items:center!important;
+
+  width:100%!important;
+
+  height:56px!important;
+  min-height:56px!important;
+  max-height:56px!important;
+
+  padding:0 18px!important;
+  margin:0!important;
+
+  font-size:15px!important;
+  line-height:1.3!important;
+
+  box-sizing:border-box!important;
+  white-space:normal!important;
+}
 
 
   /* =========================
