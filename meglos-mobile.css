@@ -624,7 +624,7 @@
   /* Trust prvky */
 
   .meglos-final-cta__trust{
-    display:grid!important;
+    display:none!important;
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
 
     gap:14px 12px!important;
@@ -658,6 +658,7 @@
 
   .meglos-final-cta__trust{
     grid-template-columns:1fr!important;
+     display:none!important;
     gap:10px!important;
   }
 
