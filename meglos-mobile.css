@@ -58,7 +58,15 @@
    ========================= */
 
 @media(max-width:767px){
+/* =========================
+   MOBILE HEADER – VERTIKÁLNÍ ZAROVNÁNÍ IKON
+   ========================= */
 
+#header .toggle-window{
+  position:relative!important;
+  top:9px!important;
+}
+   
   /* =========================
      HAMBURGER MENU
      Důležité: nepřepisovat transform/position/overflow
