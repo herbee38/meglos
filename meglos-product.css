@@ -589,3 +589,13 @@
     margin-top:24px
   }
 }
+/* ODSTUP PRODUKTU OD FOOTERU */
+.type-product #content{
+  padding-bottom:64px!important
+}
+
+@media (max-width:767px){
+  .type-product #content{
+    padding-bottom:40px!important
+  }
+}
