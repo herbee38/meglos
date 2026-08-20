@@ -745,3 +745,8 @@ main.content.wide > .index-content-wrapper{
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+/* Bod 5 – opticky rozšířit / zvětšit ikonu */
+.meglos-process__step:nth-child(5) .meglos-process__icon svg{
+  width:76px!important;
+  height:auto!important;
+}
