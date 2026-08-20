@@ -59,6 +59,27 @@
 
 @media(max-width:767px){
 
+   /* Logo v mobilním hamburger menu */
+#navigation .navigation-in > ul::before{
+  content:"";
+  display:block!important;
+
+  width:150px!important;
+  height:54px!important;
+
+  flex:0 0 auto!important;
+
+  margin:12px 18px 8px!important;
+
+  background-image:url("https://cdn.myshoptet.com/usr/770059.myshoptet.com/user/logos/meglos_logo_transparent_clean_800w.png");
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:contain;
+
+  pointer-events:none;
+}
+   
+
   /* =========================
      TYPOGRAFIE
      ========================= */
