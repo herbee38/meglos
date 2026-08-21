@@ -742,3 +742,22 @@
     white-space:nowrap!important;
   }
 }
+/* MOBIL – VYCENTROVÁNÍ CENY A TLAČÍTKA */
+@media (max-width:480px){
+
+  body.type-product .p-final-price-wrapper,
+  body.type-product .price-final{
+    display:block!important;
+    width:100%!important;
+    text-align:center!important;
+  }
+
+  body.type-product .add-to-cart-button{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+}
