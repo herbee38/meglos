@@ -274,3 +274,10 @@ body.type-category .category-perex.empty-content.empty-content-category{
 }
 
 }
+/* MOBIL – ODSTUP OBSAHU POD PEVNÝM HEADEREM */
+@media(max-width:767px){
+  body.type-category #content-wrapper{
+    padding-top:42px!important;
+    box-sizing:border-box!important;
+  }
+}
