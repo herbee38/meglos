@@ -22,8 +22,64 @@
     `;
 
     area.appendChild(button);
+  }
 
+  function showCopied(button) {
     const label = button.querySelector('span');
+    if (!label) return;
+
+    label.textContent = 'Zkopírováno';
+
+    window.setTimeout(function () {
+      label.textContent = 'Sdílet';
+    }, 1800);
+  }
+
+  function oldCopy(button, url) {
+    const field = document.createElement('textarea');
+    field.value = url;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.left = '-9999px';
+
+    document.body.appendChild(field);
+    field.select();
+    field.setSelectionRange(0, field.value.length);
+
+    const copied = document.execCommand('copy');
+    field.remove();
+
+    if (copied) {
+      showCopied(button);
+    } else {
+      window.prompt('Zkopírujte odkaz na produkt:', url);
+    }
+  }
+
+  function copyLink(button, url) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url)
+        .then(function () {
+          showCopied(button);
+        })
+        .catch(function () {
+          oldCopy(button, url);
+        });
+    } else {
+      oldCopy(button, url);
+    }
+  }
+
+  function handleShare(event) {
+    const button = event.target.closest
+      ? event.target.closest('.meglos-share-button')
+      : null;
+
+    if (!button) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
     const productName =
       document.querySelector('h1')?.textContent.trim() || document.title;
 
@@ -31,39 +87,33 @@
       document.querySelector('link[rel="canonical"]')?.href ||
       window.location.href.split('#')[0];
 
-    async function copyLink() {
-      try {
-        await navigator.clipboard.writeText(shareUrl);
-        label.textContent = 'Zkopírováno';
-
-        window.setTimeout(function () {
-          label.textContent = 'Sdílet';
-        }, 1800);
-      } catch (error) {
-        window.prompt('Zkopírujte odkaz na produkt:', shareUrl);
-      }
-    }
-
-    button.addEventListener('click', async function () {
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: productName,
-            text: productName,
-            url: shareUrl
-          });
-        } catch (error) {
-          if (error.name !== 'AbortError') await copyLink();
+    if (typeof navigator.share === 'function') {
+      navigator.share({
+        title: productName,
+        text: productName,
+        url: shareUrl
+      }).catch(function (error) {
+        if (error.name !== 'AbortError') {
+          copyLink(button, shareUrl);
         }
-      } else {
-        await copyLink();
-      }
-    });
+      });
+    } else {
+      copyLink(button, shareUrl);
+    }
+  }
+
+  function initShare() {
+    addShareButton();
+
+    if (!window.meglosShareListener) {
+      document.addEventListener('click', handleShare, true);
+      window.meglosShareListener = true;
+    }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addShareButton);
+    document.addEventListener('DOMContentLoaded', initShare);
   } else {
-    addShareButton();
+    initShare();
   }
 })();
