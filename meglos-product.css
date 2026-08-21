@@ -734,3 +734,11 @@
     letter-spacing:-.02em!important;
   }
 }
+/* MOBIL – TLAČÍTKO DO KOŠÍKU NA JEDNOM ŘÁDKU */
+@media(max-width:480px){
+  body.type-product .add-to-cart-button{
+    padding:13px 10px!important;
+    font-size:14px!important;
+    white-space:nowrap!important;
+  }
+}
