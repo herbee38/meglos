@@ -812,5 +812,9 @@ body.type-product .meglos-share-button{
     stroke-width:1.9;
     stroke-linecap:round;
     stroke-linejoin:round;
+    pointer-events:auto!important;
+position:relative;
+z-index:5;
+touch-action:manipulation;
   }
 }
