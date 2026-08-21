@@ -1,31 +1,13 @@
 (function () {
-  function addShareButton() {
-    const area = document.querySelector(
-      'body.type-product .social-buttons-wrapper .link-icons'
+  function getProductUrl() {
+    return (
+      document.querySelector('link[rel="canonical"]')?.href ||
+      window.location.href.split('#')[0]
     );
-
-    if (!area || area.querySelector('.meglos-share-button')) return;
-
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'meglos-share-button';
-    button.setAttribute('aria-label', 'Sdílet produkt');
-
-    button.innerHTML = `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="18" cy="5" r="2.5"></circle>
-        <circle cx="6" cy="12" r="2.5"></circle>
-        <circle cx="18" cy="19" r="2.5"></circle>
-        <path d="M8.2 10.8 15.8 6.3M8.2 13.2l7.6 4.5"></path>
-      </svg>
-      <span>Sdílet</span>
-    `;
-
-    area.appendChild(button);
   }
 
-  function showCopied(button) {
-    const label = button.querySelector('span');
+  function showCopied(link) {
+    const label = link.querySelector('span');
     if (!label) return;
 
     label.textContent = 'Zkopírováno';
@@ -35,7 +17,7 @@
     }, 1800);
   }
 
-  function oldCopy(button, url) {
+  function oldCopy(link, url) {
     const field = document.createElement('textarea');
     field.value = url;
     field.setAttribute('readonly', '');
@@ -50,64 +32,120 @@
     field.remove();
 
     if (copied) {
-      showCopied(button);
+      showCopied(link);
     } else {
       window.prompt('Zkopírujte odkaz na produkt:', url);
     }
   }
 
-  function copyLink(button, url) {
+  function copyLink(link, url) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(url)
         .then(function () {
-          showCopied(button);
+          showCopied(link);
         })
         .catch(function () {
-          oldCopy(button, url);
+          oldCopy(link, url);
         });
     } else {
-      oldCopy(button, url);
+      oldCopy(link, url);
     }
   }
 
-  function handleShare(event) {
-    const button = event.target.closest
-      ? event.target.closest('.meglos-share-button')
-      : null;
+  window.meglosShareProduct = function (link, event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-    if (!button) return;
+    if (link.dataset.shareBusy === '1') return false;
+    link.dataset.shareBusy = '1';
 
-    event.preventDefault();
-    event.stopPropagation();
-
+    const label = link.querySelector('span');
     const productName =
       document.querySelector('h1')?.textContent.trim() || document.title;
+    const shareUrl = getProductUrl();
 
-    const shareUrl =
-      document.querySelector('link[rel="canonical"]')?.href ||
-      window.location.href.split('#')[0];
+    window.setTimeout(function () {
+      delete link.dataset.shareBusy;
+    }, 800);
 
     if (typeof navigator.share === 'function') {
+      if (label) label.textContent = 'Sdílím…';
+
       navigator.share({
         title: productName,
         text: productName,
         url: shareUrl
-      }).catch(function (error) {
-        if (error.name !== 'AbortError') {
-          copyLink(button, shareUrl);
-        }
+      }).then(function () {
+        if (label) label.textContent = 'Sdílet';
+      }).catch(function () {
+        if (label) label.textContent = 'Sdílet';
+        copyLink(link, shareUrl);
       });
     } else {
-      copyLink(button, shareUrl);
+      copyLink(link, shareUrl);
     }
+
+    return false;
+  };
+
+  function addShareButton() {
+    const area = document.querySelector(
+      'body.type-product .social-buttons-wrapper .link-icons'
+    );
+
+    if (!area || area.querySelector('.meglos-share-button')) return;
+
+    const shareUrl = getProductUrl();
+    const link = document.createElement('a');
+
+    link.href =
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+      encodeURIComponent(shareUrl);
+
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.className = 'meglos-share-button';
+    link.setAttribute('role', 'button');
+    link.setAttribute('aria-label', 'Sdílet produkt');
+    link.setAttribute(
+      'onclick',
+      'return window.meglosShareProduct(this,event);'
+    );
+
+    link.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="18" cy="5" r="2.5"></circle>
+        <circle cx="6" cy="12" r="2.5"></circle>
+        <circle cx="18" cy="19" r="2.5"></circle>
+        <path d="M8.2 10.8 15.8 6.3M8.2 13.2l7.6 4.5"></path>
+      </svg>
+      <span>Sdílet</span>
+    `;
+
+    area.appendChild(link);
   }
 
   function initShare() {
     addShareButton();
 
-    if (!window.meglosShareListener) {
-      document.addEventListener('click', handleShare, true);
-      window.meglosShareListener = true;
+    if (!window.meglosShareCapture) {
+      document.addEventListener(
+        'click',
+        function (event) {
+          const link = event.target.closest
+            ? event.target.closest('.meglos-share-button')
+            : null;
+
+          if (link) {
+            window.meglosShareProduct(link, event);
+          }
+        },
+        true
+      );
+
+      window.meglosShareCapture = true;
     }
   }
 
