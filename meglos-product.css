@@ -818,3 +818,9 @@ z-index:5;
 touch-action:manipulation;
   }
 }
+/* MOBIL – SKRYTÍ PRODUKTOVÝCH BENEFITŮ */
+@media (max-width:767px){
+  body.type-product .container--bannersBenefit{
+    display:none!important;
+  }
+}
