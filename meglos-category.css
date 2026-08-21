@@ -281,3 +281,26 @@ body.type-category .category-perex.empty-content.empty-content-category{
     box-sizing:border-box!important;
   }
 }
+/* MOBIL – VĚTŠÍ NÁHLEDY PODKATEGORIÍ */
+@media(max-width:767px){
+  body.type-category .subcategories.with-image .image{
+    display:block!important;
+    width:140px!important;
+    max-width:100%!important;
+    height:auto!important;
+    aspect-ratio:7/5;
+    margin:0 auto 10px!important;
+    overflow:hidden!important;
+    border-radius:8px!important;
+  }
+
+  body.type-category .subcategories.with-image .image img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    object-fit:cover!important;
+  }
+}
