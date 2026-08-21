@@ -701,3 +701,10 @@
   font-size:18px!important;
   line-height:1!important
 }
+/* MOBIL – ODSTUP PRODUKTU POD HEADEREM */
+@media(max-width:767px){
+  body.type-product #content-wrapper{
+    padding-top:16px!important;
+    box-sizing:border-box!important;
+  }
+}
