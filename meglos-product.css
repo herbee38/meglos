@@ -771,3 +771,46 @@ body.type-product .add-to-cart-button::before{
   line-height:1!important;
 }
 }
+/* MOBIL – SDÍLENÍ PRODUKTU */
+body.type-product .meglos-share-button{
+  display:none
+}
+
+@media (max-width:767px){
+  body.type-product .social-buttons-wrapper .link-icons{
+    display:flex!important;
+    align-items:center!important;
+    width:100%!important;
+  }
+
+  body.type-product .social-buttons-wrapper .link-icon.chat{
+    margin:0!important;
+  }
+
+  body.type-product .meglos-share-button{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px;
+    margin:0 0 0 auto!important;
+    padding:5px 0!important;
+    border:0!important;
+    background:transparent!important;
+    color:#8B5E34!important;
+    font-family:Montserrat,sans-serif!important;
+    font-size:14px!important;
+    font-weight:600!important;
+    line-height:1.2!important;
+    cursor:pointer;
+  }
+
+  body.type-product .meglos-share-button svg{
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.9;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+}
