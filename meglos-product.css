@@ -753,11 +753,21 @@
   }
 
   body.type-product .add-to-cart-button{
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:7px;
-    text-align:center!important;
-    white-space:nowrap!important;
-  }
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  padding:13px 14px!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+
+body.type-product .add-to-cart-button::before{
+  flex:0 0 auto;
+  margin:0!important;
+  font-size:19px!important;
+  line-height:1!important;
+}
 }
