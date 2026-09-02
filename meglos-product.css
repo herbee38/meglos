@@ -46,19 +46,15 @@
   margin:0
 }
 
-/* Pořadí prvků objednávky */
+/* Pořadí prvků objednávky je součástí jejich hlavních bloků níže. */
 .type-product #product-detail-form{
   display:flex;
   flex-direction:column
 }
 
-.type-product .p-variants-block{order:1}
-.type-product .p-basic-info-block{order:2}
-.type-product #dkLabNoteMainWrapper{order:3}
-.type-product .p-to-cart-block{order:4}
-
 /* Dostupnost a kód */
 .type-product .p-basic-info-block{
+  order:2;
   justify-content:space-between;
   margin:0 0 18px;
   padding:13px 0!important;
@@ -73,6 +69,7 @@
 
 /* Nahrání fotografie a vlastní text */
 .type-product #dkLabNoteMainWrapper{
+  order:3;
   display:grid!important;
   gap:16px;
   margin:0 0 18px
@@ -146,6 +143,7 @@
 
 /* Cena a vložení do košíku */
 .type-product .p-to-cart-block{
+  order:4;
   display:block!important;
   margin:0!important;
   padding:18px!important;
@@ -174,14 +172,6 @@
 .type-product .add-to-cart{
   display:flex!important;
   gap:10px
-}
-
-.type-product .quantity{
-  flex:0 0 120px;
-  width:120px!important;
-  border-color:#D8CCC0!important;
-  border-radius:8px!important;
-  overflow:hidden
 }
 
 .type-product .add-to-cart-button{
@@ -232,23 +222,6 @@
     padding:0!important
   }
 
-  .type-product .p-detail-inner{
-    display:grid!important;
-    grid-template-columns:minmax(0,1.08fr) minmax(410px,.92fr);
-    gap:48px;
-    padding-top:32px!important
-  }
-
-  .type-product .p-image-wrapper,
-  .type-product .p-data-wrapper{
-    width:auto!important;
-    max-width:none!important;
-    flex:none!important
-  }
-
-  .type-product .p-image-wrapper{
-    padding:0!important
-  }
 }
 
 /* Mobil a tablet */
@@ -282,13 +255,10 @@
     display:grid!important;
     grid-template-columns:106px minmax(0,1fr)
   }
-
-  .type-product .quantity{
-    width:106px!important
-  }
 }
 /* MEGLOS – VARIANTY PRODUKTU */
 .type-product .p-variants-block{
+  order:1;
   padding:0 0 16px!important
 }
 
@@ -544,6 +514,8 @@
     grid-row:1;
     align-self:start;
     width:auto!important;
+    max-width:none!important;
+    flex:none!important;
     padding:0!important
   }
 
@@ -551,7 +523,9 @@
     grid-column:2;
     grid-row:1 / 3;
     align-self:start;
-    width:auto!important
+    width:auto!important;
+    max-width:none!important;
+    flex:none!important
   }
 
   .type-product .container--bannersBenefit{
@@ -608,6 +582,8 @@
   height:52px!important;
   padding:0!important;
   box-sizing:border-box;
+  border-color:#D8CCC0!important;
+  border-radius:8px!important;
   overflow:hidden
 }
 
@@ -639,6 +615,9 @@
 
 .type-product .quantity .increase,
 .type-product .quantity .decrease{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
   position:static!important;
   width:100%!important;
   height:100%!important;
@@ -680,13 +659,6 @@
 .type-product .quantity .decrease::before{
   content:none!important;
   display:none!important
-}
-
-.type-product .quantity .increase,
-.type-product .quantity .decrease{
-  display:flex!important;
-  align-items:center;
-  justify-content:center
 }
 
 .type-product .quantity .increase__sign,
@@ -732,14 +704,6 @@
     padding-right:38px!important;
     font-size:12px!important;
     letter-spacing:-.02em!important;
-  }
-}
-/* MOBIL – TLAČÍTKO DO KOŠÍKU NA JEDNOM ŘÁDKU */
-@media(max-width:480px){
-  body.type-product .add-to-cart-button{
-    padding:13px 10px!important;
-    font-size:14px!important;
-    white-space:nowrap!important;
   }
 }
 /* MOBIL – VYCENTROVÁNÍ CENY A TLAČÍTKA */
