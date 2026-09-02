@@ -304,3 +304,57 @@ body.type-category .category-perex.empty-content.empty-content-category{
     object-fit:cover!important;
   }
 }
+/* OBJEDNÁVKA – TLAČÍTKA ZPĚT A POKRAČOVAT */
+
+body.ordering-process .next-step{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+}
+
+body.ordering-process .next-step .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+}
+
+body.ordering-process .next-step .next-step-back{
+  background:#fff!important;
+  border:1px solid var(--accent)!important;
+  color:var(--accent)!important;
+  box-shadow:none;
+}
+
+body.ordering-process .next-step .next-step-back:hover{
+  background:#F2E9DF!important;
+  border-color:var(--hover)!important;
+  color:var(--hover)!important;
+}
+
+body.ordering-process .next-step .next-step-forward{
+  background:var(--accent)!important;
+  border-color:var(--accent)!important;
+  color:#fff!important;
+  box-shadow:0 7px 18px rgba(139,94,52,.18);
+}
+
+body.ordering-process .next-step .next-step-forward:hover{
+  background:var(--hover)!important;
+  border-color:var(--hover)!important;
+}
+
+@media(max-width:480px){
+  body.ordering-process .next-step{
+    display:grid;
+    grid-template-columns:88px minmax(0,1fr);
+    gap:10px;
+  }
+
+  body.ordering-process .next-step .btn{
+    width:100%;
+    padding-left:14px;
+    padding-right:14px;
+  }
+}
