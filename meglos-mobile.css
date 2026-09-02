@@ -804,12 +804,9 @@ main.content.wide
   }
 }
 /* MOBIL – KROKY OBJEDNÁVKY A TLAČÍTKA */
-@media (max-width: 767px) {
+@media (max-width: 600px) {
 
   /* Zrušení pevné šířky levého panelu */
-  body.ordering-process .content-wrapper-in {
-    display: block !important;
-  }
 
   body.ordering-process .sidebar.sidebar-left {
     float: none !important;
