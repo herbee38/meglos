@@ -1058,3 +1058,29 @@ main.content.wide
     color: #2B2B2B !important;
   }
 }
+/* Logo Meglos vpravo nahoře v mobilním košíku */
+@media (max-width: 600px) {
+  body.cart-window-visible .cart-window .cart-window-in::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 8px !important;
+    right: 16px !important;
+    width: clamp(120px, 38vw, 145px) !important;
+    height: 62px !important;
+
+    background-image: url("https://cdn.myshoptet.com/usr/770059.myshoptet.com/user/logos/meglos_logo_clean_curves_v17_transparent.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: contain !important;
+
+    pointer-events: none !important;
+    z-index: 3 !important;
+  }
+}
+/* Odsazení objednávkového procesu od mobilního headeru */
+@media (max-width: 600px) {
+  body.ordering-process .cart-wrapper {
+    margin-top: 18px !important;
+  }
+}
