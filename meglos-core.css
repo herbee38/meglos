@@ -553,6 +553,11 @@ input[type=submit]:hover{
     padding:0!important;
   }
 }
+/* KOŠÍK – SKRYTÍ NADBYTEČNÉ JEDNOTKOVÉ CENY */
+body.in-kosik .cart-table .p-price {
+  display: none !important;
+}
+
 /* OBJEDNÁVKOVÝ PROCES – DESKTOP */
 @media (min-width: 601px) {
 
@@ -672,4 +677,3 @@ body.cart-window-visible
   background: #6F4726 !important;
   border-color: #6F4726 !important;
 }
-
