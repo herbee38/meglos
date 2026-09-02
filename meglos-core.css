@@ -553,4 +553,59 @@ input[type=submit]:hover{
     padding:0!important;
   }
 }
+/* OBJEDNÁVKOVÝ PROCES – DESKTOP */
+@media (min-width: 601px) {
+
+  /* Stejný horní odstup ve všech krocích */
+  body.ordering-process .content-wrapper-in {
+    padding-top: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.ordering-process
+  .sidebar-left > .toggle-window-arr,
+  body.ordering-process ol.cart-header {
+    margin-top: 0 !important;
+  }
+
+  /* Spodní navigační tlačítka */
+  body.ordering-process .next-step {
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+  }
+
+  body.ordering-process .next-step > .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 10px 22px !important;
+
+    border-radius: 6px !important;
+    box-sizing: border-box !important;
+    font-weight: 600 !important;
+  }
+
+  /* Zpět – bílé sekundární tlačítko */
+  body.ordering-process
+  .next-step > .next-step-back {
+    background: #fff !important;
+    border: 1px solid #8B5E34 !important;
+    color: #8B5E34 !important;
+    box-shadow: none !important;
+  }
+
+  /* Pokračovat – hlavní hnědé tlačítko */
+  body.ordering-process
+  .next-step > .next-step-forward {
+    background: #8B5E34 !important;
+    border: 1px solid #8B5E34 !important;
+    color: #fff !important;
+  }
+}
 
