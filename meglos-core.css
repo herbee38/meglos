@@ -608,4 +608,68 @@ input[type=submit]:hover{
     color: #fff !important;
   }
 }
+/* VYSKAKOVACÍ NÁHLED KOŠÍKU */
+body.cart-window-visible .cart-window {
+  z-index: 10050 !important;
+}
+
+body.cart-window-visible .cart-window-in {
+  background: #fff !important;
+}
+
+/* Spodní tlačítka náhledu košíku */
+body.cart-window-visible
+.cart-window .next-step.next-step--cart {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+}
+
+body.cart-window-visible
+.cart-window .next-step--cart > .btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 10px 22px !important;
+
+  border-radius: 6px !important;
+  box-sizing: border-box !important;
+  font-weight: 600 !important;
+}
+
+/* Zpět */
+body.cart-window-visible
+.cart-window .next-step--cart > .next-step-back {
+  background: #fff !important;
+  border: 1px solid #8B5E34 !important;
+  color: #8B5E34 !important;
+  box-shadow: none !important;
+}
+
+/* Pokračovat */
+body.cart-window-visible
+.cart-window .next-step--cart > .next-step-forward {
+  background: #8B5E34 !important;
+  border: 1px solid #8B5E34 !important;
+  color: #fff !important;
+}
+
+/* Hover */
+body.cart-window-visible
+.cart-window .next-step--cart > .next-step-back:hover {
+  background: #F6F2ED !important;
+  border-color: #6F4726 !important;
+  color: #6F4726 !important;
+}
+
+body.cart-window-visible
+.cart-window .next-step--cart > .next-step-forward:hover {
+  background: #6F4726 !important;
+  border-color: #6F4726 !important;
+}
 
