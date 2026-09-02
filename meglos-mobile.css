@@ -803,62 +803,167 @@ main.content.wide
     font-size:25px!important;
   }
 }
-/* MOBILNÍ KOŠÍK – NAVIGAČNÍ TLAČÍTKA */
-@media (max-width: 480px) {
+/* MOBIL – KROKY OBJEDNÁVKY A TLAČÍTKA */
+@media (max-width: 767px) {
+
+  /* Zrušení pevné šířky levého panelu */
+  body.ordering-process .content-wrapper-in {
+    display: block !important;
+  }
+
+  body.ordering-process .sidebar.sidebar-left {
+    float: none !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 15px 22px !important;
+    padding: 0 !important;
+  }
 
   /* Horní tlačítko Zpět */
-  body.in-kosik .sidebar.sidebar-left {
-    width: 100% !important;
-    max-width: none !important;
-    box-sizing: border-box;
-    padding: 0 15px !important;
-    margin-bottom: 22px !important;
-  }
-
-  body.in-kosik .sidebar.sidebar-left > .btn.toggle-window-arr {
+  body.ordering-process
+  .sidebar.sidebar-left > a.btn.toggle-window-arr {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
     width: 100% !important;
-    min-height: 62px;
+    min-height: 58px !important;
     margin: 0 !important;
-    padding: 14px 20px !important;
+    padding: 12px 20px !important;
+    box-sizing: border-box !important;
+
     background: #fff !important;
-    border: 1px solid var(--accent) !important;
-    color: var(--accent) !important;
-    font-size: 17px !important;
-    font-weight: 600;
+    border: 1px solid #8B5E34 !important;
     border-radius: 6px !important;
     box-shadow: none !important;
+
+    color: #8B5E34 !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
   }
 
-  /* Spodní tlačítka */
-  body.in-kosik .next-step--cart {
+
+  /* TABULKA KROKŮ 1–3 */
+  body.ordering-process ol.cart-header {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 24px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+
+    width: auto !important;
+    margin: 20px 15px 28px !important;
+    padding: 0 !important;
+
+    border: 1px solid #DED8D1 !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
   }
 
-  body.in-kosik .next-step--cart .btn {
+  body.ordering-process ol.cart-header > li {
+    display: block !important;
+    flex: none !important;
     width: 100% !important;
-    min-height: 58px;
+    min-height: 64px !important;
     margin: 0 !important;
+    padding: 0 !important;
+
+    border-bottom: 1px solid #DED8D1 !important;
+  }
+
+  body.ordering-process ol.cart-header > li:last-child {
+    border-bottom: 0 !important;
+  }
+
+  body.ordering-process ol.cart-header > li > a,
+  body.ordering-process ol.cart-header > li > strong {
+    display: flex !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-height: 64px !important;
+    height: 100% !important;
+    padding: 0 !important;
+
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+  }
+
+  body.ordering-process ol.cart-header > li > a > span,
+  body.ordering-process ol.cart-header > li > strong > span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    width: 100% !important;
+    min-height: 64px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 18px !important;
+    box-sizing: border-box !important;
+
+    background: #F7F4EF !important;
+    border: 0 !important;
+    color: #3D3935 !important;
+    text-align: left !important;
+  }
+
+  /* Stejná šířka sloupce s číslem */
+  body.ordering-process ol.cart-header span::before {
+    display: inline-block !important;
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    margin-right: 8px !important;
+
+    color: #8B5E34 !important;
+    font-weight: 700 !important;
+    text-align: right !important;
+  }
+
+  /* Aktuální krok */
+  body.ordering-process ol.cart-header > li.active > a > span,
+  body.ordering-process ol.cart-header > li.active > strong > span {
+    background: #fff !important;
+    box-shadow: inset 4px 0 0 #8B5E34 !important;
+    color: #2B2B2B !important;
+  }
+
+
+  /* SPODNÍ TLAČÍTKA */
+  body.in-kosik .next-step.next-step--cart {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 12px !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 28px 0 38px !important;
+  }
+
+  body.in-kosik .next-step--cart > .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    min-height: 58px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 10px 20px !important;
+    box-sizing: border-box !important;
     border-radius: 6px !important;
   }
 
-  body.in-kosik .next-step--cart .next-step-forward {
-    grid-row: 1;
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
+  body.in-kosik #continue-order-button {
+    grid-row: 1 !important;
+    background: #8B5E34 !important;
+    border: 1px solid #8B5E34 !important;
     color: #fff !important;
   }
 
-  body.in-kosik .next-step--cart .next-step-back {
-    grid-row: 2;
+  body.in-kosik .next-step--cart > a.next-step-back {
+    grid-row: 2 !important;
     background: #fff !important;
-    border: 1px solid var(--accent) !important;
-    color: var(--accent) !important;
+    border: 1px solid #8B5E34 !important;
     box-shadow: none !important;
+    color: #8B5E34 !important;
   }
 }
