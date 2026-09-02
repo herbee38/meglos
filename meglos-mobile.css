@@ -449,7 +449,8 @@ main.content.wide
      JAK TO FUNGUJE
      ========================= */
 
-  .meglos-process{
+  .meglos-process,
+  .meglos-occasions{
     width:100%!important;
     max-width:100%!important;
 
@@ -540,21 +541,6 @@ main.content.wide
   /* =========================
      PŘÍLEŽITOSTI
      ========================= */
-
-  .meglos-occasions{
-    width:100%!important;
-    max-width:100%!important;
-
-    margin-left:0!important;
-    margin-right:0!important;
-
-    padding-top:0!important;
-    padding-right:20px!important;
-    padding-bottom:25px!important;
-    padding-left:20px!important;
-
-    box-sizing:border-box!important;
-  }
 
   .meglos-occasions__header{
     margin-bottom:30px;
@@ -806,6 +792,11 @@ main.content.wide
 /* MOBIL – KROKY OBJEDNÁVKY A TLAČÍTKA */
 @media (max-width: 600px) {
 
+  /* Celý objednávkový proces pod pevným headerem */
+  body.ordering-process .overall-wrapper {
+    padding-top: 76px !important;
+  }
+
   /* Zrušení pevné šířky levého panelu */
 
   body.ordering-process .sidebar.sidebar-left {
@@ -840,13 +831,13 @@ main.content.wide
 
 
   /* TABULKA KROKŮ 1–3 */
-  body.ordering-process ol.cart-header {
+  body.ordering-process ol.cart-header,
+  body.cart-window-visible .cart-window ol.cart-header {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 0 !important;
 
     width: auto !important;
-    margin: 20px 15px 28px !important;
     padding: 0 !important;
 
     border: 1px solid #DED8D1 !important;
@@ -854,7 +845,16 @@ main.content.wide
     overflow: hidden !important;
   }
 
-  body.ordering-process ol.cart-header > li {
+  body.ordering-process ol.cart-header {
+    margin: 20px 15px 28px !important;
+  }
+
+  body.cart-window-visible .cart-window ol.cart-header {
+    margin: 18px 15px 28px !important;
+  }
+
+  body.ordering-process ol.cart-header > li,
+  body.cart-window-visible .cart-window ol.cart-header > li {
     display: block !important;
     flex: none !important;
     width: 100% !important;
@@ -865,12 +865,15 @@ main.content.wide
     border-bottom: 1px solid #DED8D1 !important;
   }
 
-  body.ordering-process ol.cart-header > li:last-child {
+  body.ordering-process ol.cart-header > li:last-child,
+  body.cart-window-visible .cart-window ol.cart-header > li:last-child {
     border-bottom: 0 !important;
   }
 
   body.ordering-process ol.cart-header > li > a,
-  body.ordering-process ol.cart-header > li > strong {
+  body.ordering-process ol.cart-header > li > strong,
+  body.cart-window-visible .cart-window ol.cart-header > li > a,
+  body.cart-window-visible .cart-window ol.cart-header > li > strong {
     display: flex !important;
     align-items: stretch !important;
     width: 100% !important;
@@ -885,7 +888,8 @@ main.content.wide
   }
 
   body.ordering-process ol.cart-header > li > a > span,
-  body.ordering-process ol.cart-header > li > strong > span {
+  body.ordering-process ol.cart-header > li > strong > span,
+  body.cart-window-visible .cart-window ol.cart-header span {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
@@ -904,7 +908,8 @@ main.content.wide
   }
 
   /* Stejná šířka sloupce s číslem */
-  body.ordering-process ol.cart-header span::before {
+  body.ordering-process ol.cart-header span::before,
+  body.cart-window-visible .cart-window ol.cart-header span::before {
     display: inline-block !important;
     flex: 0 0 30px !important;
     width: 30px !important;
@@ -917,7 +922,8 @@ main.content.wide
 
   /* Aktuální krok */
   body.ordering-process ol.cart-header > li.active > a > span,
-  body.ordering-process ol.cart-header > li.active > strong > span {
+  body.ordering-process ol.cart-header > li.active > strong > span,
+  body.cart-window-visible .cart-window ol.cart-header > li.active span {
     background: #fff !important;
     box-shadow: inset 4px 0 0 #8B5E34 !important;
     color: #2B2B2B !important;
@@ -964,100 +970,6 @@ main.content.wide
     color: #8B5E34 !important;
   }
 }
-/* MOBIL – KROKY VE VYSKAKOVACÍM KOŠÍKU */
-@media (max-width: 600px) {
-
-  body.cart-window-visible
-  .cart-window ol.cart-header {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 0 !important;
-
-    width: auto !important;
-    margin: 18px 15px 28px !important;
-    padding: 0 !important;
-
-    border: 1px solid #DED8D1 !important;
-    border-radius: 6px !important;
-    overflow: hidden !important;
-  }
-
-  body.cart-window-visible
-  .cart-window ol.cart-header > li {
-    display: block !important;
-    flex: none !important;
-    width: 100% !important;
-    min-height: 64px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border-bottom: 1px solid #DED8D1 !important;
-  }
-
-  body.cart-window-visible
-  .cart-window ol.cart-header > li:last-child {
-    border-bottom: 0 !important;
-  }
-
-  body.cart-window-visible
-  .cart-window ol.cart-header > li > a,
-
-  body.cart-window-visible
-  .cart-window ol.cart-header > li > strong {
-    display: flex !important;
-    align-items: stretch !important;
-
-    width: 100% !important;
-    min-height: 64px !important;
-    height: 100% !important;
-    padding: 0 !important;
-
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    line-height: 1.3 !important;
-    text-decoration: none !important;
-  }
-
-  body.cart-window-visible
-  .cart-window ol.cart-header span {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    width: 100% !important;
-    min-height: 64px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 18px !important;
-    box-sizing: border-box !important;
-
-    background: #F7F4EF !important;
-    border: 0 !important;
-    color: #3D3935 !important;
-    text-align: left !important;
-  }
-
-  /* Zarovnaný sloupec s čísly */
-  body.cart-window-visible
-  .cart-window ol.cart-header span::before {
-    display: inline-block !important;
-    flex: 0 0 30px !important;
-    width: 30px !important;
-    margin-right: 8px !important;
-
-    color: #8B5E34 !important;
-    font-weight: 700 !important;
-    text-align: right !important;
-  }
-
-  /* Aktivní krok */
-  body.cart-window-visible
-  .cart-window ol.cart-header > li.active span {
-    background: #fff !important;
-    box-shadow: inset 4px 0 0 #8B5E34 !important;
-    color: #2B2B2B !important;
-  }
-}
 /* Logo Meglos vpravo nahoře v mobilním košíku */
 @media (max-width: 600px) {
   body.cart-window-visible .cart-window .cart-window-in::after {
@@ -1078,19 +990,8 @@ main.content.wide
     z-index: 3 !important;
   }
 }
-/* Odsazení mobilní objednávky pod pevný header */
-@media (max-width: 600px) {
-  body.ordering-process .overall-wrapper {
-    padding-top: 76px !important;
-  }
-}
 /* MOBIL – OBJEDNÁVKA A PRODUKTOVÁ KARTA V KOŠÍKU */
 @media (max-width: 600px) {
-
-  /* Celý objednávkový proces pod pevným headerem */
-  body.ordering-process .overall-wrapper {
-    padding-top: 76px !important;
-  }
 
   /* Základ tabulky košíku */
   body.in-kosik .cart-table,
