@@ -1078,9 +1078,13 @@ main.content.wide
     z-index: 3 !important;
   }
 }
-/* Odsazení objednávkového procesu od mobilního headeru */
+/* Odsazení mobilní objednávky od headeru */
 @media (max-width: 600px) {
-  body.ordering-process .cart-wrapper {
-    margin-top: 18px !important;
+  body.ordering-process .cart-window-in {
+    padding-top: 95px !important;
+  }
+
+  body.ordering-process .cart-window-in > .toggle-window-arr {
+    top: 18px !important;
   }
 }
