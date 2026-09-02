@@ -1084,3 +1084,158 @@ main.content.wide
     padding-top: 76px !important;
   }
 }
+/* MOBIL – OBJEDNÁVKA A PRODUKTOVÁ KARTA V KOŠÍKU */
+@media (max-width: 600px) {
+
+  /* Celý objednávkový proces pod pevným headerem */
+  body.ordering-process .overall-wrapper {
+    padding-top: 76px !important;
+  }
+
+  /* Základ tabulky košíku */
+  body.in-kosik .cart-table,
+  body.in-kosik .cart-table tbody {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Produkt jako samostatná karta */
+  body.in-kosik .cart-table tr.removeable {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    width: 100% !important;
+    margin: 0 0 14px !important;
+    padding: 14px 12px 12px !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    border: 1px solid #DED8D1 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  body.in-kosik .cart-table tr.removeable > td {
+    width: auto !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hlavní fotografie produktu */
+  body.in-kosik .cart-table tr.removeable > .cart-p-image {
+    position: absolute !important;
+    top: 14px !important;
+    left: 12px !important;
+    width: 78px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.in-kosik .cart-p-image img {
+    display: block !important;
+    width: 78px !important;
+    height: auto !important;
+    border-radius: 5px !important;
+  }
+
+  /* Název, varianta a nahraná příloha */
+  body.in-kosik .cart-table tr.removeable > .p-name {
+    grid-column: 1 / -1 !important;
+    min-height: 105px !important;
+    padding: 0 0 12px 90px !important;
+    text-align: left !important;
+  }
+
+  body.in-kosik .p-name .main-link {
+    display: block !important;
+    width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.in-kosik .p-name .main-link-variant {
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+
+  body.in-kosik .dkLabCartNoteDetails,
+  body.in-kosik .dkLabCartNoteDetail,
+  body.in-kosik .dkLabCartNoteDetailHeader,
+  body.in-kosik .dkLabCartAttachments {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mezera mezi množstvím a náhledem přílohy */
+  body.in-kosik .dkLabCartAttachments {
+    margin-top: 8px !important;
+  }
+
+  body.in-kosik .dkLabCartNoteAttachmentDetail {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Dostupnost */
+  body.in-kosik .cart-table tr.removeable > .p-availability {
+    grid-column: 1 !important;
+    padding: 12px 8px 10px 0 !important;
+    border-top: 1px solid #E8DED3 !important;
+  }
+
+  body.in-kosik .p-availability .availability-label {
+    display: block !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    transform: none !important;
+    text-align: left !important;
+  }
+
+  /* Množství */
+  body.in-kosik .cart-table tr.removeable > .p-quantity {
+    grid-column: 2 !important;
+    padding: 12px 0 10px 8px !important;
+    border-top: 1px solid #E8DED3 !important;
+    text-align: right !important;
+  }
+
+  body.in-kosik .p-quantity .quantity-form {
+    width: 100% !important;
+  }
+
+  body.in-kosik .p-quantity .quantity {
+    width: 145px !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+  }
+
+  /* Jednotková cena */
+  body.in-kosik .cart-table tr.removeable > .p-price {
+    grid-column: 1 !important;
+    padding: 12px 8px 0 0 !important;
+    border-top: 1px solid #E8DED3 !important;
+  }
+
+  /* Celková cena a odstranění */
+  body.in-kosik .cart-table tr.removeable > .p-total {
+    grid-column: 2 !important;
+    padding: 12px 0 0 8px !important;
+    border-top: 1px solid #E8DED3 !important;
+    text-align: right !important;
+  }
+
+  body.in-kosik .p-total .price-final {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+  }
+}
