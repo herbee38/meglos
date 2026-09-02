@@ -293,16 +293,6 @@ body.type-category .category-perex.empty-content.empty-content-category{
     overflow:hidden!important;
     border-radius:8px!important;
   }
-
-  body.type-category .subcategories.with-image .image img{
-    display:block!important;
-    width:100%!important;
-    height:100%!important;
-    max-width:none!important;
-    max-height:none!important;
-    margin:0!important;
-    object-fit:cover!important;
-  }
 }
 /* OBJEDNÁVKA – TLAČÍTKA ZPĚT A POKRAČOVAT */
 
