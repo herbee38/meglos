@@ -1,0 +1,395 @@
+/* MEGLOS – SPOLEČNÉ KOMPONENTY INFORMAČNÍCH STRÁNEK */
+.meglos-info,
+.meglos-info * {
+  box-sizing: border-box;
+}
+
+.meglos-info {
+  --info-accent: var(--accent, #8B5E34);
+  --info-hover: var(--hover, #6F4726);
+  --info-text: var(--text, #3D3935);
+  --info-dark: var(--dark, #2B2B2B);
+  --info-bg: var(--bg, #F6F2ED);
+  --info-border: var(--border, #E8DED3);
+  --info-white: var(--white, #FFF);
+  width: 100%;
+  max-width: 1040px;
+  color: var(--info-text);
+}
+
+.meglos-info p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.meglos-info__hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  align-items: center;
+  min-height: 250px;
+  margin: 0 0 54px;
+  padding: 42px 46px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(139, 94, 52, .12), transparent 32%),
+    linear-gradient(135deg, #FFF 0%, #F8F3ED 100%);
+  border: 1px solid var(--info-border);
+  border-radius: 16px;
+}
+
+.meglos-info__hero::before,
+.meglos-info__hero::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  border: 1px solid rgba(139, 94, 52, .18);
+  border-radius: 50%;
+}
+
+.meglos-info__hero::before {
+  top: -95px;
+  right: -70px;
+  width: 290px;
+  height: 290px;
+}
+
+.meglos-info__hero::after {
+  right: 105px;
+  bottom: -120px;
+  width: 220px;
+  height: 220px;
+}
+
+.meglos-info__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  color: var(--info-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.meglos-info__eyebrow::before {
+  width: 30px;
+  height: 2px;
+  content: "";
+  background: currentColor;
+}
+
+.meglos-info__hero h2 {
+  max-width: 620px;
+  margin: 0 0 16px;
+  color: var(--info-dark);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.15;
+}
+
+.meglos-info__hero-copy {
+  max-width: 650px;
+  font-size: 16px;
+}
+
+.meglos-info__hero-art {
+  width: 100%;
+  color: var(--info-accent);
+}
+
+.meglos-info__hero-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.meglos-info__section {
+  margin-bottom: 54px;
+}
+
+.meglos-info__heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.meglos-info__number {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--info-white);
+  background: var(--info-accent);
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.meglos-info__heading h2 {
+  margin: 0 0 4px;
+  color: var(--info-dark);
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.meglos-info__heading p {
+  color: #6A625B;
+}
+
+.meglos-info__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.meglos-info-card {
+  position: relative;
+  min-width: 0;
+  padding: 26px;
+  background: var(--info-white);
+  border: 1px solid var(--info-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(61, 57, 53, .06);
+}
+
+.meglos-info-card::after {
+  position: absolute;
+  top: 0;
+  left: 26px;
+  width: 54px;
+  height: 3px;
+  content: "";
+  background: var(--info-accent);
+  border-radius: 0 0 4px 4px;
+}
+
+.meglos-info-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.meglos-info-card__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  color: var(--info-accent);
+  background: var(--info-bg);
+  border-radius: 50%;
+}
+
+.meglos-info-card__icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.meglos-info-card__price {
+  color: var(--info-accent);
+  font-size: 19px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.meglos-info-card h3 {
+  margin: 0 0 9px;
+  color: var(--info-dark);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.meglos-info-card p {
+  color: #625B55;
+}
+
+.meglos-info__process {
+  padding: 34px;
+  background: var(--info-dark);
+  border-radius: 14px;
+  color: var(--info-white);
+}
+
+.meglos-info__process h2 {
+  margin: 0 0 26px;
+  color: var(--info-white);
+  font-size: 25px;
+  text-align: center;
+}
+
+.meglos-info__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: info-step;
+}
+
+.meglos-info__steps li {
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+  counter-increment: info-step;
+}
+
+.meglos-info__steps li::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  content: counter(info-step);
+  color: var(--info-dark);
+  background: #D9B78D;
+  border-radius: 50%;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.meglos-info__steps li:not(:last-child)::after {
+  position: absolute;
+  top: 18px;
+  left: calc(50% + 28px);
+  width: calc(100% - 28px);
+  height: 1px;
+  content: "";
+  background: rgba(255, 255, 255, .22);
+}
+
+.meglos-info__steps strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--info-white);
+  font-size: 16px;
+}
+
+.meglos-info__steps span {
+  display: block;
+  color: rgba(255, 255, 255, .74);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.meglos-info__note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 20px 22px;
+  background: var(--info-bg);
+  border-left: 4px solid var(--info-accent);
+  border-radius: 8px;
+}
+
+.meglos-info__note-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--info-accent);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .meglos-info__hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    margin-bottom: 38px;
+    padding: 30px 24px 120px;
+  }
+
+  .meglos-info__hero-art {
+    position: absolute;
+    right: 14px;
+    bottom: -18px;
+    width: 150px;
+    opacity: .7;
+  }
+
+  .meglos-info__section {
+    margin-bottom: 38px;
+  }
+
+  .meglos-info__heading {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .meglos-info__number {
+    width: 42px;
+    height: 42px;
+  }
+
+  .meglos-info__heading h2 {
+    font-size: 24px;
+  }
+
+  .meglos-info__cards,
+  .meglos-info__steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .meglos-info-card {
+    padding: 24px 20px;
+  }
+
+  .meglos-info__process {
+    padding: 28px 22px;
+  }
+
+  .meglos-info__steps {
+    gap: 22px;
+  }
+
+  .meglos-info__steps li {
+    min-height: 38px;
+    padding: 0 0 0 54px;
+    text-align: left;
+  }
+
+  .meglos-info__steps li::before {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .meglos-info__steps li:not(:last-child)::after {
+    top: 45px;
+    left: 18px;
+    width: 1px;
+    height: calc(100% - 10px);
+  }
+}
+
+@media (max-width: 420px) {
+  .meglos-info__hero {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .meglos-info-card__top {
+    align-items: flex-start;
+  }
+
+  .meglos-info-card__price {
+    font-size: 17px;
+  }
+}
