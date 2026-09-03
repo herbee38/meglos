@@ -1,0 +1,64 @@
+/* MEGLOS – SPOLEČNÉ ROZLOŽENÍ INFORMAČNÍCH STRÁNEK */
+@supports selector(body:has(.meglos-info)) {
+  body:has(.meglos-info) .sidebar.sidebar-left {
+    display: none !important;
+  }
+
+  body:has(.meglos-info) .content-wrapper-in {
+    display: block !important;
+  }
+
+  body:has(.meglos-info) #content,
+  body:has(.meglos-info) .content-inner,
+  body:has(.meglos-info) article.pageArticleDetail {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body:has(.meglos-info) #content {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  body:has(.meglos-info) .pageArticleDetail > h1,
+  body:has(.meglos-info) .meglos-info {
+    max-width: 1040px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  body:has(.meglos-info) .meglos-info__section--after-process {
+    margin-top: 54px;
+  }
+
+  @media (min-width: 768px) {
+    body:has(.meglos-info) .meglos-info__steps--five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    body:has(.meglos-info) .meglos-info__steps--five li:not(:last-child)::after {
+      left: calc(50% + 24px);
+      width: calc(100% - 12px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    body.mobile:has(.meglos-info) #content-wrapper {
+      padding-top: 36px !important;
+    }
+
+    body:has(.meglos-info) #content {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    body:has(.meglos-info) .meglos-info__steps--five {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    body:has(.meglos-info) .meglos-info__section--after-process {
+      margin-top: 38px;
+    }
+  }
+}
