@@ -519,6 +519,291 @@
   text-align: left;
 }
 
+/* Obchodní podmínky */
+.meglos-legal a {
+  color: var(--info-accent);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.meglos-legal__summary {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 34px;
+  margin-bottom: 22px;
+  padding: 28px 30px;
+  background: var(--info-white);
+  border: 1px solid var(--info-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(61, 57, 53, .05);
+}
+
+.meglos-legal__label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--info-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.meglos-legal__summary h2,
+.meglos-legal__withdrawal-form h2 {
+  margin: 0;
+  color: var(--info-dark);
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.meglos-legal__summary ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meglos-legal__summary li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.55;
+}
+
+.meglos-legal__summary li::before {
+  position: absolute;
+  top: .05em;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  content: "✓";
+  color: var(--info-white);
+  background: var(--info-accent);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.meglos-legal__toc {
+  margin-bottom: 24px;
+  padding: 30px;
+  color: var(--info-white);
+  background: var(--info-dark);
+  border-radius: 14px;
+}
+
+.meglos-legal__toc h2 {
+  margin: 0 0 20px;
+  color: var(--info-white);
+  font-size: 23px;
+  text-align: center;
+}
+
+.meglos-legal__toc ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: terms-toc;
+}
+
+.meglos-legal__toc li {
+  counter-increment: terms-toc;
+}
+
+.meglos-legal__toc a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.meglos-legal__toc a::before {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+  content: counter(terms-toc, decimal-leading-zero);
+  color: var(--info-dark);
+  background: #D9B78D;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.meglos-legal__toc a:hover,
+.meglos-legal__toc a:focus-visible {
+  color: var(--info-white);
+  text-decoration: underline;
+}
+
+.meglos-legal__document {
+  padding: 8px 38px;
+  background: var(--info-white);
+  border: 1px solid var(--info-border);
+  border-radius: 14px;
+  box-shadow: 0 12px 38px rgba(61, 57, 53, .06);
+}
+
+.meglos-legal__section {
+  padding: 34px 0;
+  scroll-margin-top: 110px;
+}
+
+.meglos-legal__section + .meglos-legal__section {
+  border-top: 1px solid var(--info-border);
+}
+
+.meglos-legal__section header {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.meglos-legal__section header > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--info-accent);
+  background: var(--info-bg);
+  border: 1px solid rgba(139, 94, 52, .35);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.meglos-legal__section h2 {
+  margin: 0;
+  color: var(--info-dark);
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.meglos-legal__section p + p,
+.meglos-legal__section p + ol,
+.meglos-legal__section ol + p,
+.meglos-legal__section .meglos-legal__notice + p {
+  margin-top: 14px;
+}
+
+.meglos-legal__section ol,
+.meglos-legal__section ul {
+  margin-bottom: 0;
+  padding-left: 24px;
+}
+
+.meglos-legal__section li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+  line-height: 1.65;
+}
+
+.meglos-legal__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 20px 0;
+  overflow: hidden;
+  background: var(--info-border);
+  border: 1px solid var(--info-border);
+  border-radius: 10px;
+}
+
+.meglos-legal__details > div {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 16px;
+  background: #FCFAF7;
+}
+
+.meglos-legal__details dt {
+  color: #6A625B;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.meglos-legal__details dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--info-dark);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.meglos-legal mark {
+  padding: 2px 6px;
+  color: #6D3F19;
+  background: #FFF0D9;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.meglos-legal__notice {
+  margin-top: 18px;
+  padding: 20px 22px;
+  background: var(--info-bg);
+  border-left: 4px solid #D9B78D;
+  border-radius: 8px;
+}
+
+.meglos-legal__notice--important {
+  background: #FBF3E8;
+  border-left-color: var(--info-accent);
+}
+
+.meglos-legal__notice strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--info-dark);
+}
+
+.meglos-legal__effective {
+  margin-top: 20px !important;
+  padding-top: 18px;
+  border-top: 1px dashed #D6CBC0;
+}
+
+.meglos-legal__withdrawal-form {
+  margin-top: 24px;
+  padding: 30px 34px;
+  background: #FCFAF7;
+  border: 1px dashed #CDBDAE;
+  border-radius: 12px;
+}
+
+.meglos-legal__withdrawal-form > p {
+  margin-top: 10px;
+}
+
+.meglos-legal__withdrawal-form > div {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 22px;
+  background: var(--info-white);
+  border: 1px solid var(--info-border);
+  border-radius: 8px;
+}
+
+.meglos-legal > .meglos-info__note {
+  margin-top: 24px;
+}
+
 /* Kontaktní stránka a formulář generovaný Shoptetem */
 body.in-kontakty .meglos-info--contact {
   padding-bottom: 18px !important;
@@ -740,6 +1025,63 @@ body.in-kontakty .meglos-info--contact #formContact .btn {
 
   .meglos-sitemap__group {
     padding: 24px 20px;
+  }
+
+  .meglos-legal__summary {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .meglos-legal__toc {
+    padding: 26px 20px;
+  }
+
+  .meglos-legal__toc ol,
+  .meglos-legal__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .meglos-legal__document {
+    padding: 4px 20px;
+  }
+
+  .meglos-legal__section {
+    padding: 28px 0;
+    scroll-margin-top: 82px;
+  }
+
+  .meglos-legal__section header {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .meglos-legal__section header > span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .meglos-legal__section h2,
+  .meglos-legal__summary h2,
+  .meglos-legal__withdrawal-form h2 {
+    font-size: 22px;
+  }
+
+  .meglos-legal__details > div {
+    grid-template-columns: 82px minmax(0, 1fr);
+    padding: 13px 14px;
+  }
+
+  .meglos-legal__notice {
+    padding: 18px;
+  }
+
+  .meglos-legal__withdrawal-form {
+    padding: 24px 20px;
+  }
+
+  .meglos-legal__withdrawal-form > div {
+    padding: 18px;
   }
 }
 
