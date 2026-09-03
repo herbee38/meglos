@@ -9,7 +9,9 @@
   --info-hover: var(--hover, #6F4726);
   --info-text: var(--text, #3D3935);
   --info-dark: var(--dark, #2B2B2B);
+  --info-muted: #6A625B;
   --info-bg: var(--bg, #F6F2ED);
+  --info-cream: #FBF3E8;
   --info-border: var(--border, #E8DED3);
   --info-white: var(--white, #FFF);
   width: 100%;
@@ -790,14 +792,76 @@
   margin-top: 10px;
 }
 
-.meglos-legal__withdrawal-form > div {
-  display: grid;
-  gap: 10px;
+.meglos-legal__download {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-top: 20px;
-  padding: 22px;
+  padding: 18px 20px;
+  color: var(--info-dark) !important;
+  text-decoration: none !important;
   background: var(--info-white);
   border: 1px solid var(--info-border);
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(66, 47, 30, 0.07);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.meglos-legal__download:hover,
+.meglos-legal__download:focus-visible {
+  color: var(--info-dark) !important;
+  border-color: var(--info-accent);
+  box-shadow: 0 14px 30px rgba(66, 47, 30, 0.12);
+  transform: translateY(-1px);
+}
+
+.meglos-legal__download-icon {
+  display: grid;
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  color: var(--info-accent);
+  background: var(--info-cream);
+  border-radius: 50%;
+  place-items: center;
+}
+
+.meglos-legal__download-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.meglos-legal__download-copy {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 3px;
+  min-width: 0;
+}
+
+.meglos-legal__download-copy strong {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.meglos-legal__download-copy small {
+  color: var(--info-muted);
+  font-size: 13px;
+}
+
+.meglos-legal__download-action {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  color: var(--info-white);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--info-accent);
+  border-radius: 6px;
+}
+
+.meglos-legal__download-note {
+  margin-top: 14px !important;
+  color: var(--info-muted);
+  font-size: 13px;
 }
 
 .meglos-legal > .meglos-info__note {
@@ -1080,8 +1144,26 @@ body.in-kontakty .meglos-info--contact #formContact .btn {
     padding: 24px 20px;
   }
 
-  .meglos-legal__withdrawal-form > div {
-    padding: 18px;
+  .meglos-legal__download {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .meglos-legal__download-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .meglos-legal__download-copy {
+    flex-basis: calc(100% - 60px);
+  }
+
+  .meglos-legal__download-action {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
   }
 }
 
