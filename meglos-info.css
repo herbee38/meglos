@@ -14,6 +14,7 @@
   --info-white: var(--white, #FFF);
   width: 100%;
   max-width: 1040px;
+  padding-bottom: 56px;
   color: var(--info-text);
 }
 
@@ -210,6 +211,17 @@
   line-height: 1.35;
 }
 
+.meglos-info-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.meglos-info-card__link:hover,
+.meglos-info-card__link:focus {
+  color: var(--info-accent);
+  text-decoration: none;
+}
+
 .meglos-info-card p {
   color: #625B55;
 }
@@ -308,7 +320,341 @@
   font-weight: 700;
 }
 
+/* Mapa webu */
+.meglos-sitemap > .meglos-info__section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.meglos-sitemap > .meglos-info__section > .meglos-info__heading {
+  grid-template-columns: 48px auto;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.meglos-sitemap > .meglos-info__section > .meglos-info__heading > div {
+  text-align: center;
+}
+
+.meglos-sitemap__hero-tree {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  color: var(--info-accent);
+}
+
+.meglos-sitemap__root,
+.meglos-sitemap__branches span {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  padding: 8px 14px;
+  background: var(--info-white);
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.meglos-sitemap__root {
+  position: relative;
+  min-width: 105px;
+  color: var(--info-white);
+  background: var(--info-accent);
+}
+
+.meglos-sitemap__root::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 21px;
+  content: "";
+  background: rgba(139, 94, 52, .45);
+}
+
+.meglos-sitemap__branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.meglos-sitemap__branches::before {
+  position: absolute;
+  top: -11px;
+  right: 17%;
+  left: 17%;
+  height: 1px;
+  content: "";
+  background: rgba(139, 94, 52, .45);
+}
+
+.meglos-sitemap__branches span {
+  position: relative;
+  min-width: 0;
+  padding-right: 9px;
+  padding-left: 9px;
+  font-size: 11px;
+}
+
+.meglos-sitemap__branches span::before {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: 11px;
+  content: "";
+  background: rgba(139, 94, 52, .45);
+}
+
+.meglos-sitemap__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.meglos-sitemap__group {
+  position: relative;
+  min-width: 0;
+  padding: 26px;
+  background: var(--info-white);
+  border: 1px solid var(--info-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(61, 57, 53, .06);
+  text-align: center;
+}
+
+.meglos-sitemap__group::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 54px;
+  height: 3px;
+  content: "";
+  background: var(--info-accent);
+  border-radius: 0 0 4px 4px;
+  transform: translateX(-50%);
+}
+
+.meglos-sitemap__group--wide {
+  grid-column: 1 / -1;
+}
+
+.meglos-sitemap__group h3 {
+  margin: 0 0 16px;
+  color: var(--info-dark);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.meglos-sitemap__group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meglos-sitemap__group--wide ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 26px;
+}
+
+.meglos-sitemap__group li {
+  margin: 0;
+  border-bottom: 1px solid rgba(232, 222, 211, .8);
+}
+
+.meglos-sitemap__group li:last-child {
+  border-bottom: 0;
+}
+
+.meglos-sitemap__group a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 9px 0;
+  color: var(--info-text);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.meglos-sitemap__group a::after {
+  margin-left: 0;
+  color: var(--info-accent);
+  content: "→";
+  font-size: 16px;
+}
+
+.meglos-sitemap__group a:hover,
+.meglos-sitemap__group a:focus-visible {
+  padding-left: 5px;
+  color: var(--info-hover);
+}
+
+.meglos-sitemap__group a[aria-current="page"] {
+  color: var(--info-accent);
+  font-weight: 700;
+}
+
+.meglos-sitemap .meglos-info__note a {
+  color: var(--info-accent);
+  font-weight: 700;
+}
+
+.meglos-sitemap > .meglos-info__note {
+  grid-template-columns: auto auto;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Kontaktní stránka a formulář generovaný Shoptetem */
+body.in-kontakty .meglos-info--contact {
+  padding-bottom: 18px !important;
+}
+
+body.in-kontakty .meglos-info--contact #formContact {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px;
+  margin: 32px 0 56px !important;
+  padding: 32px !important;
+  box-sizing: border-box !important;
+  background: var(--white, #FFF) !important;
+  border: 1px solid var(--border, #E8DED3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(61, 57, 53, .06) !important;
+}
+
+body.in-kontakty .meglos-info--contact #formContact fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .form-group {
+  margin-bottom: 20px;
+}
+
+body.in-kontakty .meglos-info--contact #formContact label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--dark, #2B2B2B);
+  font-weight: 600;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .form-control {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  color: var(--text, #3D3935);
+  background: var(--white, #FFF);
+  border: 1px solid #CFC5BB;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+body.in-kontakty .meglos-info--contact #formContact textarea.form-control {
+  min-height: 170px;
+  resize: vertical;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .form-control:focus {
+  border-color: var(--accent, #8B5E34);
+  box-shadow: 0 0 0 3px rgba(139, 94, 52, .12);
+  outline: none;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .consents {
+  color: #6A625B;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .submit-wrapper {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+body.in-kontakty .meglos-info--contact #formContact .btn {
+  min-width: 180px;
+}
+
+.meglos-info--contact .meglos-info__section--contact-form {
+  margin-bottom: 22px;
+}
+
+@media (min-width: 768px) {
+  body.in-kontakty .meglos-info--contact .meglos-info__hero {
+    display: block !important;
+  }
+
+  body.in-kontakty .meglos-info--contact .meglos-info__hero h2 {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  body.in-kontakty .meglos-info--contact .meglos-info__hero-copy {
+    max-width: 720px;
+  }
+
+  body.in-kontakty .meglos-info--contact .meglos-info__hero-art {
+    position: absolute;
+    right: 46px;
+    bottom: 20px;
+    width: 210px;
+    opacity: .14;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 992px) {
+  body.in-kontakty .meglos-info--contact .meglos-info__hero h2 {
+    white-space: nowrap !important;
+  }
+}
+
 @media (max-width: 767px) {
+  /* Obsah začíná 18 px pod pevným mobilním headerem */
+  body.mobile.in-doprava-platba #content-wrapper {
+    padding-top: 36px !important;
+  }
+
+  @supports selector(body:has(.meglos-info)) {
+    body.mobile:has(.meglos-info) #content-wrapper {
+      padding-top: 36px !important;
+    }
+  }
+
+  .meglos-info {
+    padding-bottom: 40px;
+  }
+
+  body.in-kontakty .meglos-info--contact {
+    padding-bottom: 12px !important;
+  }
+
+  body.in-kontakty .meglos-info--contact #formContact {
+    width: 100% !important;
+    margin: 28px 0 40px !important;
+    padding: 24px 20px !important;
+  }
+
+  body.in-kontakty .meglos-info--contact #formContact .btn {
+    width: 100%;
+  }
+
   .meglos-info__hero {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
@@ -376,6 +722,34 @@
     left: 18px;
     width: 1px;
     height: calc(100% - 10px);
+  }
+
+  .meglos-sitemap__hero-tree {
+    margin: 0 auto;
+    width: min(100%, 260px);
+  }
+
+  .meglos-sitemap__grid,
+  .meglos-sitemap__group--wide ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .meglos-sitemap__group--wide {
+    grid-column: auto;
+  }
+
+  .meglos-sitemap__group {
+    padding: 24px 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .meglos-sitemap__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .meglos-sitemap__group--wide {
+    grid-column: 1 / -1;
   }
 }
 
