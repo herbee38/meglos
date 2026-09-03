@@ -309,6 +309,21 @@
 }
 
 @media (max-width: 767px) {
+    /* Obsah informační stránky pod pevným mobilním headerem */
+  body.mobile.in-doprava-platba #content-wrapper {
+    padding-top: 36px !important;
+  }
+
+  @supports selector(body:has(.meglos-info)) {
+    body.mobile:has(.meglos-info) #content-wrapper {
+      padding-top: 36px !important;
+    }
+  }
+
+  .meglos-info {
+    padding-bottom: 40px;
+  }
+  
   .meglos-info__hero {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
