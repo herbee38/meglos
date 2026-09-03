@@ -62,3 +62,21 @@
     }
   }
 }
+/* Nadpis a odstup informačních stránek od footeru */
+@supports selector(body:has(.meglos-info)) {
+
+  body:has(.meglos-info) article.pageArticleDetail > header h1,
+  body:has(.meglos-info) article.pageArticleDetail > h1 {
+    text-align: center !important;
+  }
+
+  body:has(.meglos-info) .meglos-info {
+    padding-bottom: 56px !important;
+  }
+
+  @media (max-width: 767px) {
+    body:has(.meglos-info) .meglos-info {
+      padding-bottom: 40px !important;
+    }
+  }
+}
