@@ -3,6 +3,10 @@
 .meglos-info * {
   box-sizing: border-box;
 }
+.meglos-info {
+  /* ostatní současné vlastnosti */
+  padding-bottom: 56px;
+}
 
 .meglos-info {
   --info-accent: var(--accent, #8B5E34);
@@ -309,7 +313,9 @@
 }
 
 @media (max-width: 767px) {
-    /* Obsah informační stránky pod pevným mobilním headerem */
+   
+  
+  /* Obsah informační stránky pod pevným mobilním headerem */
   body.mobile.in-doprava-platba #content-wrapper {
     padding-top: 36px !important;
   }
