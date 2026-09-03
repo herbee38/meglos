@@ -3,10 +3,6 @@
 .meglos-info * {
   box-sizing: border-box;
 }
-.meglos-info {
-  /* ostatní současné vlastnosti */
-  padding-bottom: 56px;
-}
 
 .meglos-info {
   --info-accent: var(--accent, #8B5E34);
@@ -313,23 +309,6 @@
 }
 
 @media (max-width: 767px) {
-   
-  
-  /* Obsah informační stránky pod pevným mobilním headerem */
-  body.mobile.in-doprava-platba #content-wrapper {
-    padding-top: 36px !important;
-  }
-
-  @supports selector(body:has(.meglos-info)) {
-    body.mobile:has(.meglos-info) #content-wrapper {
-      padding-top: 36px !important;
-    }
-  }
-
-  .meglos-info {
-    padding-bottom: 40px;
-  }
-  
   .meglos-info__hero {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
