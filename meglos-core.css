@@ -671,9 +671,7 @@ body.cart-window-visible
   border-color: #6F4726 !important;
   color: #6F4726 !important;
 }
-
-body.cart-window-visible
-.cart-window .next-step--cart > .next-step-forward:hover {
-  background: #6F4726 !important;
-  border-color: #6F4726 !important;
+body.in-kosik .cart-table .p-price,
+body.cart-window-visible .cart-window .cart-table .p-price {
+  display: none !important;
 }
