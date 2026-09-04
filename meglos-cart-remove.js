@@ -50,8 +50,30 @@
     });
 
     holder.append(button);
-    quantityCell.append(holder);
-    row.classList.add("meglos-remove-ready");
+quantityCell.append(holder);
+
+if (row.closest(".cart-window")) {
+  requestAnimationFrame(() => {
+    const quantity = quantityCell.querySelector(".quantity");
+
+    if (quantity) {
+      const quantityBox = quantity.getBoundingClientRect();
+      const holderBox = holder.getBoundingClientRect();
+
+      const offset =
+        quantityBox.left +
+        quantityBox.width / 2 -
+        holderBox.left -
+        holderBox.width / 2;
+
+      holder.style.transform = `translateX(${offset}px)`;
+    }
+  });
+}
+
+row.classList.add("meglos-remove-ready");
+
+    
   };
 
   const updateCartRows = () => {
