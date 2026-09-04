@@ -1143,23 +1143,36 @@ main.content.wide
 /* MOBIL – výrazné odebrání produktu z košíku */
 @media (max-width: 600px) {
   body.in-kosik .cart-table tr.removeable > .p-total {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    grid-template-rows: auto auto !important;
-    align-items: end !important;
-    gap: 4px 12px !important;
-    text-align: right !important;
-  }
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  grid-column: 1 / -1 !important;
+  gap: 4px !important;
+  padding: 12px 0 0 !important;
+  border-top: 1px solid #E8DED3 !important;
+  text-align: right !important;
+}
 
-  body.in-kosik .p-total > .p-label {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-  }
+body.in-kosik .p-total > form.inline {
+  align-self: stretch !important;
+  order: 1 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
 
-  body.in-kosik .p-total .price-final {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
-  }
+body.in-kosik .p-total > .p-label {
+  align-self: flex-end !important;
+  order: 2 !important;
+  margin-top: 8px !important;
+}
+
+body.in-kosik .p-total .price-final {
+  display: block !important;
+  align-self: flex-end !important;
+  order: 3 !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
 
   body.in-kosik .p-total > form.inline {
     align-self: end !important;
