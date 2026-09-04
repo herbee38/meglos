@@ -969,7 +969,11 @@ body.in-kontakty .meglos-info--contact #formContact .btn {
 }
 
 @media (min-width: 992px) {
-  body.in-kontakty .meglos-info--contact .meglos-info__hero h2 {
+  .meglos-info__hero h2 {
+    position: relative;
+    z-index: 2;
+    width: max-content !important;
+    max-width: calc(100% + 230px) !important;
     white-space: nowrap !important;
   }
 }
