@@ -1209,3 +1209,46 @@ body.in-kontakty .meglos-info--contact #formContact {
     margin: 28px 0 40px -55px !important;
   }
 }
+/* Kontakty – grafické ikony v kartách */
+.meglos-info--contact .meglos-info-card__top {
+  justify-content: flex-start;
+  min-height: 52px;
+  font-size: 0;
+}
+
+.meglos-info--contact .meglos-info-card__top::before {
+  display: block;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  content: "";
+  background-color: var(--info-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  border-radius: 50%;
+}
+
+/* E-mail */
+.meglos-info--contact .meglos-info-card:nth-child(1)
+.meglos-info-card__top::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20stroke%3D%22%238B5E34%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%226%22%20width%3D%2226%22%20height%3D%2220%22%20rx%3D%223%22%2F%3E%3Cpath%20d%3D%22m5%209%2011%209L27%209%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Telefon */
+.meglos-info--contact .meglos-info-card:nth-child(2)
+.meglos-info-card__top::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20stroke%3D%22%238B5E34%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%204H5a2%202%200%200%200-2%202c0%2013%2010%2023%2023%2023a2%202%200%200%200%202-2v-4l-7-2-2%204c-5-2-10-7-12-12l4-2-2-7Z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Provozovatel */
+.meglos-info--contact .meglos-info-card:nth-child(3)
+.meglos-info-card__top::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20stroke%3D%22%238B5E34%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2210%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M7%2028c1-7%204-11%209-11s8%204%209%2011%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Adresa */
+.meglos-info--contact .meglos-info-card:nth-child(4)
+.meglos-info-card__top::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20stroke%3D%22%238B5E34%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M16%2029S6%2020%206%2012a10%2010%200%201%201%2020%200c0%208-10%2017-10%2017Z%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2212%22%20r%3D%223%22%2F%3E%3C%2Fsvg%3E");
+}
