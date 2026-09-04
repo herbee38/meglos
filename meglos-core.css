@@ -825,3 +825,15 @@ body.cart-window-visible .cart-window .cart-table .p-price {
     outline: none !important;
   }
 }
+.cart-table .meglos-remove-under-qty {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cart-table .meglos-remove-under-qty > * {
+  position: static !important;
+  float: none !important;
+  margin: 0 !important;
+  white-space: nowrap;
+}
