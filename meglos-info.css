@@ -1195,3 +1195,17 @@ body.in-kontakty .meglos-info--contact #formContact .btn {
     font-size: 17px;
   }
 }
+/* Kontaktní formulář přes celou šířku */
+body.in-kontakty .meglos-info--contact #formContact {
+  width: calc(100% + 64px) !important;
+  max-width: none !important;
+  margin: 32px 0 56px -64px !important;
+}
+
+@media (max-width: 767px) {
+  body.in-kontakty .meglos-info--contact #formContact {
+    width: calc(100% + 55px) !important;
+    max-width: none !important;
+    margin: 28px 0 40px -55px !important;
+  }
+}
