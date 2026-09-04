@@ -837,3 +837,21 @@ body.cart-window-visible .cart-window .cart-table .p-price {
   margin: 0 !important;
   white-space: nowrap;
 }
+.cart-table .meglos-remove-under-qty {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin-top: 9px;
+}
+
+.cart-table .meglos-remove-under-qty .remove-item {
+    position: static !important;
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    white-space: nowrap;
+}
