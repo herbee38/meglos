@@ -922,6 +922,6 @@ body.cart-window-visible .cart-window .cart-table tr.meglos-remove-ready .p-tota
 /* Vyskakovací košík – tlačítko přesně pod množstvím */
 @media (min-width: 601px) {
   .cart-window .cart-table .p-quantity > .meglos-remove-under-qty {
-    margin: 9px 0 0 -5px !important;
+    margin: 9px 0 0 40px !important;
   }
 }
