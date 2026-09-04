@@ -855,3 +855,67 @@ body.cart-window-visible .cart-window .cart-table .p-price {
     margin: 0 !important;
     white-space: nowrap;
 }
+/* KOŠÍK – ODEBRÁNÍ PRODUKTU POD VOLBOU MNOŽSTVÍ */
+body.in-kosik .cart-table tr.meglos-remove-ready .p-total > form.inline,
+body.cart-window-visible .cart-window .cart-table tr.meglos-remove-ready .p-total > form.inline {
+  display: none !important;
+}
+
+.cart-table .meglos-remove-under-qty {
+  display: flex !important;
+  justify-content: center !important;
+  width: 155px !important;
+  max-width: 100% !important;
+  margin: 9px auto 0 !important;
+}
+
+.cart-table .meglos-remove-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: 100% !important;
+  height: 38px !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  color: #7a3e35 !important;
+  background: #fff7f4 !important;
+  border: 1px solid #ddbbb3 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font-family: Montserrat, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.cart-table .meglos-remove-button svg {
+  flex: 0 0 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.cart-table .meglos-remove-button:hover,
+.cart-table .meglos-remove-button:focus-visible {
+  color: #652f28 !important;
+  background: #fbece7 !important;
+  border-color: #cfa49a !important;
+  outline: none !important;
+}
+
+@media (max-width: 600px) {
+  .cart-table .meglos-remove-under-qty {
+    width: 145px !important;
+    margin-right: 0 !important;
+  }
+
+  .cart-table .meglos-remove-button {
+    height: 42px !important;
+  }
+}
