@@ -304,3 +304,71 @@ document.querySelectorAll('body *').forEach(el => {
     });
 
 })();
+/* =========================================================
+   MEGLOS – CROSS SELL V KOŠÍKU
+   ========================================================= */
+
+function setupCartCrossSell() {
+    const cards = [...document.querySelectorAll('.up-product')];
+
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+        const productLink = card.querySelector(
+            'a.up-product-url[href*="/darkove-prani-s-vlastnim-textem/"]'
+        );
+
+        if (!productLink) return;
+
+        card.classList.add('mgl-cart-configurable-product');
+
+        /* Nejnižší cena variant = "od ..." */
+        const select = card.querySelector('.up-variants');
+
+        if (select) {
+            const prices = [...select.options]
+                .map(option => Number(option.dataset.price))
+                .filter(Number.isFinite);
+
+            if (prices.length) {
+                const minPrice = Math.min(...prices);
+                const price = card.querySelector('.up-price-value');
+
+                if (price) {
+                    price.textContent =
+                        'od ' +
+                        new Intl.NumberFormat('cs-CZ').format(minPrice) +
+                        ' Kč';
+                }
+            }
+        }
+
+        /* Vlastní tlačítko místo Přidat */
+        if (!card.querySelector('.mgl-cart-detail-btn')) {
+            const button = document.createElement('a');
+
+            button.className = 'mgl-cart-detail-btn';
+            button.href = productLink.href;
+            button.textContent = 'Vybrat přání';
+
+            const priceContainer = card.querySelector(
+                '.up-product-price-container'
+            );
+
+            if (priceContainer) {
+                priceContainer.appendChild(button);
+            }
+        }
+    });
+
+    /* Nadpis košíkového cross-sellu */
+    document.querySelectorAll('h2, h3, .up-products-header').forEach(el => {
+        if (
+            el.textContent.trim() === 'Doporučujeme přikoupit' &&
+            !el.dataset.mglChanged
+        ) {
+            el.textContent = 'Doplňte svůj dárek';
+            el.dataset.mglChanged = '1';
+        }
+    });
+}
