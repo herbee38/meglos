@@ -297,6 +297,11 @@
       cards.forEach(card => {
     card.classList.add('mgl-cart-crosssell-card');
 });
+  const cartWrapper = cards[0]?.parentElement;
+
+if (cartWrapper) {
+    cartWrapper.classList.add('mgl-cart-crosssell-wrapper');
+}    
 
         /* Nadpis nabídky v košíku */
         document.querySelectorAll(
