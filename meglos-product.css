@@ -1147,3 +1147,22 @@ touch-action:manipulation;
   margin:0!important;
   flex-shrink:0;
 }
+/* větší obrázky v cross-sellu košíku */
+.mgl-cart-crosssell-card > .product-url-image-full-size{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  width:100%!important;
+  height:180px!important;
+  margin:0 0 12px!important;
+  overflow:hidden;
+}
+
+.mgl-cart-crosssell-card > .product-url-image-full-size .up-image{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  border-radius:6px;
+}
