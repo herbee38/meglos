@@ -948,3 +948,7 @@ touch-action:manipulation;
     font-size:14px;
   }
 }
+/* MEGLOS – skrýt původní nadpis cross-sell doplňku */
+.up-container.up-type-product_cross .up-products-header.products-related-header{
+  display:none!important;
+}
