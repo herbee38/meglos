@@ -200,6 +200,41 @@
 
         parents.forEach(parent => {
             if (parent) parent.classList.add('mgl-crosssell-grid');
+
+/* MEGLOS – vlastní nadpis cross-sellu */
+parents.forEach(parent => {
+    if (!parent) return;
+
+    const container = parent.parentElement;
+    if (!container) return;
+
+    /* Schovat původní nadpis doplňku */
+    [...container.children].forEach(el => {
+        if (
+            !el.classList.contains('mgl-crosssell-heading-wrap') &&
+            el.textContent.trim() === 'Doplňte svůj dárek'
+        ) {
+            el.style.display = 'none';
+        }
+    });
+
+    /* Přidat vlastní nadpis jen jednou */
+    if (!container.querySelector('.mgl-crosssell-heading-wrap')) {
+        const heading = document.createElement('div');
+        heading.className = 'mgl-crosssell-heading-wrap';
+
+        heading.innerHTML = `
+            <h2 class="mgl-crosssell-heading">Doplňte svůj dárek</h2>
+            <p class="mgl-crosssell-subheading">
+                Vyberte si doplňky, které udělají váš dárek ještě osobnější.
+            </p>
+        `;
+
+        container.insertBefore(heading, parent);
+    }
+});
+
+          
         });
 
         cards.forEach(card => {
