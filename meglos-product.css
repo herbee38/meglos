@@ -779,3 +779,132 @@ touch-action:manipulation;
     display:none!important;
   }
 }
+/* =========================================================
+   MEGLOS – CROSS SELL KARTY
+   ========================================================= */
+
+.mgl-crosssell-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  padding:0!important;
+  margin:0!important;
+}
+
+.mgl-crosssell-grid>.up-product.mgl-crosssell-card{
+  display:flex!important;
+  flex-direction:column;
+  min-width:0;
+  margin:0!important;
+  padding:16px!important;
+  background:#fff;
+  border:1px solid #E8DED3;
+  border-radius:10px;
+  box-shadow:0 4px 14px rgba(61,57,53,.06);
+}
+
+.mgl-crosssell-card .up-product-information{
+  display:flex!important;
+  flex-direction:column;
+  flex:1;
+}
+
+.mgl-crosssell-card .up-image{
+  display:block;
+  width:100%;
+  margin:0 0 12px!important;
+}
+
+.mgl-crosssell-card .up-image a{
+  display:block;
+  width:100%;
+}
+
+.mgl-crosssell-card .up-image img{
+  display:block;
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:7px;
+}
+
+.mgl-crosssell-card .up-product-details{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.mgl-crosssell-card .up-product-name{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.mgl-crosssell-card .up-product-name a{
+  color:#3D3935;
+  text-decoration:none;
+}
+
+.mgl-crosssell-card .up-product-name a:hover{
+  color:#8B5E34;
+}
+
+.mgl-crosssell-card .up-availability{
+  display:block;
+  margin-bottom:4px;
+  font-size:13px;
+}
+
+.mgl-crosssell-card .up-price{
+  display:block;
+  margin-top:auto;
+  font-size:16px;
+  font-weight:700;
+  color:#2B2B2B;
+}
+
+/* Nechceme varianty, množství ani původní Přidat */
+.mgl-crosssell-card .up-product-variants,
+.mgl-crosssell-card .up-quantity,
+.mgl-crosssell-card .up-product-add-to-cart{
+  display:none!important;
+}
+
+.mgl-crosssell-detail-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  margin-top:14px;
+  padding:10px 14px;
+  border-radius:5px;
+  background:#8B5E34;
+  color:#fff!important;
+  font-weight:600;
+  text-decoration:none!important;
+  transition:.2s ease;
+}
+
+.mgl-crosssell-detail-btn:hover{
+  background:#6F4726;
+  color:#fff!important;
+}
+
+@media(max-width:991px){
+  .mgl-crosssell-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:575px){
+  .mgl-crosssell-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .mgl-crosssell-card .up-image img{
+    height:auto;
+    aspect-ratio:4/3;
+  }
+}
