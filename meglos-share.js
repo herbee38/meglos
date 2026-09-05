@@ -175,3 +175,98 @@
         addCrossSellAnchor();
     }
 })();
+/* =========================================================
+   MEGLOS – ÚPRAVA CROSS SELL PRODUKTŮ
+   ========================================================= */
+
+(function () {
+
+    function formatPrice(value) {
+        return new Intl.NumberFormat('cs-CZ').format(value) + ' Kč';
+    }
+
+    function setupCrossSell() {
+
+        const cards = [
+            ...document.querySelectorAll(
+                '.up-product:has([data-product-offer-type="product_cross"])'
+            )
+        ];
+
+        if (!cards.length) return;
+
+        /* Označíme rodičovský seznam jako grid */
+        const parents = new Set(cards.map(card => card.parentElement));
+
+        parents.forEach(parent => {
+            if (parent) parent.classList.add('mgl-crosssell-grid');
+        });
+
+        cards.forEach(card => {
+
+            card.classList.add('mgl-crosssell-card');
+
+            /* URL detailu produktu */
+            const productLink =
+                card.querySelector('.up-product-name .up-product-url') ||
+                card.querySelector('.up-image .up-product-url');
+
+            if (!productLink) return;
+
+            /* U variantního produktu zobrazíme nejnižší cenu jako "od ..." */
+            const variantSelect = card.querySelector('.up-variants');
+
+            if (variantSelect) {
+
+                const prices = [...variantSelect.options]
+                    .map(option => Number(option.dataset.price))
+                    .filter(price => Number.isFinite(price));
+
+                if (prices.length) {
+                    const minPrice = Math.min(...prices);
+                    const priceEl = card.querySelector('.up-price-value');
+
+                    if (priceEl) {
+                        priceEl.textContent = 'od ' + formatPrice(minPrice);
+                    }
+                }
+            }
+
+            /* Vlastní tlačítko */
+            if (!card.querySelector('.mgl-crosssell-detail-btn')) {
+
+                const button = document.createElement('a');
+
+                button.className = 'mgl-crosssell-detail-btn';
+                button.href = productLink.href;
+                button.textContent = 'Jít na detail';
+
+                card.appendChild(button);
+            }
+        });
+    }
+
+    /* První načtení */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupCrossSell);
+    } else {
+        setupCrossSell();
+    }
+
+    /*
+     * Doplněk může obsah překreslovat dynamicky,
+     * proto úpravu zopakujeme při změně DOM.
+     */
+    let timer;
+
+    const observer = new MutationObserver(() => {
+        clearTimeout(timer);
+        timer = setTimeout(setupCrossSell, 100);
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+})();
