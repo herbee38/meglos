@@ -908,3 +908,43 @@ touch-action:manipulation;
     aspect-ratio:4/3;
   }
 }
+/* =========================================================
+   MEGLOS – NADPIS CROSS SELL
+   ========================================================= */
+
+.mgl-crosssell-heading-wrap{
+  text-align:center;
+  margin:8px 0 24px;
+  padding:0 20px;
+}
+
+.mgl-crosssell-heading{
+  margin:0 0 7px;
+  font-size:26px;
+  line-height:1.25;
+  font-weight:600;
+  color:#3D3935;
+}
+
+.mgl-crosssell-subheading{
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+  font-weight:400;
+  color:#6F6862;
+}
+
+@media(max-width:767px){
+  .mgl-crosssell-heading-wrap{
+    margin:4px 0 18px;
+    padding:0 12px;
+  }
+
+  .mgl-crosssell-heading{
+    font-size:22px;
+  }
+
+  .mgl-crosssell-subheading{
+    font-size:14px;
+  }
+}
