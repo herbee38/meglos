@@ -208,15 +208,20 @@ parents.forEach(parent => {
     const container = parent.parentElement;
     if (!container) return;
 
-    /* Schovat původní nadpis doplňku */
-    [...container.children].forEach(el => {
-        if (
-            !el.classList.contains('mgl-crosssell-heading-wrap') &&
-            el.textContent.trim() === 'Doplňte svůj dárek'
-        ) {
+  /* Schovat původní nadpis doplňku */
+container.querySelectorAll('*').forEach(el => {
+    if (el.closest('.mgl-crosssell-heading-wrap')) return;
+
+    if (el.textContent.trim() === 'Doplňte svůj dárek') {
+        const hasSameTextChild = [...el.children].some(child =>
+            child.textContent.trim() === 'Doplňte svůj dárek'
+        );
+
+        if (!hasSameTextChild) {
             el.style.display = 'none';
         }
-    });
+    }
+});
 
     /* Přidat vlastní nadpis jen jednou */
     if (!container.querySelector('.mgl-crosssell-heading-wrap')) {
