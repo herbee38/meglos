@@ -1166,3 +1166,96 @@ touch-action:manipulation;
   object-fit:cover!important;
   border-radius:6px;
 }
+/* =========================================================
+   MEGLOS – DOLADĚNÍ CROSS-SELL KARET V KOŠÍKU
+   ========================================================= */
+
+.mgl-cart-crosssell-card{
+  display:flex!important;
+  flex-direction:column!important;
+  padding:12px!important;
+  box-sizing:border-box!important;
+}
+
+/* větší obrázek */
+.mgl-cart-crosssell-card > .product-url-image-full-size{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  width:100%!important;
+  height:210px!important;
+  margin:0 0 12px!important;
+  overflow:hidden;
+}
+
+/* obrázek přes celou šířku */
+.mgl-cart-crosssell-card > .product-url-image-full-size .up-image{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  border-radius:6px;
+}
+
+/* obsah pod obrázkem */
+.mgl-cart-crosssell-card .up-product-content{
+  display:flex!important;
+  flex-direction:column!important;
+  flex:1!important;
+  width:100%!important;
+  padding:0!important;
+}
+
+/* blok názvu */
+.mgl-cart-crosssell-card .up-product-description-container{
+  display:block!important;
+  min-height:42px!important;
+  margin:0 0 10px!important;
+  line-height:1.35;
+}
+
+/* název produktu – výraznější */
+.mgl-cart-crosssell-card .up-product-description-container .up-product-url{
+  display:block!important;
+  margin:0!important;
+  font-size:14px!important;
+  line-height:1.35!important;
+  font-weight:600!important;
+  color:#3D3935!important;
+  text-decoration:none!important;
+  white-space:normal!important;
+  hyphens:none!important;
+  -webkit-hyphens:none!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+}
+
+/* hover názvu */
+.mgl-cart-crosssell-card .up-product-description-container .up-product-url:hover{
+  color:#8B5E34!important;
+}
+
+/* spodní řádek */
+.mgl-cart-crosssell-card .up-product-price-container{
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:space-between!important;
+  gap:10px;
+  width:100%!important;
+  margin-top:auto!important;
+}
+
+/* dostupnost + cena pod sebou */
+.mgl-cart-crosssell-card .up-product-price-container > span{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+}
+
+/* tlačítka */
+.mgl-cart-crosssell-card .up-product-add-to-cart,
+.mgl-cart-crosssell-card .mgl-cart-detail-btn{
+  margin:0!important;
+  flex-shrink:0;
+}
