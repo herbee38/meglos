@@ -952,3 +952,52 @@ touch-action:manipulation;
 .up-container.up-type-product_cross .up-products-header.products-related-header{
   display:none!important;
 }
+/* =========================================================
+   MEGLOS – CROSS SELL V KOŠÍKU
+   ========================================================= */
+
+/* Konfigurovatelné přání – skrýt varianty a původní Přidat */
+.mgl-cart-configurable-product .up-variants,
+.mgl-cart-configurable-product .up-product-add-to-cart{
+  display:none!important;
+}
+
+/* Vlastní tlačítko */
+.mgl-cart-detail-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  margin-top:8px;
+  padding:7px 12px;
+  border-radius:5px;
+  background:#8B5E34;
+  color:#fff!important;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.2;
+  text-decoration:none!important;
+  transition:.2s ease;
+}
+
+.mgl-cart-detail-btn:hover{
+  background:#6F4726;
+  color:#fff!important;
+}
+
+/* Karty mají stejnou výšku */
+.up-type-cart .up-product{
+  height:auto!important;
+  display:flex!important;
+  flex-direction:column;
+}
+
+.up-type-cart .up-product-content{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.up-type-cart .up-product-price-container{
+  margin-top:auto;
+}
