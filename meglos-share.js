@@ -294,6 +294,9 @@
 
         const cards = getOfferCards('cart');
         if (!cards.length) return;
+      cards.forEach(card => {
+    card.classList.add('mgl-cart-crosssell-card');
+});
 
         /* Nadpis nabídky v košíku */
         document.querySelectorAll(
