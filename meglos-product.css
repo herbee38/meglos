@@ -1017,3 +1017,39 @@ touch-action:manipulation;
   word-break:keep-all!important;
   overflow-wrap:normal!important;
 }
+/* =========================================================
+   MEGLOS – ŠIRŠÍ CROSS SELL V KOŠÍKU
+   ========================================================= */
+
+.mgl-cart-crosssell-wrapper{
+  display:flex!important;
+  gap:16px!important;
+  width:100%!important;
+}
+
+.mgl-cart-crosssell-wrapper .mgl-cart-crosssell-card{
+  width:calc((100% - 32px)/3)!important;
+  flex:0 0 calc((100% - 32px)/3)!important;
+  max-width:none!important;
+  margin-right:0!important;
+}
+
+/* Tablet – 2 karty */
+@media(max-width:991px){
+  .mgl-cart-crosssell-wrapper .mgl-cart-crosssell-card{
+    width:calc((100% - 16px)/2)!important;
+    flex-basis:calc((100% - 16px)/2)!important;
+  }
+}
+
+/* Mobil – 1 karta */
+@media(max-width:575px){
+  .mgl-cart-crosssell-wrapper{
+    gap:12px!important;
+  }
+
+  .mgl-cart-crosssell-wrapper .mgl-cart-crosssell-card{
+    width:100%!important;
+    flex-basis:100%!important;
+  }
+}
