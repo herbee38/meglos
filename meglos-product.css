@@ -282,11 +282,6 @@
   font-size:0!important
 }
 
-.type-product .variant-list th::after{
-  content:"Vyberte rozměr";
-  color:#3D3935;
-  font:600 14px/1.4 Montserrat,sans-serif
-}
 
 .type-product #simple-variants,
 .type-product #simple-variants-select{
