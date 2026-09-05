@@ -155,3 +155,23 @@
     initShare();
   }
 })();
+/* MEGLOS – kotva pro cross-sell na detailu produktu */
+(function () {
+    function addCrossSellAnchor() {
+        if (!document.body.classList.contains('type-product')) return;
+
+        const tabs = document.querySelector('.shp-tabs-row.responsive-nav');
+        if (!tabs || document.querySelector('#meglos-crosssell-anchor')) return;
+
+        const anchor = document.createElement('div');
+        anchor.id = 'meglos-crosssell-anchor';
+
+        tabs.parentNode.insertBefore(anchor, tabs);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addCrossSellAnchor);
+    } else {
+        addCrossSellAnchor();
+    }
+})();
