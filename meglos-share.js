@@ -208,18 +208,12 @@ parents.forEach(parent => {
     const container = parent.parentElement;
     if (!container) return;
 
-  /* Schovat původní nadpis doplňku */
-container.querySelectorAll('*').forEach(el => {
+ /* Schovat původní nadpis cross-sell doplňku */
+document.querySelectorAll('body *').forEach(el => {
     if (el.closest('.mgl-crosssell-heading-wrap')) return;
 
-    if (el.textContent.trim() === 'Doplňte svůj dárek') {
-        const hasSameTextChild = [...el.children].some(child =>
-            child.textContent.trim() === 'Doplňte svůj dárek'
-        );
-
-        if (!hasSameTextChild) {
-            el.style.display = 'none';
-        }
+    if ((el.textContent || '').trim() === 'Doplňte svůj dárek') {
+        el.style.display = 'none';
     }
 });
 
