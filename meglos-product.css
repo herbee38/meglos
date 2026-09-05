@@ -1001,3 +1001,23 @@ touch-action:manipulation;
 .up-type-cart .up-product-price-container{
   margin-top:auto;
 }
+/* MEGLOS – názvy produktů v cross-sellu košíku */
+.up-type-cart .up-product-description-container{
+  min-height:34px;
+  line-height:1.35;
+}
+
+.up-type-cart .up-product-description-container .up-product-url{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+
+  font-size:13px;
+  line-height:1.35;
+
+  hyphens:none!important;
+  -webkit-hyphens:none!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+}
