@@ -919,4 +919,11 @@ body.cart-window-visible .cart-window .cart-table tr.meglos-remove-ready .p-tota
     height: 42px !important;
   }
 }
+.meglos-footer-brand img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 552 / 235;
+}
 
