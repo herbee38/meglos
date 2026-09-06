@@ -1267,7 +1267,7 @@ touch-action:manipulation;
 
   /* Trochu širší blok hlavního produktu */
   .cart-inner{
-    width:calc(100% + 80px)!important;
+    width:calc(100% + 90px)!important;
     max-width:none!important;
   }
 
@@ -1283,10 +1283,6 @@ touch-action:manipulation;
     padding-top:14px!important;
   }
 
-  /* náhled o 10 px níž */
-  .cart-table .cart-p-image{
-    padding-top:24px!important;
-  }
   .cart-table .cart-p-image img{
     display:block!important;
     width:80px!important;
@@ -1300,5 +1296,30 @@ touch-action:manipulation;
   /* Cena vpravo trochu doleva */
   .cart-table .p-total{
     padding-right:35px!important;
+  }
+}
+@media(min-width:992px){
+
+  /* levý produktový thumbnail už neposouvat */
+  .cart-table .cart-p-image{
+    padding-top:14px!important;
+  }
+
+  /* nahraná příloha / ChatGPT Image v názvu produktu */
+  .cart-table td.p-name img{
+    display:block!important;
+    width:110px!important;
+    height:110px!important;
+    object-fit:cover!important;
+    margin:10px auto 8px!important;
+    border-radius:6px;
+  }
+
+  /* obal odkazu kolem nahraného náhledu vystředit */
+  .cart-table td.p-name a:has(img){
+    display:block!important;
+    width:110px!important;
+    margin:10px auto 6px!important;
+    text-align:center!important;
   }
 }
