@@ -1305,21 +1305,4 @@ touch-action:manipulation;
     padding-top:14px!important;
   }
 
-  /* nahraná příloha / ChatGPT Image v názvu produktu */
-  .cart-table td.p-name img{
-    display:block!important;
-    width:60px!important;
-    height:60px!important;
-    object-fit:cover!important;
-    margin:10px auto 8px!important;
-    border-radius:6px;
-  }
-
-  /* obal odkazu kolem nahraného náhledu vystředit */
-  .cart-table td.p-name a:has(img){
-    display:block!important;
-    width:110px!important;
-    margin:10px auto 6px!important;
-    text-align:center!important;
-  }
-}
+  
