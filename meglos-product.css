@@ -1267,7 +1267,7 @@ touch-action:manipulation;
 
   /* Trochu širší blok hlavního produktu */
   .cart-inner{
-    width:calc(100% + 90px)!important;
+    width:calc(100% + 80px)!important;
     max-width:none!important;
   }
 
@@ -1308,8 +1308,8 @@ touch-action:manipulation;
   /* nahraná příloha / ChatGPT Image v názvu produktu */
   .cart-table td.p-name img{
     display:block!important;
-    width:110px!important;
-    height:110px!important;
+    width:60px!important;
+    height:60px!important;
     object-fit:cover!important;
     margin:10px auto 8px!important;
     border-radius:6px;
