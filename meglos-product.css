@@ -1259,3 +1259,42 @@ touch-action:manipulation;
   margin:0!important;
   flex-shrink:0;
 }
+/* =========================================================
+   MEGLOS – HLAVNÍ PRODUKT V KOŠÍKU
+   ========================================================= */
+
+@media(min-width:992px){
+
+  /* Trochu širší blok hlavního produktu */
+  .cart-inner{
+    width:calc(100% + 70px)!important;
+    max-width:none!important;
+  }
+
+  .cart-table{
+    width:100%!important;
+  }
+
+  /* Větší náhled produktu */
+  .cart-table .cart-p-image{
+    width:95px!important;
+    min-width:95px!important;
+    vertical-align:top!important;
+    padding-top:14px!important;
+  }
+
+  .cart-table .cart-p-image img{
+    display:block!important;
+    width:80px!important;
+    height:80px!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    margin:0 auto!important;
+    border-radius:5px;
+  }
+
+  /* Cena vpravo trochu doleva */
+  .cart-table .p-total{
+    padding-right:35px!important;
+  }
+}
