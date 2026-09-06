@@ -1305,4 +1305,40 @@ touch-action:manipulation;
     padding-top:14px!important;
   }
 
+  /* =========================================================
+   MEGLOS – NÁHLED NAHRANÉ PŘÍLOHY V KOŠÍKU
+   ========================================================= */
+
+@media(min-width:992px){
+
+  /* celou přílohu o 10 px níž */
+  .cart-table .p-name .dkLabCartAttachments{
+    margin-top:10px!important;
+  }
+
+  /* řádek náhledu + názvu souboru */
+  .cart-table .p-name .dkLabCartNoteAttachmentDetail{
+    display:flex!important;
+    align-items:center!important;
+    gap:8px!important;
+  }
+
+  /* prostor pro náhled */
+  .cart-table .p-name .dkLabPrilohaIcon{
+    width:64px!important;
+    height:64px!important;
+    flex:0 0 64px!important;
+  }
+
+  /* samotný obrázek */
+  .cart-table .p-name .dkLabNoteImagePreview{
+    display:block!important;
+    width:64px!important;
+    height:64px!important;
+    max-width:none!important;
+    object-fit:cover!important;
+    border-radius:4px;
+  }
+}
+
   
