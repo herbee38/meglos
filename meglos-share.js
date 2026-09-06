@@ -109,10 +109,6 @@
     link.className = 'meglos-share-button';
     link.setAttribute('role', 'button');
     link.setAttribute('aria-label', 'Sdílet produkt');
-    link.setAttribute(
-      'onclick',
-      'return window.meglosShareProduct(this,event);'
-    );
 
     link.innerHTML = `
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -314,39 +310,98 @@ if (cartWrapper) {
         });
 
 
+        /*
+         * Produkty, které se nesmí přidat přímo z upsellu.
+         * Zákazník musí nejdřív na detail a zvolit konfiguraci.
+         */
+        const configurableProducts = [
+            {
+                hrefPart: '/darkove-prani-s-vlastnim-textem/',
+                buttonText: 'Vybrat přání'
+            },
+            {
+                hrefPart: '/darkove-baleni/',
+                buttonText: 'Vybrat balení'
+            }
+        ];
+
         cards.forEach(card => {
 
-            /*
-             * Konfigurovatelné přání:
-             * zákazník musí jít na detail produktu
-             */
+            const config = configurableProducts.find(item =>
+                card.querySelector(
+                    'a.up-product-url[href*="' + item.hrefPart + '"]'
+                )
+            );
+
+            if (!config) return;
+
             const productLink = card.querySelector(
-                'a.up-product-url[href*="/darkove-prani-s-vlastnim-textem/"]'
+                'a.up-product-url[href*="' + config.hrefPart + '"]'
             );
 
             if (!productLink) return;
 
+            /*
+             * Stejná třída pro oba konfigurovatelné produkty.
+             * Tím oba používají stejné CSS včetně :hover.
+             */
             card.classList.add('mgl-cart-configurable-product');
 
             setMinVariantPrice(card);
 
-            /* Tlačítko Vybrat přání */
-            if (!card.querySelector('.mgl-cart-detail-btn')) {
+            /* Výběr variant proběhne až na detailu produktu. */
+            const variants = card.querySelector('.up-variants');
+            if (variants) {
+                variants.style.setProperty('display', 'none', 'important');
+            }
 
-                const button = document.createElement('a');
+            /*
+             * Schovat původní tlačítko addonu "Přidat".
+             * Produktové odkazy a naše vlastní tlačítko necháváme být.
+             */
+            [...card.querySelectorAll('a, button')].forEach(el => {
+                if (
+                    el.classList.contains('up-product-url') ||
+                    el.classList.contains('mgl-cart-detail-btn')
+                ) {
+                    return;
+                }
 
+                const text = el.textContent.trim();
+                const href = el.getAttribute('href') || '';
+
+                if (
+                    text === 'Přidat' ||
+                    text === 'Vybrat' ||
+                    text === 'Vybrat balení' ||
+                    /\/kosik\/?(?:$|[?#])/.test(href)
+                ) {
+                    el.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+            /*
+             * Vlastní odkaz na detail.
+             * Používá stejnou CSS třídu jako "Vybrat přání",
+             * proto funguje i nativní hover bez JS mouseenter/mouseleave.
+             */
+            let button = card.querySelector('.mgl-cart-detail-btn');
+
+            if (!button) {
+                button = document.createElement('a');
                 button.className = 'mgl-cart-detail-btn';
-                button.href = productLink.href;
-                button.textContent = 'Vybrat přání';
 
                 const priceContainer = card.querySelector(
                     '.up-product-price-container'
                 );
 
-                if (priceContainer) {
-                    priceContainer.appendChild(button);
-                }
+                if (!priceContainer) return;
+
+                priceContainer.appendChild(button);
             }
+
+            button.href = productLink.href;
+            button.textContent = config.buttonText;
         });
     }
 
@@ -394,137 +449,4 @@ if (cartWrapper) {
         subtree: true
     });
 
-})();
-(function () {
-  if (window.meglosGiftWrapUpsellInit) return;
-  window.meglosGiftWrapUpsellInit = true;
-
-  function fixGiftWrapUpsell() {
-    const cards = [...document.querySelectorAll('.up-product')];
-
-    const giftCard = cards.find(el =>
-      el.textContent.includes('Dárkové balení')
-    );
-
-    const wishCard = cards.find(el =>
-      el.textContent.includes('Dárkové přání s vlastním textem')
-    );
-
-    if (!giftCard || !wishCard) return;
-
-    /* 1. Skrýt výběr variant */
-    const variants = giftCard.querySelector('.up-variants');
-    if (variants) {
-      variants.style.setProperty('display', 'none', 'important');
-    }
-
-    /* 2. Vzorové tlačítko "Vybrat přání" */
-    const wishBtn = [...wishCard.querySelectorAll('a, button')]
-      .find(el => el.textContent.trim() === 'Vybrat přání');
-
-    if (!wishBtn) return;
-
-    /* 3. Najít akční tlačítko Dárkového balení */
-    let giftBtn = [...giftCard.querySelectorAll('a, button')]
-      .find(el =>
-        !el.classList.contains('up-product-url') &&
-        (
-          el.textContent.trim() === 'Přidat' ||
-          el.textContent.trim() === 'Vybrat' ||
-          el.textContent.trim() === 'Vybrat balení' ||
-          el.textContent.trim() === ''
-        )
-      );
-
-    if (!giftBtn) return;
-
-    /*
-     * Pokud ještě není naše, naklonujeme ho.
-     * Tím odstraníme původní click událost doplňku,
-     * která by mohla produkt rovnou přidat do košíku.
-     */
-    if (!giftBtn.dataset.meglosGiftWrap) {
-      const cleanBtn = giftBtn.cloneNode(true);
-      cleanBtn.dataset.meglosGiftWrap = '1';
-      giftBtn.replaceWith(cleanBtn);
-      giftBtn = cleanBtn;
-    }
-
-    /* 4. Text a odkaz */
-    giftBtn.textContent = 'Vybrat balení';
-
-    if (giftBtn.tagName === 'A') {
-      giftBtn.href = '/darkove-baleni/';
-    }
-
-    /* 5. Převzít přesný vzhled tlačítka "Vybrat přání" */
-    const cs = getComputedStyle(wishBtn);
-
-    [
-      'background',
-      'background-color',
-      'color',
-      'border',
-      'border-color',
-      'border-width',
-      'border-style',
-      'border-radius',
-      'padding-top',
-      'padding-right',
-      'padding-bottom',
-      'padding-left',
-      'font-size',
-      'font-weight',
-      'font-family',
-      'line-height',
-      'height',
-      'min-height',
-      'box-shadow',
-      'text-decoration',
-      'display',
-      'align-items',
-      'justify-content',
-      'cursor'
-    ].forEach(prop => {
-      giftBtn.style.setProperty(
-        prop,
-        cs.getPropertyValue(prop),
-        'important'
-      );
-    });
-    
-const normalBg = '#8B5E34';
-const hoverBg  = '#6F4726';
-
-giftBtn.style.setProperty('background-color', normalBg, 'important');
-giftBtn.style.setProperty('border-color', normalBg, 'important');
-giftBtn.style.setProperty('color', '#fff', 'important');
-
-giftBtn.addEventListener('mouseenter', function () {
-  this.style.setProperty('background-color', hoverBg, 'important');
-  this.style.setProperty('border-color', hoverBg, 'important');
-});
-
-giftBtn.addEventListener('mouseleave', function () {
-  this.style.setProperty('background-color', normalBg, 'important');
-  this.style.setProperty('border-color', normalBg, 'important');
-});
-    /* 6. Klik vede vždy na výběr balení */
-    giftBtn.onclick = function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      window.location.href = '/darkove-baleni/';
-    };
-  }
-
-  fixGiftWrapUpsell();
-
-  const observer = new MutationObserver(() => {
-    requestAnimationFrame(fixGiftWrapUpsell);
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
 })();
