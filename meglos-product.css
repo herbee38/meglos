@@ -1267,7 +1267,7 @@ touch-action:manipulation;
 
   /* Trochu širší blok hlavního produktu */
   .cart-inner{
-    width:calc(100% + 70px)!important;
+    width:calc(100% + 80px)!important;
     max-width:none!important;
   }
 
@@ -1283,6 +1283,10 @@ touch-action:manipulation;
     padding-top:14px!important;
   }
 
+  /* náhled o 10 px níž */
+  .cart-table .cart-p-image{
+    padding-top:24px!important;
+  }
   .cart-table .cart-p-image img{
     display:block!important;
     width:80px!important;
