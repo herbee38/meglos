@@ -926,4 +926,7 @@ body.cart-window-visible .cart-window .cart-table tr.meglos-remove-ready .p-tota
   height: auto;
   aspect-ratio: 552 / 235;
 }
+img[src*="meglos_hero_shoptet.jpg"] {
+  aspect-ratio: 1896 / 830;
+}
 
